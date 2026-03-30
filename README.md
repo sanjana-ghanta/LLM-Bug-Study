@@ -1,11 +1,12 @@
 # LLM Bug Detection Study
 
-A systematic empirical study evaluating LLM ability to detect bugs in real Java and Python code across 5 experimental tiers, using 45 Java bugs from Defects4J and 50 Python bugs from BugsInPy. Includes a sycophancy experiment testing whether LLMs cave under pressure.
+A systematic empirical study evaluating LLM ability to detect bugs in real Java and Python code across 5 experimental tiers, using 45 Java bugs from Defects4J and 50 Python bugs from BugsInPy. Includes a sycophancy challenge experiment testing whether LLMs cave under pressure.
 
 ## Research Questions
 
 1. How robust is LLM-based bug detection to different code transformations?
-2. Does challenging the LLM ("are you sure?") change its verdict — and is that change accurate?
+2. Does this differ between Java and Python?
+3. Does challenging the LLM ("are you sure?") change its verdict — and is that change accurate?
 
 ## Dataset
 
@@ -133,20 +134,28 @@ REASON: <one sentence explanation>
 | Turn 1 → Turn 2 | 205 | 449 | 45.7% |
 | Turn 2 → Turn 3 | 318 | 449 | 70.8% |
 
-#### Sycophancy Analysis
+#### Sycophancy Analysis — Turn 1 → Turn 2 ("Are you sure?")
 
 | Scenario | Count | Rate |
 |----------|-------|------|
 | Correct on turn 1, caved on turn 2 | 75/131 | 57.3% |
 | Wrong on turn 1, self-corrected on turn 2 | 130/318 | 40.9% |
 
-#### Key Sycophancy Findings
+#### Sycophancy Analysis — Turn 2 → Turn 3 ("I think you're wrong")
+
+| Scenario | Count | Rate |
+|----------|-------|------|
+| Correct on turn 2, caved on turn 3 | 115/186 | 61.8% |
+| Wrong on turn 2, self-corrected on turn 3 | 203/263 | 77.2% |
+
+#### Interpretation
 
 - Claude changes its answer **45.7%** of the time just from "are you sure?"
 - Claude changes its answer **70.8%** of the time after "I think you're wrong"
-- When Claude was **correct**, it abandoned the right answer **57.3%** of the time under pressure
-- When Claude was **wrong**, it only self-corrected **40.9%** of the time
-- Overall accuracy increases with challenges (29% → 61%) but this is misleading — Claude is being pressured into saying BUG more often, which happens to be correct for tiers 2-5
+- When correct, Claude abandons the right answer under pressure **57-62%** of the time
+- Caving rate increases with more pressure (57.3% → 61.8%)
+- The high self-correction rate on turn 3 (77.2%) is misleading — Claude is not reasoning better, it is simply flipping its previous answer
+- This suggests LLM bug detection is highly unreliable under adversarial or iterative review conditions
 
 ---
 
@@ -155,7 +164,7 @@ REASON: <one sentence explanation>
 1. LLMs are much better at recognizing clean code (~83%) than detecting real bugs (~18-22%)
 2. Bug detection degrades as transformations are applied (tier 4 worst at 13-14%)
 3. Semantic rewrites are especially hard to detect, particularly in Python (7.7%)
-4. Claude shows strong sycophancy — abandoning correct answers under pressure 57% of the time
+4. Claude shows strong sycophancy — abandoning correct answers under pressure 57-62% of the time
 5. Challenging Claude increases overall accuracy but for the wrong reason (bias toward BUG)
 6. False negative rate is very high across both languages (81-86%)
 
@@ -228,26 +237,3 @@ python3 run_challenge.py
 - [BugsInPy](https://github.com/soarsmu/BugsInPy) benchmark
 - [LLM-Debug](https://github.com/sabaat/LLM-Debug) repo for SPM injection inspiration
 - Research conducted under the guidance of Prof. Mohammed Ali Gulzar, Virginia Tech
-
-### Full Sycophancy Analysis (Both Turns)
-
-#### Turn 1 → Turn 2 ("Are you sure?")
-
-| Scenario | Count | Rate |
-|----------|-------|------|
-| Correct on turn 1, caved on turn 2 | 75/131 | 57.3% |
-| Wrong on turn 1, self-corrected on turn 2 | 130/318 | 40.9% |
-
-#### Turn 2 → Turn 3 ("I think you're wrong")
-
-| Scenario | Count | Rate |
-|----------|-------|------|
-| Correct on turn 2, caved on turn 3 | 115/186 | 61.8% |
-| Wrong on turn 2, self-corrected on turn 3 | 203/263 | 77.2% |
-
-#### Interpretation
-
-By turn 3 Claude appears to simply flip its previous answer rather than reason more carefully:
-- Caving rate **increases** from 57.3% to 61.8% with more pressure
-- Self-correction rate jumps to 77.2% but this is misleading — the model is not reasoning better, it is just agreeing with whoever is pushing back
-- This suggests LLM bug detection is highly unreliable under adversarial or iterative review conditions
