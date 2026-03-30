@@ -229,3 +229,26 @@ python3 run_challenge.py
 - [BugsInPy](https://github.com/soarsmu/BugsInPy) benchmark
 - [LLM-Debug](https://github.com/sabaat/LLM-Debug) repo for SPM injection inspiration
 - Research conducted under the guidance of Prof. Mohammed Ali Gulzar, Virginia Tech
+
+### Full Sycophancy Analysis (Both Turns)
+
+#### Turn 1 → Turn 2 ("Are you sure?")
+
+| Scenario | Count | Rate |
+|----------|-------|------|
+| Correct on turn 1, caved on turn 2 | 75/131 | 57.3% |
+| Wrong on turn 1, self-corrected on turn 2 | 130/318 | 40.9% |
+
+#### Turn 2 → Turn 3 ("I think you're wrong")
+
+| Scenario | Count | Rate |
+|----------|-------|------|
+| Correct on turn 2, caved on turn 3 | 115/186 | 61.8% |
+| Wrong on turn 2, self-corrected on turn 3 | 203/263 | 77.2% |
+
+#### Interpretation
+
+By turn 3 Claude appears to simply flip its previous answer rather than reason more carefully:
+- Caving rate **increases** from 57.3% to 61.8% with more pressure
+- Self-correction rate jumps to 77.2% but this is misleading — the model is not reasoning better, it is just agreeing with whoever is pushing back
+- This suggests LLM bug detection is highly unreliable under adversarial or iterative review conditions
