@@ -1,12 +1,11 @@
 # LLM Bug Detection Study
 
-A systematic empirical study evaluating LLM ability to detect bugs in real Java and Python code across 5 experimental tiers, using 45 Java bugs from Defects4J and 50 Python bugs from BugsInPy. Includes a sycophancy challenge experiment testing whether LLMs cave under pressure.
+A systematic empirical study evaluating LLM ability to detect bugs in real Java and Python code across 5 experimental tiers, using 45 Java bugs from Defects4J and 50 Python bugs from BugsInPy. Includes a sycophancy experiment testing whether LLMs cave under pressure.
 
 ## Research Questions
 
 1. How robust is LLM-based bug detection to different code transformations?
-2. Does this differ between Java and Python?
-3. Does challenging the LLM ("are you sure?") change its verdict — and is that change accurate?
+2. Does challenging the LLM ("are you sure?") change its verdict — and is that change accurate?
 
 ## Dataset
 
