@@ -1,0 +1,14 @@
+{
+  "project": "thefuck",
+  "bug_id": "7",
+  "file_path": "thefuck/rules/php_s.py",
+  "language": "python",
+  "buggy_code": "from thefuck.utils import replace_argument, for_app\n\n\n@for_app('php')\ndef match(command):\n    return \"php -s\" in command.script\n\n\ndef get_new_command(command):\n    return replace_argument(command.script, \"-s\", \"-S\")\n\n\nrequires_output = False\n",
+  "patched_code": "from thefuck.utils import replace_argument, for_app\n\n\n@for_app('php')\ndef match(command):\n    return \" -s \" in command.script\n\n\ndef get_new_command(command):\n    return replace_argument(command.script, \"-s\", \"-S\")\n",
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null
+}

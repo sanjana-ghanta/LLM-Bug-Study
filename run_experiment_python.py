@@ -6,16 +6,15 @@ import anthropic
 
 client = anthropic.Anthropic()
 
-def truncate_code(code, max_lines=100):
-    """Only send first 100 lines to stay under token limits."""
+def truncate_code(code, max_lines=50):
     lines = code.splitlines()
     if len(lines) > max_lines:
         return "\n".join(lines[:max_lines]) + "\n... (truncated)"
     return code
 
 def ask_claude(code, file_path):
-    code = truncate_code(code, max_lines=80)
-    prompt = f"""Review the following Java code from {file_path} and determine if it contains a bug.
+    code = truncate_code(code, max_lines=50)
+    prompt = f"""Review the following Python code from {file_path} and determine if it contains a bug.
 Respond in this exact format:
 VERDICT: BUG or NO BUG
 REASON: <one sentence explanation>
@@ -80,19 +79,20 @@ def process_bug(data_json_path, writer, completed):
         writer.writerow({
             "project": project,
             "bug_id": bug_id,
+            "language": "python",
             "tier": tier_num,
             "expected": expected,
             "verdict": verdict,
             "correct": correct,
             "response": full_response.replace("\n", " ")
         })
-        time.sleep(20)
+        time.sleep(5)
 
 if __name__ == "__main__":
-    BUGS_DIR = "/Users/sunny/llm-bug-study/experiment/bugs"
-    OUT_CSV = "/Users/sunny/llm-bug-study/experiment/results.csv"
+    BUGS_DIR = "/Users/sunny/llm-bug-study/experiment/pybugs"
+    OUT_CSV = "/Users/sunny/llm-bug-study/experiment/results_python.csv"
 
-    fields = ["project", "bug_id", "tier", "expected", "verdict", "correct", "response"]
+    fields = ["project", "bug_id", "language", "tier", "expected", "verdict", "correct", "response"]
     completed = load_completed(OUT_CSV)
     print(f"Already completed: {len(completed)} tier results")
 

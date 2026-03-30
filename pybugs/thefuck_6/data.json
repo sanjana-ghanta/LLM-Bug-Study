@@ -1,0 +1,14 @@
+{
+  "project": "thefuck",
+  "bug_id": "6",
+  "file_path": "thefuck/rules/git_branch_exists.py",
+  "language": "python",
+  "buggy_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\n\n\n@git_support\ndef match(command):\n    return (\"fatal: A branch named '\" in command.output\n            and \" already exists.\" in command.output)\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    branch_name = re.findall(\n        r\"fatal: A branch named '([^']*)' already exists.\", command.output)[0]\n    new_command_templates = [['git branch -d {0}', 'git branch {0}'],\n                             ['git branch -d {0}', 'git checkout -b {0}'],\n                             ['git branch -D {0}', 'git branch {0}'],\n                             ['git branch -D {0}', 'git checkout -b {0}'],\n                             ['git checkout {0}']]\n    for new_command_template in new_command_templates:\n        yield shell.and_(*new_command_template).format(branch_name)\n",
+  "patched_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\n\n\n@git_support\ndef match(command):\n    return (\"fatal: A branch named '\" in command.output\n            and \"' already exists.\" in command.output)\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    branch_name = re.findall(\n        r\"fatal: A branch named '(.+)' already exists.\", command.output)[0]\n    branch_name = branch_name.replace(\"'\", r\"\\'\")\n    new_command_templates = [['git branch -d {0}', 'git branch {0}'],\n                             ['git branch -d {0}', 'git checkout -b {0}'],\n                             ['git branch -D {0}', 'git branch {0}'],\n                             ['git branch -D {0}', 'git checkout -b {0}'],\n                             ['git checkout {0}']]\n    for new_command_template in new_command_templates:\n        yield shell.and_(*new_command_template).format(branch_name)\n",
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null
+}
