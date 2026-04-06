@@ -237,3 +237,55 @@ python3 run_challenge.py
 - [BugsInPy](https://github.com/soarsmu/BugsInPy) benchmark
 - [LLM-Debug](https://github.com/sabaat/LLM-Debug) repo for SPM injection inspiration
 - Research conducted under the guidance of Prof. Mohammed Ali Gulzar, Virginia Tech
+
+---
+
+## Experiment 4: Redesigned with Benchmark Context (v2)
+
+After meeting with Prof. Gulzar, we redesigned the experiment to better target the core research question: **is the LLM truly reasoning about code, or acting like a search engine retrieving known patterns?**
+
+### Changes from original experiment
+- Prompt now tells Claude the code is from Defects4J or BugsInPy
+- No code truncation — full file sent
+- Line number requested in response
+- 10 bugs total (5 Java, 5 Python)
+- Claude Sonnet used for both languages
+
+### Prompt This code is from a known bug in the {benchmark} benchmark. Can you help me identify the bug?
+Please respond in this exact format: VERDICT: BUG or NO BUG LINE: <line number where the bug is, or NONE if no bug> REASON: <one sentence explanation of what specifically is wrong in this code>
+ ### Results
+
+| Tier | Description | Accuracy |
+|------|-------------|----------|
+| 1 | Patched clean code | 20.0% |
+| 2 | Original buggy code | 60.0% |
+| 3 | Patched + SPM | 90.0% |
+| 4 | Original + SPM | 90.0% |
+| 5 | Semantic rewrite | 75.0% |
+
+**False positive rate (tier 1):** 80% — telling Claude the code is from a buggy benchmark causes strong anchoring bias
+
+### Bug Attribution
+
+Out of 30 BUG verdicts across tiers 2-5:
+
+| | Count | Rate |
+|---|---|---|
+| Found actual documented bug | 1/30 | 3.3% |
+| Found SPM injected bug | 0/30 | 0.0% |
+| Found something else entirely | 29/30 | 96.7% |
+
+### Three Distinct LLM Behaviors Observed
+
+**1. Pattern matching on file names**
+Lang-3 produced the identical bug report as Lang-1 despite being a completely different bug, simply because both files are NumberUtils.java. Claude recognized the filename and recalled the same pattern from training data.
+
+**2. Surface-level code analysis**
+Claude finds real but different issues in the code — plausible bugs that exist but are not the specific documented Defects4J/BugsInPy bug. It performs shallow syntactic analysis rather than deep semantic reasoning.
+
+**3. Genuine confusion on complex bugs**
+For Math-1 (fraction overflow), Claude attempted to reason through the logic carefully but ultimately could not identify the bug, suggesting it struggles with bugs requiring deep mathematical understanding.
+
+### Key Insight
+
+LLMs appear to perform **surface-level syntactic analysis** rather than **deep semantic reasoning**. They find plausible-looking bugs based on code patterns seen in training data, but not the specific bugs that require understanding program semantics. This supports the hypothesis that LLMs act more like a search engine retrieving known patterns than a reasoning engine analyzing code.

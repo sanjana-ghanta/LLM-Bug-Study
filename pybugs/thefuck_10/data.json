@@ -10,5 +10,6 @@
   "tier3_mutation_type": "operator_swap",
   "tier4_code": null,
   "tier4_mutation_line": null,
-  "tier4_mutation_type": null
+  "tier4_mutation_type": null,
+  "original_bug_line": 12
 }
