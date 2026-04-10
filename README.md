@@ -159,6 +159,66 @@ REASON: <one sentence explanation>
 
 ---
 
+### Experiment 3: Redesigned with Benchmark Context (v2)
+
+After meeting with Prof. Gulzar, we redesigned the experiment to better target the core research question: **is the LLM truly reasoning about code, or acting like a search engine retrieving known patterns?**
+
+#### Changes from original experiment
+- Prompt now tells Claude the code is from Defects4J or BugsInPy
+- No code truncation — full file sent
+- Line number requested in response
+- 10 bugs total (5 Java, 5 Python)
+- Claude Sonnet used for both languages
+
+#### Prompt
+```
+This code is from a known bug in the {benchmark} benchmark. Can you help me identify the bug?
+
+Please respond in this exact format:
+VERDICT: BUG or NO BUG
+LINE: <line number where the bug is, or NONE if no bug>
+REASON: <one sentence explanation of what specifically is wrong in this code>
+```
+
+#### Results
+
+| Tier | Description | Accuracy |
+|------|-------------|----------|
+| 1 | Patched clean code | 20.0% |
+| 2 | Original buggy code | 60.0% |
+| 3 | Patched + SPM | 90.0% |
+| 4 | Original + SPM | 90.0% |
+| 5 | Semantic rewrite | 75.0% |
+
+**False positive rate (tier 1):** 80% — telling Claude the code is from a buggy benchmark causes strong anchoring bias
+
+#### Bug Attribution
+
+Out of 30 BUG verdicts across tiers 2-5:
+
+| | Count | Rate |
+|---|---|---|
+| Found actual documented bug | 1/30 | 3.3% |
+| Found SPM injected bug | 0/30 | 0.0% |
+| Found something else entirely | 29/30 | 96.7% |
+
+#### Three Distinct LLM Behaviors Observed
+
+**1. Pattern matching on file names**
+Lang-3 produced the identical bug report as Lang-1 despite being a completely different bug, simply because both files are NumberUtils.java. Claude recognized the filename and recalled the same pattern from training data.
+
+**2. Surface-level code analysis**
+Claude finds real but different issues in the code — plausible bugs that exist but are not the specific documented Defects4J/BugsInPy bug. It performs shallow syntactic analysis rather than deep semantic reasoning.
+
+**3. Genuine confusion on complex bugs**
+For Math-1 (fraction overflow), Claude attempted to reason through the logic carefully but ultimately could not identify the bug, suggesting it struggles with bugs requiring deep mathematical understanding.
+
+#### Key Insight
+
+LLMs appear to perform **surface-level syntactic analysis** rather than **deep semantic reasoning**. They find plausible-looking bugs based on code patterns seen in training data, but not the specific bugs that require understanding program semantics. This supports the hypothesis that LLMs act more like a search engine retrieving known patterns than a reasoning engine analyzing code.
+
+---
+
 ## Key Findings
 
 1. LLMs are much better at recognizing clean code (~83%) than detecting real bugs (~18-22%)
@@ -167,26 +227,50 @@ REASON: <one sentence explanation>
 4. Claude shows strong sycophancy — abandoning correct answers under pressure 57-62% of the time
 5. Challenging Claude increases overall accuracy but for the wrong reason (bias toward BUG)
 6. False negative rate is very high across both languages (81-86%)
+7. When given benchmark context, LLMs anchor strongly to expected bugs (80% false positive rate on clean code)
+8. LLMs almost never find the actual documented bug — 96.7% of verdicts point to something else
 
 ## Repository Structure
+
 ```
-experiment/
-├── extract_bug.py              # Extracts changed Java files from Defects4J
-├── extract_pybug.py            # Extracts changed Python files from BugsInPy
-├── recheckout_all.py           # Checks out all Java bugs from Defects4J
-├── extract_all_pybugs.py       # Extracts all Python bugs from BugsInPy
-├── inject_spm.py               # Injects SPMs into Java code (tiers 3 & 4)
-├── inject_spm_python.py        # Injects SPMs into Python code (tiers 3 & 4)
-├── generate_tier5.py           # Generates Java semantic rewrites (tier 5)
-├── generate_tier5_python.py    # Generates Python semantic rewrites (tier 5)
-├── run_experiment.py           # Main Java experiment runner
-├── run_experiment_python.py    # Main Python experiment runner
-├── run_challenge.py            # Sycophancy challenge experiment runner
-├── results.csv                 # Java results (290 data points)
-├── results_python.csv          # Python results (215 data points)
-├── results_challenge.csv       # Challenge results (449 data points)
-└── bugs/                       # Java bug data (not tracked in git)
-└── pybugs/                     # Python bug data (not tracked in git)
+LLM-Bug-Study/
+├── scripts/
+│   ├── setup/
+│   │   ├── checkout_all.sh         # Check out all Java bugs from Defects4J
+│   │   ├── checkout_bug.sh         # Check out a single Java bug
+│   │   ├── setup_all_bugs.sh       # Full Java environment setup
+│   │   └── recheckout_all.py       # Re-checkout all Java bugs
+│   ├── extract/
+│   │   ├── extract_bug.py          # Extract changed Java files from Defects4J
+│   │   ├── extract_pybug.py        # Extract changed Python files from BugsInPy
+│   │   ├── extract_all_pybugs.py   # Extract all Python bugs
+│   │   └── extract_bug_line.py     # Extract original bug line numbers
+│   ├── inject/
+│   │   ├── inject_spm.py           # Inject SPMs into Java code (tiers 3 & 4)
+│   │   ├── inject_spm_python.py    # Inject SPMs into Python code (tiers 3 & 4)
+│   │   ├── generate_tier5.py       # Generate Java semantic rewrites (tier 5)
+│   │   └── generate_tier5_python.py# Generate Python semantic rewrites (tier 5)
+│   └── run/
+│       ├── run_experiment.py       # Main Java experiment runner
+│       ├── run_experiment_python.py# Main Python experiment runner
+│       ├── run_experiment_v2.py    # Benchmark context experiment runner
+│       ├── run_experiment_lineno.py# Line number experiment runner
+│       ├── run_challenge.py        # Sycophancy challenge experiment runner
+│       └── test_lineno.py          # Line number attribution test script
+├── results/
+│   ├── java/
+│   │   └── results.csv             # Java 5-tier results (290 data points)
+│   ├── python/
+│   │   └── results_python.csv      # Python 5-tier results (215 data points)
+│   ├── challenge/
+│   │   └── results_challenge.csv   # Sycophancy challenge results (449 data points)
+│   └── v2/
+│       └── results_v2.csv          # Benchmark context results (48 data points)
+├── data/
+│   ├── bugs/                       # Java bug checkouts — Defects4J (not tracked)
+│   └── pybugs/                     # Python bug checkouts — BugsInPy (not tracked)
+├── pyrepos/                        # BugsInPy repository clones (not tracked)
+└── README.md
 ```
 
 ## Setup & Replication
@@ -198,6 +282,7 @@ experiment/
 - Anthropic API key
 
 ### Steps
+
 ```bash
 # 1. Clone this repo
 git clone https://github.com/sanjana-ghanta/LLM-Bug-Study.git
@@ -210,26 +295,34 @@ pip install anthropic
 export ANTHROPIC_API_KEY="your-key-here"
 
 # 4. Java experiment
-python3 recheckout_all.py
-python3 inject_spm.py
-python3 generate_tier5.py
-python3 run_experiment.py
+python3 scripts/setup/recheckout_all.py
+python3 scripts/inject/inject_spm.py
+python3 scripts/inject/generate_tier5.py
+python3 scripts/run/run_experiment.py
 
 # 5. Python experiment
-python3 extract_all_pybugs.py
-python3 inject_spm_python.py
-python3 generate_tier5_python.py
-python3 run_experiment_python.py
+python3 scripts/extract/extract_all_pybugs.py
+python3 scripts/inject/inject_spm_python.py
+python3 scripts/inject/generate_tier5_python.py
+python3 scripts/run/run_experiment_python.py
 
 # 6. Challenge experiment
-python3 run_challenge.py
+python3 scripts/run/run_challenge.py
+
+# 7. Benchmark context experiment (v2)
+python3 scripts/run/run_experiment_v2.py
 ```
+
+Results are written to the `results/` subdirectories.
 
 ## Models Used
 
-- Java experiment: Claude Sonnet (`claude-sonnet-4-20250514`)
-- Python experiment: Claude Haiku (`claude-haiku-4-5-20251001`)
-- Challenge experiment: Claude Haiku (`claude-haiku-4-5-20251001`)
+| Experiment | Model |
+|------------|-------|
+| Java 5-tier | Claude Sonnet (`claude-sonnet-4-20250514`) |
+| Python 5-tier | Claude Haiku (`claude-haiku-4-5-20251001`) |
+| Sycophancy challenge | Claude Haiku (`claude-haiku-4-5-20251001`) |
+| Benchmark context (v2) | Claude Sonnet (`claude-sonnet-4-20250514`) |
 
 ## Acknowledgements
 
@@ -237,55 +330,3 @@ python3 run_challenge.py
 - [BugsInPy](https://github.com/soarsmu/BugsInPy) benchmark
 - [LLM-Debug](https://github.com/sabaat/LLM-Debug) repo for SPM injection inspiration
 - Research conducted under the guidance of Prof. Mohammed Ali Gulzar, Virginia Tech
-
----
-
-## Experiment 4: Redesigned with Benchmark Context (v2)
-
-After meeting with Prof. Gulzar, we redesigned the experiment to better target the core research question: **is the LLM truly reasoning about code, or acting like a search engine retrieving known patterns?**
-
-### Changes from original experiment
-- Prompt now tells Claude the code is from Defects4J or BugsInPy
-- No code truncation — full file sent
-- Line number requested in response
-- 10 bugs total (5 Java, 5 Python)
-- Claude Sonnet used for both languages
-
-### Prompt This code is from a known bug in the {benchmark} benchmark. Can you help me identify the bug?
-Please respond in this exact format: VERDICT: BUG or NO BUG LINE: <line number where the bug is, or NONE if no bug> REASON: <one sentence explanation of what specifically is wrong in this code>
- ### Results
-
-| Tier | Description | Accuracy |
-|------|-------------|----------|
-| 1 | Patched clean code | 20.0% |
-| 2 | Original buggy code | 60.0% |
-| 3 | Patched + SPM | 90.0% |
-| 4 | Original + SPM | 90.0% |
-| 5 | Semantic rewrite | 75.0% |
-
-**False positive rate (tier 1):** 80% — telling Claude the code is from a buggy benchmark causes strong anchoring bias
-
-### Bug Attribution
-
-Out of 30 BUG verdicts across tiers 2-5:
-
-| | Count | Rate |
-|---|---|---|
-| Found actual documented bug | 1/30 | 3.3% |
-| Found SPM injected bug | 0/30 | 0.0% |
-| Found something else entirely | 29/30 | 96.7% |
-
-### Three Distinct LLM Behaviors Observed
-
-**1. Pattern matching on file names**
-Lang-3 produced the identical bug report as Lang-1 despite being a completely different bug, simply because both files are NumberUtils.java. Claude recognized the filename and recalled the same pattern from training data.
-
-**2. Surface-level code analysis**
-Claude finds real but different issues in the code — plausible bugs that exist but are not the specific documented Defects4J/BugsInPy bug. It performs shallow syntactic analysis rather than deep semantic reasoning.
-
-**3. Genuine confusion on complex bugs**
-For Math-1 (fraction overflow), Claude attempted to reason through the logic carefully but ultimately could not identify the bug, suggesting it struggles with bugs requiring deep mathematical understanding.
-
-### Key Insight
-
-LLMs appear to perform **surface-level syntactic analysis** rather than **deep semantic reasoning**. They find plausible-looking bugs based on code patterns seen in training data, but not the specific bugs that require understanding program semantics. This supports the hypothesis that LLMs act more like a search engine retrieving known patterns than a reasoning engine analyzing code.
