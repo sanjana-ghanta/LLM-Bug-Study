@@ -1,9 +1,9 @@
-bugs/*/buggy/
-bugs/*/patched/
+data/bugs/*/buggy/
+data/bugs/*/patched/
 __pycache__/
 *.pyc
 .DS_Store
-pybugs/*/buggy/
-pybugs/*/patched/
-bugs/*/buggy/
-bugs/*/patched/
+data/pybugs/*/buggy/
+data/pybugs/*/patched/
+data/bugs/*/buggy/
+data/bugs/*/patched/
