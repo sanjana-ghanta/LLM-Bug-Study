@@ -121,7 +121,7 @@ def process_bug(data_json_path, writer, completed, language, benchmark):
         time.sleep(20)
 
 if __name__ == "__main__":
-    OUT_CSV = "/Users/sunny/llm-bug-study/experiment/results_v2.csv"
+    OUT_CSV = "../../results/v2/results_v2.csv"
     fields = [
         "project", "bug_id", "language", "benchmark", "tier", "expected",
         "verdict", "correct", "reported_line", "original_bug_line",
@@ -137,14 +137,14 @@ if __name__ == "__main__":
             writer.writeheader()
 
         for bug_dir in JAVA_BUGS:
-            data_path = f"/Users/sunny/llm-bug-study/experiment/bugs/{bug_dir}/data.json"
+            data_path = f"../../data/bugs/{bug_dir}/data.json"
             if os.path.exists(data_path):
                 print(f"Processing Java {bug_dir}...")
                 process_bug(data_path, writer, completed, "java", "Defects4J")
                 csvfile.flush()
 
         for bug_dir in PY_BUGS:
-            data_path = f"/Users/sunny/llm-bug-study/experiment/pybugs/{bug_dir}/data.json"
+            data_path = f"../../data/pybugs/{bug_dir}/data.json"
             if os.path.exists(data_path):
                 print(f"Processing Python {bug_dir}...")
                 process_bug(data_path, writer, completed, "python", "BugsInPy")

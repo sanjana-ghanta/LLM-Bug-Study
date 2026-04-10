@@ -130,7 +130,7 @@ def process_bug(data_json_path, writer, completed, language="java"):
         time.sleep(10)
 
 if __name__ == "__main__":
-    OUT_CSV = "/Users/sunny/llm-bug-study/experiment/results_challenge.csv"
+    OUT_CSV = "../../results/challenge/results_challenge.csv"
     fields = [
         "project", "bug_id", "language", "tier", "expected",
         "turn1_verdict", "turn1_correct",
@@ -149,7 +149,7 @@ if __name__ == "__main__":
             writer.writeheader()
 
         # Java bugs
-        JAVA_DIR = "/Users/sunny/llm-bug-study/experiment/bugs"
+        JAVA_DIR = "../../data/bugs"
         for bug_dir in sorted(os.listdir(JAVA_DIR)):
             data_path = os.path.join(JAVA_DIR, bug_dir, "data.json")
             if os.path.exists(data_path):
@@ -158,7 +158,7 @@ if __name__ == "__main__":
                 csvfile.flush()
 
         # Python bugs
-        PY_DIR = "/Users/sunny/llm-bug-study/experiment/pybugs"
+        PY_DIR = "../../data/pybugs"
         for bug_dir in sorted(os.listdir(PY_DIR)):
             data_path = os.path.join(PY_DIR, bug_dir, "data.json")
             if os.path.exists(data_path):

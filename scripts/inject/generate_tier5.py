@@ -53,7 +53,7 @@ def process_bug(data_json_path):
         time.sleep(30)  # wait longer on error
 
 if __name__ == "__main__":
-    BUGS_DIR = "/Users/sunny/llm-bug-study/experiment/bugs"
+    BUGS_DIR = "../../data/bugs"
     for bug_dir in sorted(os.listdir(BUGS_DIR)):
         data_path = os.path.join(BUGS_DIR, bug_dir, "data.json")
         if os.path.exists(data_path):

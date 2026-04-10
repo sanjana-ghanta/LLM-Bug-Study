@@ -70,7 +70,7 @@ def process_bug(data_json_path):
     print(f"Done: {data['project']}-{data['bug_id']} | T3: {t3_type} @ line {t3_line} | T4: {t4_type} @ line {t4_line}")
 
 if __name__ == "__main__":
-    BUGS_DIR = "/Users/sunny/llm-bug-study/experiment/pybugs"
+    BUGS_DIR = "../../data/pybugs"
     for bug_dir in sorted(os.listdir(BUGS_DIR)):
         data_path = os.path.join(BUGS_DIR, bug_dir, "data.json")
         if os.path.exists(data_path):

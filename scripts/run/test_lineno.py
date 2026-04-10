@@ -87,14 +87,14 @@ if __name__ == "__main__":
     # Test 5 Java bugs
     java_bugs = ["Lang_1", "Lang_3", "Math_1", "Math_2", "Chart_1"]
     for bug in java_bugs:
-        path = f"/Users/sunny/llm-bug-study/experiment/bugs/{bug}/data.json"
+        path = f"../../data/bugs/{bug}/data.json"
         if os.path.exists(path):
             process_bug(path, language="java")
 
     # Test 5 Python bugs
     py_bugs = ["pandas_1", "pandas_2", "black_1", "black_2", "thefuck_2"]
     for bug in py_bugs:
-        path = f"/Users/sunny/llm-bug-study/experiment/pybugs/{bug}/data.json"
+        path = f"../../data/pybugs/{bug}/data.json"
         if os.path.exists(path):
             process_bug(path, language="python")
 

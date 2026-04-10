@@ -89,8 +89,8 @@ def process_bug(data_json_path, writer, completed):
         time.sleep(20)
 
 if __name__ == "__main__":
-    BUGS_DIR = "/Users/sunny/llm-bug-study/experiment/bugs"
-    OUT_CSV = "/Users/sunny/llm-bug-study/experiment/results.csv"
+    BUGS_DIR = "../../data/bugs"
+    OUT_CSV = "../../results/java/results.csv"
 
     fields = ["project", "bug_id", "tier", "expected", "verdict", "correct", "response"]
     completed = load_completed(OUT_CSV)
