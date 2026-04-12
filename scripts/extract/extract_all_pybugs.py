@@ -11,7 +11,7 @@ bugs = (
 )
 
 for project, bug_id in bugs:
-    out_dir = os.path.expanduser(f"~/llm-bug-study/experiment/pybugs/{project}_{bug_id}")
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data/pybugs", f"{project}_{bug_id}")
     data_path = os.path.join(out_dir, "data.json")
 
     if os.path.exists(data_path):

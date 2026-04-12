@@ -72,7 +72,7 @@ def extract_pybug(project, bug_id, repo_dir):
         "patched_code": patched_code
     }
 
-    out_dir = os.path.expanduser(f"~/llm-bug-study/experiment/pybugs/{project}_{bug_id}")
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data/pybugs", f"{project}_{bug_id}")
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, "data.json")
     with open(out_path, "w") as f:

@@ -34,7 +34,7 @@ def read_file(base_dir, file_path):
     raise FileNotFoundError(f"Could not find {file_path} under {base_dir}")
 
 def extract_bug(project, bug_id):
-    base = os.path.expanduser(f"~/llm-bug-study/experiment/bugs/{project}_{bug_id}")
+    base = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data/bugs", f"{project}_{bug_id}")
     buggy_dir = os.path.join(base, "buggy")
     patched_dir = os.path.join(base, "patched")
 
