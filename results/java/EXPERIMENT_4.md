@@ -1,0 +1,207 @@
+# Experiment 4: Nudged Prompt with Type Hints (v3)
+
+## Motivation
+
+Experiments 1-3 established that LLMs almost never find the actual documented bug — 96.7% of verdicts in experiment 3 pointed to something else entirely. A natural question is: **does giving the LLM more information help?**
+
+Experiment 4 tests two things simultaneously:
+1. Does adding a *type hint* (telling Claude what category of bug to look for) improve attribution?
+2. Does the order in which bugs are presented matter? (reverse chronological: Lang_61 → Lang_1)
+
+We also expanded the Lang dataset from 20 to 59 bugs (all active Defects4J Lang bugs) to get more statistical power.
+
+---
+
+## Dataset
+
+**59 active Lang bugs** from Defects4J (Lang_25 and Lang_48 are deprecated).
+
+### File distribution — files with multiple bugs
+
+| File | Bug count |
+|------|-----------|
+| NumberUtils.java | 9 |
+| StringUtils.java | 6 |
+| FastDateFormat.java | 4 |
+| StrBuilder.java | 4 |
+| LocaleUtils.java | 3 |
+| FastDateParser.java | 2 |
+| RandomStringUtils.java | 2 |
+| CharSequenceTranslator.java | 2 |
+| NumericEntityUnescaper.java | 2 |
+| DateUtils.java | 2 |
+| Fraction.java | 2 |
+| ExtendedMessageFormat.java | 2 |
+| ClassUtils.java | 2 |
+| ArrayUtils.java | 2 |
+| StringEscapeUtils.java | 2 |
+
+Files with multiple bugs are high-risk for LLM pattern-matching — Claude may report the wrong bug for a file it has seen multiple times in training.
+
+See `results/java/Lang_Bug_Ref.md` for the full bug map with Jira links.
+
+---
+
+## Experimental Design
+
+### Prompt
+
+```
+This code is from a known bug database ({benchmark}), and contains a known issue related to
+{hint}. Can you help identify it?
+
+Please respond in this exact format:
+VERDICT: BUG or NO BUG
+LINE: <line number where the bug is, or NONE if no bug>
+REASON: <one sentence explanation of what specifically is wrong>
+
+File: {file_path}
+
+Code:
+{code}
+```
+
+Where `{benchmark}` is `Defects4J` for Java bugs and `BugsInPy` for Python bugs, and `{hint}` is dynamically generated from the SPM mutation type:
+
+| Mutation type | Hint |
+|---------------|------|
+| off_by_one | "a boundary or range handling error" |
+| operator_swap | "an arithmetic expression error" |
+| boolean_logic | "a conditional logic error" |
+| none | "a logic error" |
+
+### Key differences from previous experiments
+
+| | Exp 1 (v1) | Exp 3 (v2) | Exp 4 (v3) |
+|---|---|---|---|
+| Benchmark context | No | Yes | Yes |
+| Type hint | No | No | Yes |
+| Line number requested | No | Yes | Yes |
+| Code truncation | 80 lines | None | None |
+| Bug count | 45 Java | 10 (5 Java, 5 Python) | 59 Lang |
+| Order | Forward | Forward | **Reverse** (61→1) |
+| Model | Sonnet | Sonnet | **Haiku** |
+
+### Run order
+
+Bugs processed in reverse order (Lang_61 → Lang_1) to test whether Claude's responses for earlier bugs are influenced by seeing later bugs first. This is relevant because many files appear multiple times — if Claude processes Lang_61 (StrBuilder.java) before Lang_59 (also StrBuilder.java), does its response change?
+
+---
+
+## Results
+
+### Accuracy by tier
+
+| Tier | Description | Correct | Total | Accuracy |
+|------|-------------|---------|-------|----------|
+| 1 | Patched clean code | 9 | 57 | 15.8% |
+| 2 | Original buggy | 47 | 57 | 82.5% |
+| 3 | Patched + SPM | 54 | 56 | 96.4% |
+| 4 | Original + SPM | 55 | 56 | 98.2% |
+| 5 | Semantic rewrite | 52 | 57 | 91.2% |
+
+### Comparison across all experiments
+
+| Tier | v1 neutral | v2 context | v3 context+hint |
+|------|-----------|-----------|----------------|
+| 1 (clean) | 83.3% | 20.0% | **15.8%** |
+| 2 (buggy) | 21.7% | 60.0% | **82.5%** |
+| 3 (patched+SPM) | 20.0% | 90.0% | **96.4%** |
+| 4 (original+SPM) | 14.5% | 90.0% | **98.2%** |
+| 5 (rewrite) | 18.3% | 75.0% | **91.2%** |
+
+### Bug attribution (tier 2)
+
+| | Count | Rate |
+|---|---|---|
+| Found actual documented bug | 1/57 | 1.8% |
+| Found SPM injected bug | 0/57 | 0.0% |
+| Found something else | 46/57 | 80.7% |
+| No bug reported | 10/57 | 17.5% |
+
+### Bug attribution across all tiers
+
+| Tier | Original | SPM | Other | None | Total |
+|------|----------|-----|-------|------|-------|
+| 2 | 1 | 0 | 46 | 10 | 57 |
+| 3 | 2 | 8 | 43 | 3 | 56 |
+| 4 | 1 | 6 | 48 | 1 | 56 |
+| 5 | 2 | 0 | 50 | 5 | 57 |
+
+---
+
+## Cross-Match Analysis
+
+### Hypothesis
+
+When Claude reports "other" (not the documented bug, not the SPM), is it finding a *real* bug from a different version of the same file? For example, Lang_1's version of `NumberUtils.java` still contains the Lang_7 bug since it was committed later.
+
+### Method
+
+For each "other" verdict in tier 2 (46 total), we checked whether Claude's reported line number matched the `original_bug_line` of any other documented bug in the same file, within a tolerance of ±5 lines.
+
+### Result
+
+| | Count | Rate |
+|---|---|---|
+| Reported line matched a different documented bug | 2/46 | 4.3% |
+| No match to any documented bug | 44/46 | 95.7% |
+
+**Matches found:**
+- Lang_54 → reported line 96, matches Lang_5 bug at line 96 (both LocaleUtils.java)
+- Lang_19 → reported line 64, matches Lang_28 bug at line 62 (both NumericEntityUnescaper.java)
+
+Both matches could be coincidental given the proximity of lines.
+
+**High-overlap files with zero cross-matches:**
+
+| File | Documented bugs | Cross-matches |
+|------|----------------|---------------|
+| NumberUtils.java | 9 | 0 |
+| StringUtils.java | 6 | 0 |
+| FastDateFormat.java | 4 | 0 |
+| StrBuilder.java | 4 | 0 |
+
+### Conclusion
+
+The hypothesis does not hold. Even with 9 different bugs in NumberUtils.java, Claude almost never lands on the line of a different documented bug. The 95.7% non-match rate means Claude is generating plausible-sounding but ungrounded reports based on surface pattern recognition from training data — not doing temporal cross-referencing across file versions.
+
+---
+
+## Key Findings
+
+**Finding 1: Type hints dramatically increase BUG verdict rate but not attribution accuracy.**
+Tier 2 accuracy jumped from 21.7% (v1) to 82.5% (v3), but the rate of finding the correct bug barely moved (3.3% in v2 → 1.8% in v3). Claude is more confidently wrong, not more correctly right.
+
+**Finding 2: Clean code detection collapsed.**
+Tier 1 accuracy dropped from 83.3% (v1) to 15.8% (v3). The type hint overrides Claude's ability to recognize clean code — it's primed to find something and does, even when nothing is wrong.
+
+**Finding 3: The "wrong" bugs are not other real documented bugs.**
+Cross-match analysis across all 59 Lang bugs shows only 4.3% of "other" verdicts correspond to a different documented bug in the same file. Claude is not finding future/past bugs from the same codebase — it is retrieving familiar bug patterns from training data.
+
+**Finding 4: Each additional prompt cue adds bias, not reasoning.**
+v1 → v2 → v3 shows a clear progression: each experiment adds more information to the prompt, and each time Claude's BUG verdict rate increases on buggy tiers. But attribution stays flat. This suggests Claude is responding to the *framing* of the prompt (benchmark context, type hint) rather than actually analyzing the code more carefully.
+
+---
+
+## Output file
+
+Results saved to `results/java/results_v3_lang.csv` with columns:
+
+| Column | Description |
+|--------|-------------|
+| project | Lang |
+| bug_id | Bug number |
+| tier | 1-5 |
+| hint | Type hint given in prompt |
+| mutation_type | SPM type used for hint generation |
+| expected | BUG or NO BUG |
+| verdict | Claude's verdict |
+| correct | Whether verdict matched expected |
+| reported_line | Line Claude identified |
+| original_bug_line | Actual documented bug line |
+| spm_line | Line where SPM was injected |
+| bug_found | original / spm / other / none |
+| response | Full Claude response text |
+
+> **Note:** `original_bug_line` is blank for some rows because line extraction for Lang 21-61 ran after the experiment completed. The `data.json` files have been updated with the correct lines.
