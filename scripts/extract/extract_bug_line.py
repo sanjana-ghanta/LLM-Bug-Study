@@ -4,7 +4,7 @@ import subprocess
 
 def get_bug_line_java(project, bug_id):
     """Get the line number of the original bug from the diff."""
-    base = f"/Users/sunny/llm-bug-study/experiment/bugs/{project}_{bug_id}"
+    base = f"/Users/sunny/llm-bug-study/experiment/data/bugs/{project}_{bug_id}"
     buggy_dir = os.path.join(base, "buggy")
     patched_dir = os.path.join(base, "patched")
 
@@ -50,7 +50,7 @@ def get_bug_line_python(project, bug_id):
 
 def process_all():
     # Java bugs
-    JAVA_DIR = "/Users/sunny/llm-bug-study/experiment/bugs"
+    JAVA_DIR = "/Users/sunny/llm-bug-study/experiment/data/bugs"
     for bug_dir in sorted(os.listdir(JAVA_DIR)):
         data_path = os.path.join(JAVA_DIR, bug_dir, "data.json")
         if not os.path.exists(data_path):
