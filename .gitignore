@@ -7,3 +7,4 @@ data/pybugs/*/buggy/
 data/pybugs/*/patched/
 data/bugs/*/buggy/
 data/bugs/*/patched/
+checkout_lang_log.txt
