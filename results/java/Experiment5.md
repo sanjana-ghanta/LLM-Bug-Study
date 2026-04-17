@@ -150,7 +150,7 @@ TEST FILE: {test_class}
 
 ---
 
-## Manual Review of Claude's Reasoning (v4b, tier 2)
+## Review of Claude's Reasoning (v4b, tier 2)
 
 Claude's reasoning quality was noticeably better with package context. Several bugs were correctly identified with detailed technical explanations:
 
