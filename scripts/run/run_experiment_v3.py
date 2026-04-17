@@ -1,3 +1,4 @@
+import re
 import json
 import os
 import time
@@ -53,7 +54,7 @@ Code:
             for line in text.splitlines():
                 if line.startswith("LINE:"):
                     val = line.replace("LINE:", "").strip()
-                    digits = ''.join(filter(str.isdigit, val.split()[0] if val.split() else ''))
+                    match = re.match(r'\d+', val.strip()); digits = match.group(0) if match else ''
                     if digits:
                         line_no = int(digits)
             return verdict, line_no, text
