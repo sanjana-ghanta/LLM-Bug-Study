@@ -1,15 +1,5 @@
 # Experiment 5: Full Project Context with Test Cases (v4)
 
-## Motivation
-
-Experiments 1-4 established that adding more prompt context (benchmark name, type hints) increases BUG verdict rates but barely improves attribution — Claude finds *something*, just rarely the *right* bug. The best attribution so far was 3.5% (v3).
-
-The hypothesis for experiment 5: what if Claude had access to the full project rather than just a single file? Real developers debug with full context — they can see how files relate, trace dependencies, and use test failures as signals. Would giving Claude the same context improve its ability to find the correct bug?
-
-We tested two variants (v4a and v4b) on the Chart project (26 bugs, tiers 1 and 2 only).
-
----
-
 ## Dataset
 
 **26 active Chart bugs** from Defects4J (JFreeChart project). No deprecated bugs.
@@ -160,7 +150,7 @@ TEST FILE: {test_class}
 
 ---
 
-## Manual Review of Claude's Reasoning (v4b, tier 2)
+## Review of Claude's Reasoning (v4b, tier 2)
 
 Claude's reasoning quality was noticeably better with package context. Several bugs were correctly identified with detailed technical explanations:
 
@@ -186,20 +176,20 @@ Testing whether Claude's "other" verdicts correspond to different documented bug
 
 **Result: 0/9 cross-matches (0.0%)**
 
-Chart has fewer shared-file bugs than Lang so this was expected to be low. Combined with the Lang result (4.3%), the hypothesis does not hold — Claude is not finding future/past bugs from the same codebase.
+Chart has fewer shared-file bugs than Lang so this was expected to be low. Combined with the Lang result (4.3%), the hypothesis does not hold. Claude is not finding future/past bugs from the same codebase.
 
 ---
 
 ## Key Findings
 
 **Finding 1: Package context produced the best attribution rate across all experiments (8.3%).**
-Giving Claude the full package — not just the changed file — helped it understand the surrounding code structure and produce more grounded bug reports.
+Giving Claude the full package, not just the changed file, helped it understand the surrounding code structure and produce more grounded bug reports.
 
 **Finding 2: Tier 1 accuracy recovered with v4a (83.3%) but dipped slightly with v4b (75.0%).**
 Without the type hint (v4a), Claude correctly identifies clean code at the same rate as v1. The type hint reintroduces some false positives.
 
 **Finding 3: The "none" rate is high in both v4 variants (58-62%).**
-With a large amount of context, Claude often says NO BUG rather than guessing — the opposite of v2/v3 where benchmark context pushed it toward saying BUG. This suggests Claude is more cautious when it has more to read.
+With a large amount of context, Claude often says NO BUG rather than guessing, the opposite of v2/v3 where benchmark context pushed it toward saying BUG. This suggests Claude is more cautious when it has more to read.
 
 **Finding 4: When Claude does find a bug in v4b, the reasoning is qualitatively better.**
 Even when the line number is off, Claude's explanations are technically detailed, reference the test case, and often correctly describe the nature of the defect. The gap between attribution accuracy (8.3%) and reasoning quality is larger than in earlier experiments.
