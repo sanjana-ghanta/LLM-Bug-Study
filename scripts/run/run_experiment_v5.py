@@ -3,9 +3,14 @@ import json
 import os
 import csv
 import time
-import anthropic
+from openai import OpenAI
 
-client = anthropic.Anthropic()
+client = OpenAI(
+    api_key=os.environ.get("VT_API_KEY", "PASTE_YOUR_KEY_HERE"),
+    base_url="https://llm-api.arc.vt.edu/api/v1",
+)
+
+MODEL = "gpt-oss-120b"
 
 BENCHMARK_NAME = {
     "Lang":  "Defects4J",
@@ -56,17 +61,21 @@ REASON: <one sentence explanation of what specifically is wrong>"""
 
     for attempt in range(3):
         try:
-            response = client.messages.create(
-                model="claude-haiku-4-5-20251001",
-                max_tokens=256,
-                messages=[{"role": "user", "content": prompt}]
+            response = client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": "You are a helpful code analysis assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=512
             )
-            text = response.content[0].text.strip()
+            text = response.choices[0].message.content
             if not text:
                 print(f"  Empty response (attempt {attempt+1})")
                 time.sleep(10)
                 continue
 
+            text = text.strip()
             line_no = None
             for line in text.splitlines():
                 if line.startswith("LINE:"):
@@ -77,13 +86,14 @@ REASON: <one sentence explanation of what specifically is wrong>"""
 
             return line_no, text
 
-        except anthropic.RateLimitError:
-            wait = 90 * (attempt + 1)
-            print(f"  Rate limit, waiting {wait}s...")
-            time.sleep(wait)
         except Exception as e:
-            print(f"  Error: {e}")
-            time.sleep(10)
+            if "rate" in str(e).lower():
+                wait = 60 * (attempt + 1)
+                print(f"  Rate limit, waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"  Error: {e}")
+                time.sleep(10)
 
     return None, "max retries exceeded"
 
@@ -111,7 +121,7 @@ def load_completed(csv_path):
 
 if __name__ == "__main__":
     BUGS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../data/bugs")
-    OUT_CSV  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../results/java/results_v5_chart.csv")
+    OUT_CSV  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../results/java/results_v5_gptoss_chart.csv")
 
     fields = [
         "project", "bug_id", "tier", "file", "hint", "mutation_type",
@@ -127,6 +137,7 @@ if __name__ == "__main__":
         reverse=True
     )
     print(f"Running on {len(all_chart)} Chart bugs (tiers 1 & 2) in reverse order")
+    print(f"Model: {MODEL}")
 
     with open(OUT_CSV, "a", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fields)
