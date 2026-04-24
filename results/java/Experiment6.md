@@ -35,14 +35,16 @@ REASON: <one sentence explanation of what specifically is wrong>
 - Forces a line number commitment
 
 ### Classification
-
-| Tier | Reported line | Classification |
-|------|--------------|----------------|
-| 1 (clean) | None/no line | `reasoned_no_bug` — correct |
-| 1 (clean) | Any line | `pattern_matched_clean` — gave a line on clean code |
-| 2 (buggy) | Within ±5 of actual | `correct` |
-| 2 (buggy) | Different line | `wrong` |
-| 2 (buggy) | None/no line | `none` |
+ 
+| Tier | Response | Classification |
+|------|----------|----------------|
+| 1 (clean) | Gave a line number | `pattern_matched_clean` — recalled bug on clean code |
+| 1 (clean) | Analysis but no LINE: | `malformed` — analyzed but didn't commit |
+| 1 (clean) | No line, no analysis | `reasoned_no_bug` — correct |
+| 2 (buggy) | Within ±5 of actual line | `correct` |
+| 2 (buggy) | Different line number | `wrong` |
+| 2 (buggy) | Analysis but no LINE: | `malformed` |
+| 2 (buggy) | No line, no analysis | `none` |
 
 ### Model
 Claude Haiku (`claude-haiku-4-5-20251001`)
@@ -52,22 +54,26 @@ Claude Haiku (`claude-haiku-4-5-20251001`)
 ---
 
 ## Results
-
+ 
 ### Tier 1 — clean/patched code (no bug exists)
-
+ 
 | Result | Count | Rate |
 |--------|-------|------|
-| `pattern_matched_clean` — gave a line on clean code | 21/24 | **87.5%** |
-| `reasoned_no_bug` — correctly gave no line | 3/24 | 12.5% |
-
+| `pattern_matched_clean` — gave a line on clean code | 21/24 | 87.5% |
+| `malformed` — gave analysis but no line number | 3/24 | 12.5% |
+| `reasoned_no_bug` — correctl | 0/24 | 0% |
+ 
+**Claude never once correctly answered on clean code.** Every single tier 1 response either gave a confident line number (87.5%) or gave a partial analysis without committing to a line (12.5%). Zero cases of correctly recognizing the code was clean.
+ 
 ### Tier 2 — buggy code (bug exists)
-
+ 
 | Result | Count | Rate |
 |--------|-------|------|
 | `correct` — found the right line | 3/24 | 12.5% |
 | `wrong` — gave a line but wrong | 18/24 | 75.0% |
-| `none` — gave no line | 3/24 | 12.5% |
-
+| `malformed` — gave analysis but no line | 3/24 | 12.5% |
+| `none` | 0/24 | 0% |
+ 
 ---
 
 ## Tier 1 vs Tier 2 Comparison
