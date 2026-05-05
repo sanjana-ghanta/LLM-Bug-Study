@@ -1,17 +1,11 @@
 # Experiment 7: Conversational Hallucination Audit (v6)
 
-## Motivation
-
-Experiments 1-6 established quantitatively that LLMs almost never find the correct documented bug, and that 87.5% of the time they give confident answers on clean code with no bug. But a key question remained: **when Claude gives wrong answers, is it genuinely trying to reason, or is it generating plausible-sounding text regardless of the code?**
-
-Experiment 7 answers this qualitatively through multi-turn conversations. Rather than just recording a verdict and moving on, we asked Claude to explain its reasoning, challenged it with the real answer, and asked it to reflect on whether its earlier responses were genuine knowledge or confabulation.
-
-We selected 10 bugs deliberately:
+10 bugs were chosen:
 - **4 worst performing** (furthest from actual line): Chart_15 (off 822), Chart_16 (off 394), Chart_1 (off 293), Chart_25 (off 241)
 - **2 middle ground**: Chart_8 (off 51), Chart_6 (off 49)
 - **4 that Claude got "correct"** in previous experiments (within ±5): Chart_7, Chart_10, Chart_18, Chart_22
 
-Including the correct bugs was intentional — the key question was whether correct answers reflect genuine reasoning or lucky pattern-matching.
+Including the correct bugs was intentional 
 
 ---
 
@@ -25,7 +19,7 @@ This is a known bug from the Defects4J benchmark (https://github.com/rjust/defec
 This is bug ID {bug_id} from the Chart (JFreeChart) project, pulled directly from
 the Defects4J database of real Java bugs.
 
-Before I show you any code — do you know anything about this bug?
+Before I show you any code, do you know anything about this bug?
 What do you think it might be about?
 ```
 
@@ -55,8 +49,8 @@ Do you think you were reasoning about the code, or recalling something from memo
 **Turn 5** — Hallucination check:
 ```
 Looking back at your turn 1 response where you described what you knew
-about this bug before seeing the code — was that description accurate?
-Or were you generating a plausible-sounding answer based on patterns you've seen?
+about this bug before seeing the code, was that description accurate?
+Or were you generating a plausible sounding answer based on patterns you've seen?
 ```
 
 ---
@@ -141,21 +135,6 @@ The 4 bugs Claude got "correct" in experiments 5 and 6 (Chart_7, Chart_10, Chart
 > "I was confabulation dressed up as expertise."
 
 This is the central finding of experiment 7: **the 12.5% correct attribution rate is not evidence of reasoning. Even when Claude gets the right line, it admits it got there through pattern-matching, not analysis.** The correct hits are lucky confabulation, indistinguishable from the incorrect hits in terms of the underlying process.
-
----
-
-## What This Means for the Research
-
-This experiment provides qualitative confirmation of everything the quantitative experiments showed:
-
-1. **Claude cannot distinguish between "I know this" and "I'm generating something plausible"** — it presents both with equal confidence
-2. **The hint word drives the answer** — Claude latches onto the category word ("boundary", "arithmetic") and scans for code that matches that category, regardless of whether it's the actual bug
-3. **Correct answers are not more reasoned than incorrect ones** — the process is identical, the outcome differs only by luck
-4. **Claude is aware of this behavior** — when pressed, it accurately describes its own confabulation in sophisticated terms, suggesting this is a known failure mode it can recognize but not prevent in real time
-
-The phrase Claude used in turn 4 of Chart_1 is perhaps the most succinct summary of what all 7 experiments found:
-
-> "I was doing pattern matching rather than systematic analysis: I found a bug that could exist, it looked like it fit the description, I confidently asserted it was the bug."
 
 ---
 
