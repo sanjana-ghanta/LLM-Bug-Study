@@ -138,6 +138,27 @@ This is the central finding of experiment 7: **the 12.5% correct attribution rat
 
 ---
 
+
+| Bug | Reasoning quality | Assessment |
+|-----|------------------|------------|
+| Chart_1 | Correct reasoning | Correctly identified inverted null check `if (dataset != null)` should be `if (dataset == null)`. Logic is sound — just reported line 1555 instead of 1797. Same bug appears multiple times in the file. |
+| Chart_7 | Correct reasoning | Correctly identified `minMiddleIndex` used instead of `maxMiddleIndex` in the maxMiddle block. Even spotted the asymmetry by comparing min and max blocks. Reported 283 vs actual 300 — same bug, different line. |
+| Chart_8 | Correct reasoning | Correctly identified `&&` should be `||` in range validation. Logic is completely sound — `week < 1 AND week > 53` is logically impossible so validation never fires. Reported 131 vs actual 175 — same bug in a different constructor. |
+| Chart_10 | Honest, admitted uncertainty | Correctly admitted it couldn't find an arithmetic error in the string concatenation. The most epistemically honest response. The real bug is missing HTML escaping of quotes. |
+| Chart_15 | Wrong method | Found `percent > MAX_INTERIOR_GAP` and argued `>=` should be used. This reasoning is debatable at best — `>` vs `>=` at a boundary is not clearly wrong. The real bug at 1377 is in `drawSimpleLabels`. |
+| Chart_16 | Self-contradicted | Found boundary checks inconsistent (`>= vs > -1`), then in turn 3 correctly proved to itself these are mathematically equivalent. Found a "bug" then disproved it. |
+| Chart_18 | Plausible but wrong | Found `if (index < this.keys.size())` and argued `rebuildIndex()` isn't called when removing the last element. This reasoning is technically incorrect — after removing the last element, other indices are unchanged so not rebuilding is actually fine. Found a plausible-sounding bug that isn't one. |
+| Chart_22 | Partially correct | Correctly identified `if (row >= 0)` as unreachable dead code after the earlier null check. This is true — the code IS dead. But dead code isn't the documented bug. The real bug at 231 is `removeObject()` never checking if a column is now empty. |
+| Chart_25 | Found real inconsistency | Found hardcoded `5.0d` vs proportional scaling — this IS a real inconsistency and likely a genuine issue in the codebase, just not the documented bug at 258. Reasoning is sound but points to the wrong problem. |
+| Chart_6 | Self-contradicted | Argued the `readObject` loop would go out of sync, then in turn 3 correctly realized both methods write exactly one integer per iteration so they stay synchronized. Same pattern as Chart_16 — found then disproved its own answer. |
+
+**Summary of reasoning quality:**
+- 3/10: Correct reasoning, wrong line number (Chart_1, Chart_7, Chart_8)
+- 1/10: Honest: correctly admitted it couldn't find the bug (Chart_10)
+- 3/10: Found plausible issues that aren't the actual documented bug (Chart_18, Chart_22, Chart_25)
+- 3/10: Wrong reasoning, self-contradicted under pressure (Chart_15, Chart_16, Chart_6)
+
+
 ## Output Files
 
 | File | Description |
