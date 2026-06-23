@@ -1,0 +1,6 @@
+project,bug_id,file,actual_line,claude_line,actual_hits,claude_hits,actual_covered,claude_covered,actual_rank_pct,claude_rank_pct,file_coverage_pct
+Lang,1,NumberUtils,466,542,100,,True,False,97.6,,98.1
+Lang,4,LookupTranslator,31,64,,,False,False,,,100.0
+Lang,5,LocaleUtils,96,147,27,,True,False,87.0,,100.0
+Lang,6,CharSequenceTranslator,95,89,1042605,10633,True,True,96.7,50.0,93.3
+Lang,7,NumberUtils,720,385,,,False,False,,,97.6
