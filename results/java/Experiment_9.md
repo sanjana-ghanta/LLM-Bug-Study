@@ -1,16 +1,13 @@
-# Experiment 9: Test Fix Experiment (v9)
+# Experiment 9: Test Fix Experiment
 
 ## Motivation
-
-Experiments 1-8 established that Claude rarely finds the correct documented bug line, points to non-covered lines 71% of the time, and self-describes its behavior as confabulation. But all of these experiments measured *attribution accuracy* — whether Claude points to the right line.
-
 Experiment 9 asks a different question: **even if Claude points to the wrong line, can it suggest a fix that actually works?**
 
 This separates two things that previous experiments conflated:
 1. **Location accuracy** — did Claude find the right line?
 2. **Reasoning quality** — does Claude understand what's wrong and how to fix it?
 
-It's possible that Claude understands the type of bug and the correct fix, but simply can't locate the specific documented instance. If Claude's fix passes the test suite even at a different line, that's evidence of genuine (if imprecise) reasoning.
+It's possible that Claude understands the type of bug and the correct fix, but simply can't locate the specific documented instance. If Claude's fix passes the test suite even at a different line, that's evidence of genuine (even if imprecise) reasoning.
 
 ---
 
@@ -132,15 +129,7 @@ Claude flipped `if (dataset != null)` to `if (dataset == null)`. Correct reasoni
 
 ## Key Findings
 
-**Finding 1: 16% of fixes pass all tests — always near Claude's line, not the documented line.**
-
-Every passing fix was at Claude's reported line (not the Defects4J documented line). The diffs range from 3 to 1963 lines, with most between 3-8. Claude finds and fixes real bugs in the vicinity of the documented one — it stops at the first plausible match rather than locating the specific test-detected instance.
-
-**Finding 2: Claude is more likely to break code (28%) than fix it (16%).**
-
-Across 50 bugs, 14 were made worse vs 8 that passed. This is the key practical finding: Claude's automated fixes are net-negative if applied without human review. The "made worse" cases are not random — they follow patterns: wrong constructor instance (Chart_8), identical bug pattern applied to wrong location (Lang_9/10), plausible-sounding but incorrect formula changes (Math_13).
-
-**Finding 3: Project complexity determines "made worse" rate.**
+**Project complexity determines "made worse" rate.**
 
 | Project | Pass rate | Made worse |
 |---------|-----------|------------|
@@ -148,20 +137,14 @@ Across 50 bugs, 14 were made worse vs 8 that passed. This is the key practical f
 | Math | 17.6% | 35.3% |
 | Lang | 8.3% | 50.0% |
 
-Lang and Math bugs involve complex algorithmic logic (string parsing, numerical methods) where wrong fixes cascade across many tests. Chart bugs are more isolated rendering methods — wrong fixes tend to fail quietly.
+Lang and Math bugs involve complex algorithmic logic (string parsing, numerical methods) where wrong fixes cascade across many tests. Chart bugs are more isolated rendering methods.
 
-**Finding 4: Correct fix type ≠ correct fix location.**
-
-Chart_8 (&&→||), Chart_3 (min→max), Lang_7 (same fix as Lang_3), Lang_10 (same fix as Lang_9) all show Claude applying a logically correct fix type to the wrong instance. The bug pattern appears multiple times in the file and Claude consistently targets the wrong one. This is "stopping-too-early" behavior — pattern recognition without exhaustive search.
-
-**Finding 5: All evidence from experiments 6-9 converges.**
+**All evidence from experiments 6-9 converges.**
 
 - Exp 6: 87.5% pattern match rate on clean code
 - Exp 7: Self-describes as "confabulating" 10/10
 - Exp 8: 71.4% of Claude's lines not covered by tests
 - Exp 9: 16% pass rate, always at wrong line, 28% made worse
-
-The 16% that pass are not evidence of genuine debugging capability. They are cases where Claude's pattern-matched line happens to be close enough to the real bug that fixing it also resolves the test-detected failure.
 
 ---
 
@@ -173,7 +156,7 @@ The 16% that pass are not evidence of genuine debugging capability. They are cas
 | Math | Numerical algorithms | Medium-large | 17.6% | 35.3% |
 | Lang | String utilities | Large (StringUtils 6000+ lines) | 8.3% | 50.0% |
 
-The pattern is clear: larger files with more complex logic and denser test coverage → lower pass rate and higher "made worse" rate. Claude's pattern-matching approach works better on smaller, more isolated classes.
+The pattern is clear in that larger files with more complex logic and denser test coverage have a lower pass rate and higher "made worse" rate. Claude's pattern matching approach works better on smaller, more isolated classes.
 
 ---
 
