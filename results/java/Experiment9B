@@ -1,33 +1,16 @@
-# Experiment 9b: Test-Flip Attribution
-
-## Motivation
-
-Experiment 9 measured whether Claude's proposed fix makes the full test suite
-pass (16.0%) or fail worse (28.0%). But "pass/fail" and even failing-test
-*counts* can hide what's actually happening. A count that looks unchanged
-(e.g. 1 → 1 failing) can silently hide a real effect: one test flips to
-passing while a *different* test breaks, netting to the same number.
-
-Per Prof. Gulzar's framing: the test suite is the only ground truth we have
-for whether a line is actually buggy. So the real question isn't "did the
-count go down" — it's **did fixing Claude's line flip any specific test from
-failing to passing?** If yes, that's direct evidence Claude's line is
-verifiably buggy, by the only oracle available, regardless of whether it
-matches the officially documented line.
-
----
+# Experiment 9b: Test Flip 
 
 ## Method
 
-This reuses the fixes already computed in Experiment 9 — no new Claude calls.
+This reuses the fixes already computed in Experiment 9 and no new Claude calls were made.
 For each of the 50 bugs where Experiment 9 applied a fix:
 
 1. **Checkout the buggy version** fresh (`defects4j checkout`)
 2. **Run the test suite and capture the *set* of failing test names** (not
-   just the count) — before the fix
+   just the count), before the fix
 3. **Apply the same fix** Experiment 9 already computed (`original_code` →
    `fixed_code`, already recorded in `results_v9_testfix*.csv`)
-4. **Run the test suite again and capture the failing test set** — after the fix
+4. **Run the test suite again and capture the failing test set**  after the fix
 5. **Compute the set difference:**
    - `flipped_to_pass` = failed before, passes now
    - `flipped_to_fail` = passed before, fails now (a regression)
