@@ -37,7 +37,7 @@ EXPLANATION: <one sentence>"""
         try:
             response = client.messages.create(
                 model="claude-haiku-4-5-20251001",
-                max_tokens=256,
+                max_tokens=512,
                 messages=[{"role": "user", "content": prompt}]
             )
             return response.content[0].text.strip()
@@ -49,27 +49,55 @@ EXPLANATION: <one sentence>"""
             return None
     return None
 
-def parse_fix(fix_response):
-    original = None
-    fixed = None
-    for line in fix_response.splitlines():
-        if line.startswith('ORIGINAL:'):
-            original = line.replace('ORIGINAL:', '').strip()
-        elif line.startswith('FIXED:'):
-            fixed = line.replace('FIXED:', '').strip()
-    return original, fixed
+import re as _re
 
-def apply_fix_to_file(full_file_path, original_line, fixed_line):
+def parse_fix(fix_response):
+    """
+    Regex-based parser (v2). Handles responses with or without real line
+    breaks, and takes the LAST ORIGINAL/FIXED pair in the response -- so
+    that if Claude reconsiders mid-response (explores multiple candidate
+    lines before settling on one), we get its final answer, not its first
+    draft.
+    """
+    if not fix_response:
+        return None, None
+    pattern = _re.compile(
+        r'ORIGINAL:\s*(.*?)\s*FIXED:\s*(.*?)\s*(?=ORIGINAL:|EXPLANATION:|$)',
+        _re.DOTALL
+    )
+    matches = pattern.findall(fix_response)
+    if not matches:
+        return None, None
+    original, fixed = matches[-1]
+    return original.strip(), fixed.strip()
+
+def apply_fix_to_file(full_file_path, original_line, fixed_line, reported_line=None):
+    """
+    Finds the line matching original_line's text and replaces it with
+    fixed_line. If the text appears more than once in the file, picks the
+    occurrence CLOSEST to reported_line (Claude's self-reported line
+    number) instead of always taking the first match -- since always
+    taking the first match can silently edit the wrong copy of duplicated
+    code (confirmed cause of several bad-outcome bugs in Experiment 9).
+    """
     with open(full_file_path) as f:
         lines = f.readlines()
-    for i, line in enumerate(lines):
-        if line.strip() == original_line.strip():
-            indent = len(line) - len(line.lstrip())
-            lines[i] = " " * indent + fixed_line.strip() + "\n"
-            with open(full_file_path, "w") as f:
-                f.writelines(lines)
-            return True
-    return False
+
+    match_indices = [i for i, line in enumerate(lines) if line.strip() == original_line.strip()]
+    if not match_indices:
+        return False
+
+    if len(match_indices) == 1 or reported_line is None:
+        i = match_indices[0]
+    else:
+        # pick whichever match is closest to Claude's reported line (1-indexed)
+        i = min(match_indices, key=lambda idx: abs((idx + 1) - reported_line))
+
+    indent = len(lines[i]) - len(lines[i].lstrip())
+    lines[i] = " " * indent + fixed_line.strip() + "\n"
+    with open(full_file_path, "w") as f:
+        f.writelines(lines)
+    return True
 
 def run_tests(checkout_dir):
     result = subprocess.run(

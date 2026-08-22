@@ -1,0 +1,51 @@
+project,bug_id,orig_statements,fixed_statements,statement_delta,length_ratio,category,original_code,fixed_code
+Chart,26,1,1,0,1.13,minimal_edit,float labely = (float) (dataArea.getY() + dataArea.getHeight(),float labely = (float) (dataArea.getY() + dataArea.getHeight() / 2.0);
+Chart,25,1,1,0,0.98,minimal_edit,"line = new Line2D.Double(highVal, rectY + rectHeight * 0.25,","line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25,"
+Chart,24,1,1,0,0.93,minimal_edit,int g = (int) ((value - this.lowerBound) / (this.upperBound,int g = (int) ((v - this.lowerBound) / (this.upperBound
+Chart,23,1,1,0,1.0,minimal_edit,"line = new Line2D.Double(y0, x0, y1, x1);","line = new Line2D.Double(x0, y0, x1, y1);"
+Chart,22,1,1,0,1.2,minimal_edit,if (row >= 0) {,if (column >= 0) {
+Chart,21,1,1,0,0.44,minimal_edit,else if (minval < this.minimumRangeValue) {,else if (!Double.is
+Chart,18,1,1,0,1.03,minimal_edit,if (index < this.keys.size()) {,if (index <= this.keys.size()) {
+Chart,17,1,2,1,1.58,added_statement(s),for (int index = start; index <= end; index++) {,for (int index = start; index <= end && index < this.data.size(); index++) {
+Chart,16,1,1,0,1.05,minimal_edit,if ((category < 0) || (category >= getCategoryCount())) {,if ((category < 0) || (category > getCategoryCount() - 1)) {
+Chart,15,2,2,0,1.0,minimal_edit,for (int section = 0; section < keys.size(); section++) {,for (int section = 0; section < keys.size(); section++) {
+Chart,13,1,1,0,1.1,minimal_edit,"this.bottomBlock.setBounds(new Rectangle2D.Double(0.0, h[0] + h[2],","this.bottomBlock.setBounds(new Rectangle2D.Double(0.0, h[0] + h[2] + h[4],"
+Chart,12,2,2,0,1.09,minimal_edit,for (int i = 0; i < piedataset.getItemCount(); i++) {,for (int i = 0; i <= piedataset.getItemCount() - 1; i++) {
+Chart,11,1,1,0,1.0,minimal_edit,PathIterator iterator2 = p1.getPathIterator(null);,PathIterator iterator2 = p2.getPathIterator(null);
+Chart,10,1,2,1,1.75,added_statement(s),"return "" title=\"""" + toolTipText","return "" title=\"""" + toolTipText.replace(""\"""", ""&quot;"")"
+Chart,9,1,2,1,1.58,added_statement(s),for (int index = start; index <= end; index++) {,for (int index = start; index <= end && index < this.data.size(); index++) {
+Chart,8,1,1,0,1.0,minimal_edit,if ((week < FIRST_WEEK_IN_YEAR) && (week > LAST_WEEK_IN_YEAR)) {,if ((week < FIRST_WEEK_IN_YEAR) || (week > LAST_WEEK_IN_YEAR)) {
+Chart,7,1,1,0,1.0,minimal_edit,long s = getDataItem(this.minMiddleIndex).getPeriod().getStart(),long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart()
+Chart,6,1,1,0,1.03,minimal_edit,for (int i = 0; i < count; i++) {,for (int i = 0; i <= count; i++) {
+Chart,5,1,1,0,0.35,minimal_edit,if (index >= 0 && !this.allowDuplicateXValues) {,if (index >= 0) {
+Chart,3,1,1,0,1.0,minimal_edit,"this.maxY = minIgnoreNaN(this.maxY, yy);","this.maxY = maxIgnoreNaN(this.maxY, yy);"
+Chart,1,1,1,0,1.0,minimal_edit,if (dataset != null) {,if (dataset == null) {
+Lang,3,1,1,0,0.91,minimal_edit,if (expPos > -1 && expPos < str.length() - 1) {,if (expPos > -1 && expPos < str.length()) {
+Lang,4,1,1,0,2.89,large_rewrite,int max = longest;,"int max = Math.min(longest, input.length() - index);"
+Lang,5,1,1,0,1.0,minimal_edit,"return new Locale(str.substring(0, 2), str.substring(3, 5), str.substring(6));","return new Locale(str.substring(0, 2), str.substring(3, 5), str.substring(5));"
+Lang,6,1,1,0,1.33,minimal_edit,for (int pt = 0; pt < consumed; pt++) {,for (int pt = 0; pt < consumed && pos < len; pt++) {
+Lang,7,1,1,0,0.91,minimal_edit,if (expPos > -1 && expPos < str.length() - 1) {,if (expPos > -1 && expPos < str.length()) {
+Lang,8,1,1,0,0.88,minimal_edit,int minutes = offset / (60 * 1000) - 60 * hours;,int minutes = (offset / (60 * 1000)) % 60;
+Lang,9,1,1,0,1.11,minimal_edit,for(int i=0; i<strategies.length;) {,for(int i=0; i<strategies.length; ++i) {
+Lang,10,1,1,0,1.11,minimal_edit,for(int i=0; i<strategies.length;) {,for(int i=0; i<strategies.length; ++i) {
+Lang,11,1,1,0,1.0,minimal_edit,int gap = end - start;,int gap = end - start;
+Lang,12,1,1,0,1.18,minimal_edit,int gap = end - start;,int gap = end - start + 1;
+Lang,14,1,1,0,1.03,minimal_edit,while (pos < strLen - closeLen) {,while (pos <= strLen - closeLen) {
+Lang,15,1,1,0,0.96,minimal_edit,for (int i = 0; i < typeParams.length; i++) {,for (int i = 0; i < typeArgs.length; i++) {
+Math,2,1,1,0,0.93,minimal_edit,return (n * m * (N - n) * (N - m)) / (N * N * (N - 1));,return (n * m * (N - n) * (N - m)) / (N * (N - 1));
+Math,3,1,1,0,1.0,minimal_edit,"int k = FastMath.max(0, n + 1 - xLen);","int k = FastMath.max(0, n + 1 - hLen);"
+Math,4,1,1,0,1.03,minimal_edit,return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;,return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;
+Math,5,1,1,0,1.03,minimal_edit,for (int k = 0; k < n ; k++) {,for (int k = 0; k <= n ; k++) {
+Math,6,1,1,0,1.23,minimal_edit,if (data instanceof MaxIter) {,} else if (data instanceof MaxIter) {
+Math,7,1,1,0,1.0,minimal_edit,"isLastStep = isLastStep || Precision.equals(currentT, tEnd, 1);","isLastStep = isLastStep || Precision.equals(currentT, tEnd, 2);"
+Math,8,1,1,0,1.04,minimal_edit,if (randomValue < sum) {,if (randomValue <= sum) {
+Math,9,1,1,0,1.03,minimal_edit,"return new Vector3D(1, zero, (a - b * cos) / n, direction);","return new Vector3D(1.0, zero, (a - b * cos) / n, direction);"
+Math,10,1,1,0,0.92,minimal_edit,for (int k = n - 1; k >= 0; k -= 2) {,for (int k = n - 1; k >= 0; --k) {
+Math,11,1,1,0,1.04,minimal_edit,"return FastMath.pow(2 * FastMath.PI, -dim / 2) *","return FastMath.pow(2 * FastMath.PI, -dim / 2.0) *"
+Math,12,1,1,0,1.21,minimal_edit,return (high | low) * 0x1.0p-52d;,return (high | (long) low) * 0x1.0p-52d;
+Math,13,1,1,0,1.2,minimal_edit,return FastMath.sqrt(getChiSquare() / rows);,return FastMath.sqrt(getChiSquare() / (rows - cols));
+Math,14,1,1,0,1.07,minimal_edit,for (int i = 0; i < target.length; i++) {,for (int i = 0; i < residuals.length; ++i) {
+Math,16,1,2,1,1.37,added_statement(s),idx = (int) (((-1.7168146928204136 * xa * xa + 8.0) * xa) + 0.5);,idx = (int) (((-1.7168146928204136 * xa * xa + 8.0) * xa) + 0.5); if (idx > 13) idx = 13;
+Math,17,1,1,0,0.95,minimal_edit,if (q == mant.length*rsize+offset+1) {,if (q == mant.length*rsize+offset) {
+Math,19,1,1,0,1.71,large_rewrite,if (bestValue == fitness[arindex[(int)(0.1+lambda/4.)]]) {,if (bestValue == fitness[arindex[(int)(0.1+lambda/4.)]] && (int)(0.1+lambda/4.) < arindex.length) {
+Math,20,1,1,0,1.71,large_rewrite,if (bestValue == fitness[arindex[(int)(0.1+lambda/4.)]]) {,if (bestValue == fitness[arindex[(int)(0.1+lambda/4.)]] && (int)(0.1+lambda/4.) < arindex.length) {
