@@ -1,0 +1,17 @@
+{
+  "project": "Jsoup",
+  "bug_id": 91,
+  "file_path": "org/jsoup/UncheckedIOException.java",
+  "buggy_code": "package org.jsoup;\n\nimport java.io.IOException;\n\npublic class UncheckedIOException extends RuntimeException {\n    public UncheckedIOException(IOException cause) {\n        super(cause);\n    }\n\n\n    public IOException ioException() {\n        return (IOException) getCause();\n    }\n}\n",
+  "patched_code": "package org.jsoup;\n\nimport java.io.IOException;\n\npublic class UncheckedIOException extends RuntimeException {\n    public UncheckedIOException(IOException cause) {\n        super(cause);\n    }\n\n    public UncheckedIOException(String message) {\n        super(new IOException(message));\n    }\n\n    public IOException ioException() {\n        return (IOException) getCause();\n    }\n}\n",
+  "original_bug_line": 9,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "package org.jsoup;\n\nimport java.io.IOException;\n\npublic class UncheckedIOException extends RuntimeException {\n\n    public UncheckedIOException(final IOException ioException) {\n        super(ioException);\n    }\n\n    public IOException ioException() {\n        final IOException cause = (IOException) this.getCause();\n        return cause;\n    }\n}"
+  }
+}

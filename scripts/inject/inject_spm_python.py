@@ -76,3 +76,4 @@ if __name__ == "__main__":
         if os.path.exists(data_path):
             process_bug(data_path)
     print("All SPMs injected!")
+

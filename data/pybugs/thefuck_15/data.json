@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "15",
+  "file_path": "thefuck/rules/git_add.py",
+  "language": "python",
+  "buggy_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    return ('did not match any file(s) known to git.' in command.stderr\n            and \"Did you forget to 'git add'?\" in command.stderr)\n\n\n@git_support\ndef get_new_command(command):\n    missing_file = re.findall(\n            r\"error: pathspec '([^']*)' \"\n            r\"did not match any file\\(s\\) known to git.\", command.stderr)[0]\n\n    formatme = shell.and_('git add -- {}', '{}')\n    return formatme.format(missing_file, command.script)\n",
+  "patched_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    return 'did not match any file(s) known to git.' in command.stderr\n\n\n@git_support\ndef get_new_command(command):\n    missing_file = re.findall(\n        r\"error: pathspec '([^']*)' \"\n        r'did not match any file\\(s\\) known to git.', command.stderr)[0]\n\n    formatme = shell.and_('git add -- {}', '{}')\n    return formatme.format(missing_file, command.script)\n",
+  "original_bug_line": 5,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    err = command.stderr\n    return ('did not match any file(s) known to git.' in err\n            and \"Did you forget to 'git add'?\" in err)\n\n\n@git_support\ndef get_new_command(command):\n    pattern = (r\"error: pathspec '([^']*)' \"\n               r\"did not match any file\\(s\\) known to git.\")\n    unmatched_path = re.findall(pattern, command.stderr)[0]\n\n    template = shell.and_('git add -- {}', '{}')\n    return template.format(unmatched_path, command.script)"
+  }
+}

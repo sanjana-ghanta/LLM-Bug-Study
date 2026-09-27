@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "13",
+  "file_path": "thefuck/rules/git_branch_exists.py",
+  "language": "python",
+  "buggy_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\n\n\n@git_support\ndef match(command):\n    return ('branch' in command.script\n            and \"fatal: A branch named '\" in command.stderr\n            and \" already exists.\" in command.stderr)\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    branch_name = re.findall(\n        r\"fatal: A branch named '([^']*)' already exists.\", command.stderr)[0]\n    new_command_templates = [['git branch -d {0}', 'git branch {0}'],\n                             ['git branch -D {0}', 'git branch {0}'],\n                             ['git checkout {0}']]\n    for new_command_template in new_command_templates:\n        yield shell.and_(*new_command_template).format(branch_name)\n",
+  "patched_code": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\n\n\n@git_support\ndef match(command):\n    return (\"fatal: A branch named '\" in command.stderr\n            and \" already exists.\" in command.stderr)\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    branch_name = re.findall(\n        r\"fatal: A branch named '([^']*)' already exists.\", command.stderr)[0]\n    new_command_templates = [['git branch -d {0}', 'git branch {0}'],\n                             ['git branch -d {0}', 'git checkout -b {0}'],\n                             ['git branch -D {0}', 'git branch {0}'],\n                             ['git branch -D {0}', 'git checkout -b {0}'],\n                             ['git checkout {0}']]\n    for new_command_template in new_command_templates:\n        yield shell.and_(*new_command_template).format(branch_name)\n",
+  "original_bug_line": 6,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\nimport re\n\n\n@git_support\ndef match(command):\n    if 'branch' not in command.script:\n        return False\n    return (\"fatal: A branch named '\" in command.stderr\n            and command.stderr.find(\" already exists.\") != -1)\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    pattern = r\"fatal: A branch named '([^']*)' already exists.\"\n    extracted_branch = re.findall(pattern, command.stderr)[0]\n    template_groups = [\n        ('git branch -d {0}', 'git branch {0}'),\n        ('git branch -D {0}', 'git branch {0}'),\n        ('git checkout {0}',\n    ]\n    idx = 0\n    while idx < len(template_groups):\n        yield shell.and_(*template_groups[idx]).format(extracted_branch)\n        idx += 1"
+  }
+}

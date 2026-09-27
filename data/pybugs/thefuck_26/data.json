@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "26",
+  "file_path": "thefuck/rules/vagrant_up.py",
+  "language": "python",
+  "buggy_code": "from thefuck import shells\n\n\ndef match(command, settings):\n    return command.script.startswith('vagrant ') and 'run `vagrant up`' in command.stderr.lower()\n\n\ndef get_new_command(command, settings):\n    cmds = command.script.split(' ')\n    machine = \"\"\n    if len(cmds) >= 3:\n        machine = cmds[2]\n    return shells.and_(\"vagrant up \" +  machine, command.script)\n",
+  "patched_code": "from thefuck import shells\n\n\ndef match(command, settings):\n    return command.script.startswith('vagrant ') and 'run `vagrant up`' in command.stderr.lower()\n\n\ndef get_new_command(command, settings):\n    cmds = command.script.split(' ')\n    machine = None\n    if len(cmds) >= 3:\n        machine = cmds[2]\n\n    startAllInstances = shells.and_(\"vagrant up\", command.script)\n    if machine is None: \n        return startAllInstances\n    else:\n        return [ shells.and_(\"vagrant up \" +  machine, command.script), startAllInstances]\n",
+  "original_bug_line": 7,
+  "tier3_code": "from thefuck import shells\n\n\ndef match(command, settings):\n    return command.script.startswith('vagrant ') and 'run `vagrant up`' in command.stderr.lower()\n\n\ndef get_new_command(command, settings):\n    cmds = command.script.split(' ')\n    machine = None\n    if len(cmds) >= 3:\n        machine = cmds[2]\n\n    startAllInstances = shells.and_(\"vagrant up\", command.script)\n    if machine is None: \n        return startAllInstances\n    else:\n        return [ shells.and_(\"vagrant up \" -  machine, command.script), startAllInstances]",
+  "tier3_mutation_line": 18,
+  "tier3_mutation_type": "operator_swap",
+  "tier4_code": "from thefuck import shells\n\n\ndef match(command, settings):\n    return command.script.startswith('vagrant ') and 'run `vagrant up`' in command.stderr.lower()\n\n\ndef get_new_command(command, settings):\n    cmds = command.script.split(' ')\n    machine = \"\"\n    if len(cmds) >= 3:\n        machine = cmds[2]\n    return shells.and_(\"vagrant up \" -  machine, command.script)",
+  "tier4_mutation_line": 13,
+  "tier4_mutation_type": "operator_swap",
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck import shells\n\n\ndef match(command, settings):\n    script_text = command.script\n    error_text = command.stderr.lower()\n    return script_text.startswith('vagrant ') and 'run `vagrant up`' in error_text\n\n\ndef get_new_command(command, settings):\n    parts = command.script.split(' ')\n    target = \"\"\n    if len(parts) >= 3:\n        target = parts[2]\n    return shells.and_(\"vagrant up \" + target, command.script)"
+  }
+}

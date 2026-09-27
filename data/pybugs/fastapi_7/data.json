@@ -1,0 +1,18 @@
+{
+  "project": "fastapi",
+  "bug_id": "7",
+  "file_path": "fastapi/exception_handlers.py",
+  "language": "python",
+  "buggy_code": "from fastapi.exceptions import RequestValidationError\nfrom starlette.exceptions import HTTPException\nfrom starlette.requests import Request\nfrom starlette.responses import JSONResponse\nfrom starlette.status import HTTP_422_UNPROCESSABLE_ENTITY\n\n\nasync def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:\n    headers = getattr(exc, \"headers\", None)\n    if headers:\n        return JSONResponse(\n            {\"detail\": exc.detail}, status_code=exc.status_code, headers=headers\n        )\n    else:\n        return JSONResponse({\"detail\": exc.detail}, status_code=exc.status_code)\n\n\nasync def request_validation_exception_handler(\n    request: Request, exc: RequestValidationError\n) -> JSONResponse:\n    return JSONResponse(\n        status_code=HTTP_422_UNPROCESSABLE_ENTITY, content={\"detail\": exc.errors()}\n    )\n",
+  "patched_code": "from fastapi.encoders import jsonable_encoder\nfrom fastapi.exceptions import RequestValidationError\nfrom starlette.exceptions import HTTPException\nfrom starlette.requests import Request\nfrom starlette.responses import JSONResponse\nfrom starlette.status import HTTP_422_UNPROCESSABLE_ENTITY\n\n\nasync def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:\n    headers = getattr(exc, \"headers\", None)\n    if headers:\n        return JSONResponse(\n            {\"detail\": exc.detail}, status_code=exc.status_code, headers=headers\n        )\n    else:\n        return JSONResponse({\"detail\": exc.detail}, status_code=exc.status_code)\n\n\nasync def request_validation_exception_handler(\n    request: Request, exc: RequestValidationError\n) -> JSONResponse:\n    return JSONResponse(\n        status_code=HTTP_422_UNPROCESSABLE_ENTITY,\n        content={\"detail\": jsonable_encoder(exc.errors())},\n    )\n",
+  "original_bug_line": 1,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from starlette.requests import Request\nfrom starlette.responses import JSONResponse\nfrom starlette.status import HTTP_422_UNPROCESSABLE_ENTITY\nfrom starlette.exceptions import HTTPException\nfrom fastapi.exceptions import RequestValidationError\n\n\nasync def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:\n    headers = getattr(exc, \"headers\", None)\n    if headers:\n        return JSONResponse(\n            {\"detail\": exc.detail}, status_code=exc.status_code, headers=headers\n        )\n    else:\n        return JSONResponse({\"detail\": exc.detail}, status_code=exc.status_code)\n\n\nasync def request_validation_exception_handler(\n    request: Request, exc: RequestValidationError\n) -> JSONResponse:\n    return JSONResponse(\n        status_code=HTTP_422_UNPROCESSABLE_ENTITY, content={\"detail\": exc.errors()}\n    )"
+  }
+}

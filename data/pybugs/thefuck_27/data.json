@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "27",
+  "file_path": "thefuck/rules/open.py",
+  "language": "python",
+  "buggy_code": "# Opens URL's in the default web browser\n#\n# Example:\n# > open github.com\n# The file ~/github.com does not exist.\n# Perhaps you meant 'http://github.com'?\n#\n\n\ndef match(command, settings):\n    return (command.script.startswith(('open', 'xdg-open', 'gnome-open', 'kde-open'))\n            and (\n                '.com' in command.script\n                or '.net' in command.script\n                or '.org' in command.script\n                or '.ly' in command.script\n                or '.io' in command.script\n                or '.se' in command.script\n                or '.edu' in command.script\n                or '.info' in command.script\n                or '.me' in command.script\n                or 'www.' in command.script))\n\n\ndef get_new_command(command, settings):\n    return 'open http://' + command.script[5:]\n",
+  "patched_code": "# Opens URL's in the default web browser\n#\n# Example:\n# > open github.com\n# The file ~/github.com does not exist.\n# Perhaps you meant 'http://github.com'?\n#\n\n\ndef match(command, settings):\n    return (command.script.startswith(('open', 'xdg-open', 'gnome-open', 'kde-open'))\n            and (\n                '.com' in command.script\n                or '.net' in command.script\n                or '.org' in command.script\n                or '.ly' in command.script\n                or '.io' in command.script\n                or '.se' in command.script\n                or '.edu' in command.script\n                or '.info' in command.script\n                or '.me' in command.script\n                or 'www.' in command.script))\n\n\ndef get_new_command(command, settings):\n    return command.script.replace('open ', 'open http://')\n",
+  "original_bug_line": 23,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": "# Opens URL's in the default web browser\n#\n# Example:\n# > open github.com\n# The file ~/github.com does not exist.\n# Perhaps you meant 'http://github.com'?\n#\n\n\ndef match(command, settings):\n    return (command.script.startswith(('open', 'xdg-open', 'gnome-open', 'kde-open'))\n            and (\n                '.com' in command.script\n                or '.net' in command.script\n                or '.org' in command.script\n                or '.ly' in command.script\n                or '.io' in command.script\n                or '.se' in command.script\n                or '.edu' in command.script\n                or '.info' in command.script\n                or '.me' in command.script\n                or 'www.' in command.script))\n\n\ndef get_new_command(command, settings):\n    return 'open http://' - command.script[5:]",
+  "tier4_mutation_line": 26,
+  "tier4_mutation_type": "operator_swap",
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "# Launches URL's in the default web browser\n#\n# Example:\n# > open github.com\n# The file ~/github.com does not exist.\n# Perhaps you meant 'http://github.com'?\n#\n\n_LAUNCHERS = ('open', 'xdg-open', 'gnome-open', 'kde-open')\n_SUFFIXES = ('.com', '.net', '.org', '.ly', '.io', '.se', '.edu', '.info', '.me', 'www.')\n\n\ndef match(cmd, settings):\n    has_tld = False\n    for ending in _SUFFIXES:\n        if ending in cmd.script:\n            has_tld = True\n            break\n    starts_with_launcher = False\n    for name in _LAUNCHERS:\n        if cmd.script.startswith(name):\n            starts_with_launcher = True\n            break\n    return starts_with_launcher and has_tld\n\n\ndef get_new_command(cmd, settings):\n    return 'open http://' + cmd.script[5:]"
+  }
+}

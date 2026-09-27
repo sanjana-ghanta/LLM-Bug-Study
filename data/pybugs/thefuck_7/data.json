@@ -11,5 +11,8 @@
   "tier4_code": null,
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
-  "original_bug_line": 3
+  "original_bug_line": 3,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck.utils import for_app, replace_argument\n\n\n@for_app('php')\ndef match(command):\n    script_text = command.script\n    return script_text.find(\"php -s\") != -1\n\n\ndef get_new_command(command):\n    old_flag = \"-s\"\n    new_flag = \"-S\"\n    return replace_argument(command.script, old_flag, new_flag)\n\n\nrequires_output = False"
+  }
 }

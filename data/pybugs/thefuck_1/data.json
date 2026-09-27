@@ -11,5 +11,8 @@
   "tier4_code": null,
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
-  "original_bug_line": 12
+  "original_bug_line": 12,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck.utils import replace_argument, for_app\nfrom thefuck.specific.sudo import sudo_support\nimport re\n\n\n@for_app('pip', 'pip2', 'pip3')\n@sudo_support\ndef match(command):\n    if 'pip' not in command.script:\n        return False\n    if 'unknown command' not in command.output:\n        return False\n    return 'maybe you meant' in command.output\n\n\ndef get_new_command(command):\n    wrong = re.findall(r'ERROR: unknown command \\\"([a-z]+)\\\"',\n                       command.output)[0]\n    suggestion = re.findall(r'maybe you meant \\\"([a-z]+)\\\"',\n                            command.output)[0]\n\n    return replace_argument(command.script, wrong, suggestion)"
+  }
 }

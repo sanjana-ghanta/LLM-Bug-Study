@@ -11,5 +11,8 @@
   "tier4_code": null,
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
-  "original_bug_line": 7
+  "original_bug_line": 7,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\nfrom thefuck.utils import eager\n\n\n@git_support\ndef match(command):\n    output_text = command.output\n    return \"fatal: A branch named '\" in output_text and \" already exists.\" in output_text\n\n\n@git_support\n@eager\ndef get_new_command(command):\n    name = re.findall(\n        r\"fatal: A branch named '([^']*)' already exists.\",\n        command.output)[0]\n    templates = [\n        ['git branch -d {0}', 'git branch {0}'],\n        ['git branch -d {0}', 'git checkout -b {0}'],\n        ['git branch -D {0}', 'git branch {0}'],\n        ['git branch -D {0}', 'git checkout -b {0}'],\n        ['git checkout {0}']\n    ]\n    idx = 0\n    while idx < len(templates):\n        parts = templates[idx]\n        yield shell.and_(*parts).format(name)\n        idx += 1"
+  }
 }

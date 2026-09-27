@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "29",
+  "file_path": "thefuck/types.py",
+  "language": "python",
+  "buggy_code": "from collections import namedtuple\n\n\nCommand = namedtuple('Command', ('script', 'stdout', 'stderr'))\n\nCorrectedCommand = namedtuple('CorrectedCommand', ('script', 'side_effect', 'priority'))\n\nRule = namedtuple('Rule', ('name', 'match', 'get_new_command',\n                           'enabled_by_default', 'side_effect',\n                           'priority', 'requires_output'))\n\n\nclass RulesNamesList(list):\n    \"\"\"Wrapper a top of list for storing rules names.\"\"\"\n\n    def __contains__(self, item):\n        return super(RulesNamesList, self).__contains__(item.name)\n\n\nclass Settings(dict):\n\n    def __getattr__(self, item):\n        return self.get(item)\n\n    def update(self, **kwargs):\n        \"\"\"Returns new settings with new values from `kwargs`.\"\"\"\n        conf = dict(self)\n        conf.update(kwargs)\n        return Settings(conf)\n",
+  "patched_code": "from collections import namedtuple\n\n\nCommand = namedtuple('Command', ('script', 'stdout', 'stderr'))\n\nCorrectedCommand = namedtuple('CorrectedCommand', ('script', 'side_effect', 'priority'))\n\nRule = namedtuple('Rule', ('name', 'match', 'get_new_command',\n                           'enabled_by_default', 'side_effect',\n                           'priority', 'requires_output'))\n\n\nclass RulesNamesList(list):\n    \"\"\"Wrapper a top of list for storing rules names.\"\"\"\n\n    def __contains__(self, item):\n        return super(RulesNamesList, self).__contains__(item.name)\n\n\nclass Settings(dict):\n\n    def __getattr__(self, item):\n        return self.get(item)\n\n    def update(self, **kwargs):\n        \"\"\"\n        Returns new settings with values from `kwargs` for unset settings.\n        \"\"\"\n        conf = dict(kwargs)\n        conf.update(self)\n        return Settings(conf)\n",
+  "original_bug_line": 23,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from collections import namedtuple\n\n\nCmdEntry = namedtuple('CmdEntry', ('script', 'stdout', 'stderr'))\n\nFixedCmd = namedtuple('FixedCmd', ('script', 'side_effect', 'priority'))\n\nMatchingRule = namedtuple('MatchingRule', ('name', 'match', 'get_new_command',\n                                           'enabled_by_default', 'side_effect',\n                                           'priority', 'requires_output'))\n\n\nclass RulesRegistry(list):\n    \"\"\"Wrapper a top of list for storing rules names.\"\"\"\n\n    def __contains__(self, rule):\n        return super(RulesRegistry, self).__contains__(rule.name)\n\n\nclass Configuration(dict):\n\n    def __getattr__(self, key):\n        return self.get(key)\n\n    def update(self, **kwargs):\n        \"\"\"Returns new settings with new values from `kwargs`.\"\"\"\n        merged = dict(self)\n        for k in kwargs:\n            merged[k] = kwargs[k]\n        return Configuration(merged)"
+  }
+}

@@ -11,5 +11,8 @@
   "tier4_code": null,
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
-  "original_bug_line": 24
+  "original_bug_line": 24,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    has_push = 'push' in command.script\n    has_upstream = 'set-upstream' in command.stderr\n    return has_push and has_upstream\n\n\n@git_support\ndef get_new_command(command):\n    # When --set-upstream or -u is supplied, drop it along with its value,\n    # since git's own suggested command (which we build upon) already\n    # contains --set-upstream plus its value\n    idx = -1\n    for opt in ('--set-upstream', '-u'):\n        try:\n            idx = command.script_parts.index(opt)\n        except ValueError:\n            continue\n\n    if idx is not -1:\n        command.script_parts.pop(idx)\n        command.script_parts.pop(idx)\n\n    suggestion = command.stderr.split('\\n')[-3].strip().partition('git ')[2]\n    base = \" \".join(command.script_parts)\n    return replace_argument(base, 'push', suggestion)"
+  }
 }

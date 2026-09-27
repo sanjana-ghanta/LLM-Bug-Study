@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "32",
+  "file_path": "thefuck/rules/ls_lah.py",
+  "language": "python",
+  "buggy_code": "def match(command, settings):\n    return 'ls' in command.script and not ('ls -' in command.script)\n\n\ndef get_new_command(command, settings):\n    command = command.script.split(' ')\n    command[0] = 'ls -lah'\n    return ' '.join(command)\n",
+  "patched_code": "def match(command, settings):\n    return (command.script == 'ls'\n            or command.script.startswith('ls ')\n            and not ('ls -' in command.script))\n\n\ndef get_new_command(command, settings):\n    command = command.script.split(' ')\n    command[0] = 'ls -lah'\n    return ' '.join(command)\n",
+  "original_bug_line": 1,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "def match(command, settings):\n    script_text = command.script\n    return 'ls' in script_text and 'ls -' not in script_text\n\n\ndef get_new_command(command, settings):\n    parts = command.script.split(' ')\n    parts[0] = 'ls -lah'\n    return ' '.join(parts)"
+  }
+}

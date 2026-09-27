@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "31",
+  "file_path": "thefuck/rules/git_diff_staged.py",
+  "language": "python",
+  "buggy_code": "from thefuck import utils\n\n\n@utils.git_support\ndef match(command, settings):\n    return ('git' in command.script and\n            'diff' in command.script and\n            '--staged' not in command.script)\n\n\n@utils.git_support\ndef get_new_command(command, settings):\n    return '{} --staged'.format(command.script)\n",
+  "patched_code": "from thefuck import utils\n\n\n@utils.git_support\ndef match(command, settings):\n    return ('git' in command.script and\n            'diff' in command.script and\n            '--staged' not in command.script)\n\n\n@utils.git_support\ndef get_new_command(command, settings):\n    return command.script.replace(' diff', ' diff --staged')\n",
+  "original_bug_line": 10,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck import utils\n\n\n@utils.git_support\ndef match(command, settings):\n    script = command.script\n    if 'git' not in script:\n        return False\n    if 'diff' not in script:\n        return False\n    return '--staged' not in script\n\n\n@utils.git_support\ndef get_new_command(command, settings):\n    return command.script + ' --staged'"
+  }
+}

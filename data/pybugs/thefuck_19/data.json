@@ -1,0 +1,18 @@
+{
+  "project": "thefuck",
+  "bug_id": "19",
+  "file_path": "thefuck/rules/git_push_force.py",
+  "language": "python",
+  "buggy_code": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    return ('push' in command.script\n            and '! [rejected]' in command.stderr\n            and 'failed to push some refs to' in command.stderr\n            and 'Updates were rejected because the tip of your current branch is behind' in command.stderr)\n\n\n@git_support\ndef get_new_command(command):\n    return replace_argument(command.script, 'push', 'push --force')\n\n\nenabled_by_default = False\n",
+  "patched_code": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    return ('push' in command.script\n            and '! [rejected]' in command.stderr\n            and 'failed to push some refs to' in command.stderr\n            and 'Updates were rejected because the tip of your current branch is behind' in command.stderr)\n\n\n@git_support\ndef get_new_command(command):\n    return replace_argument(command.script, 'push', 'push --force-with-lease')\n\n\nenabled_by_default = False\n",
+  "original_bug_line": 12,
+  "tier3_code": null,
+  "tier3_mutation_line": null,
+  "tier3_mutation_type": null,
+  "tier4_code": null,
+  "tier4_mutation_line": null,
+  "tier4_mutation_type": null,
+  "tier5_code_by_model": {
+    "glm-5.3-thinking": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(cmd):\n    rejected_err = '! [rejected]' in cmd.stderr\n    push_in_script = 'push' in cmd.script\n    refs_err = 'failed to push some refs to' in cmd.stderr\n    behind_err = 'Updates were rejected because the tip of your current branch is behind' in cmd.stderr\n    return push_in_script and rejected_err and refs_err and behind_err\n\n\n@git_support\ndef get_new_command(cmd):\n    return replace_argument(cmd.script, 'push', 'push --force')\n\n\nenabled_by_default = False"
+  }
+}
