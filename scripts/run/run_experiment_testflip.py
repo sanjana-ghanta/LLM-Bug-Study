@@ -20,7 +20,7 @@ import shutil
 import subprocess
 import time
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BUGS_DIR = os.path.join(BASE, "data/bugs")
 OUT_CSV = os.path.join(BASE, "results/java/results_testflip.csv")
 

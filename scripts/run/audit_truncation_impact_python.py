@@ -14,7 +14,7 @@ import csv
 import json
 import os
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RESULTS_CSV = os.path.join(BASE, "results/python/results_python.csv")
 BUGS_DIR = os.path.join(BASE, "data/pybugs")
 OUT_CSV = os.path.join(BASE, "results/python/results_truncation_audit_python.csv")

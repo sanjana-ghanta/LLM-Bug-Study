@@ -12,7 +12,7 @@ import csv
 import json
 import os
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RESULTS_CSV = os.path.join(BASE, "results/java/results.csv")
 AUDIT_CSV = os.path.join(BASE, "results/java/results_truncation_audit.csv")
 BUGS_DIR = os.path.join(BASE, "data/bugs")

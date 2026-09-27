@@ -16,7 +16,7 @@ import subprocess
 import csv
 import os
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 REPO_DIR = os.path.expanduser("~/defects4j/project_repos")
 
 PROJECT_REPO_NAMES = {

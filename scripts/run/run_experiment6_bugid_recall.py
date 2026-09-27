@@ -31,7 +31,7 @@ import time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 from lib.llm_clients import call_llm
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BUGS_DIR = os.path.join(BASE, "data/bugs")
 RESULTS_DIR = os.path.join(BASE, "results/java")
 

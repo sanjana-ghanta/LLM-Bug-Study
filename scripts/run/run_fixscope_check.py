@@ -20,7 +20,7 @@ import csv
 import os
 import re
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT_CSV = os.path.join(BASE, "results/java/results_fixscope.csv")
 
 SOURCES = [

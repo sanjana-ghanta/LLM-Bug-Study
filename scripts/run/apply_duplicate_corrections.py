@@ -14,7 +14,7 @@ import csv
 import os
 import shutil
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TESTFLIP_CSV = os.path.join(BASE, "results/java/results_testflip.csv")
 REVERIFY_CSV = os.path.join(BASE, "results/java/results_duplicate_reverify.csv")
 

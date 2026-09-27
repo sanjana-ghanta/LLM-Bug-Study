@@ -13,7 +13,7 @@ import csv
 import os
 import sys
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def find_misses(language, model):

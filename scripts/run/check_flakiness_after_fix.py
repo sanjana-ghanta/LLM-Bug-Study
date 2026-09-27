@@ -14,7 +14,7 @@ import subprocess
 
 N_RUNS = 5
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BUGS_TO_CHECK = [
     ("Chart", "26", os.path.join(BASE, "results/java/results_v9_testfix.csv")),
     ("Math", "16", os.path.join(BASE, "results/java/results_v9_testfix_math.csv")),

@@ -13,7 +13,7 @@ import os
 import csv
 import shutil
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 COVERAGE_CSV = os.path.join(BASE, "results/java/results_actuallinecoverage_v2.csv")
 REVERIFY_CSV = os.path.join(BASE, "results/java/results_duplicate_reverify.csv")
 

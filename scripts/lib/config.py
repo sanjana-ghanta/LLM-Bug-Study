@@ -48,7 +48,7 @@ PROJECTS = {
     # },
 }
 
-BASE = os.path.expanduser("~/llm-bug-study/experiment")
+BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BUGS_DIR = os.path.join(BASE, "data/bugs")
 REPO_DIR = os.path.expanduser("~/defects4j/project_repos")
 RESULTS_DIR = os.path.join(BASE, "results/java")
