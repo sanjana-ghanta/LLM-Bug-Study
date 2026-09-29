@@ -1,0 +1,2504 @@
+Model: deepseek-v4-flash-thinking | Projects: all
+Already completed: 325 tier results
+Tracking 953 previously-failed attempts (953 permanently given up on after 3 tries)
+Processing PySnooper_1...
+  Skipping tier 1 for PySnooper-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for PySnooper-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for PySnooper-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for PySnooper-1 (conditional: Tier 2 not yet correct)
+Processing PySnooper_2...
+  Skipping tier 1 for PySnooper-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for PySnooper-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for PySnooper-2, already done
+  Skipping tier 5 for PySnooper-2 (conditional: Tier 2 not yet correct)
+Processing PySnooper_3...
+  Skipping tier 1 for PySnooper-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for PySnooper-3, already done
+  Skipping tier 3 for PySnooper-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for PySnooper-3, already done
+Processing ansible_1...
+  Skipping tier 1 for ansible-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-1 (conditional: Tier 2 not yet correct)
+Processing ansible_10...
+  Skipping tier 1 for ansible-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-10, already done
+  Skipping tier 5 for ansible-10 (conditional: Tier 2 not yet correct)
+Processing ansible_11...
+  Skipping tier 1 for ansible-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-11, already done
+  Skipping tier 5 for ansible-11 (conditional: Tier 2 not yet correct)
+Processing ansible_12...
+  Skipping tier 1 for ansible-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-12, already done
+Processing ansible_13...
+  Skipping tier 1 for ansible-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-13, already done
+  Skipping tier 5 for ansible-13 (conditional: Tier 2 not yet correct)
+Processing ansible_14...
+  Skipping tier 1 for ansible-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-14 (conditional: Tier 2 not yet correct)
+Processing ansible_15...
+  Skipping tier 1 for ansible-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-15 (conditional: Tier 2 not yet correct)
+Processing ansible_16...
+  Skipping tier 1 for ansible-16, already done
+  Skipping tier 2 for ansible-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-16 (conditional: Tier 2 not yet correct)
+Processing ansible_17...
+  Skipping tier 1 for ansible-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-17 (conditional: Tier 2 not yet correct)
+Processing ansible_18...
+  Skipping tier 1 for ansible-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-18 (conditional: Tier 2 not yet correct)
+Processing ansible_2...
+  Skipping tier 1 for ansible-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-2 (conditional: Tier 2 not yet correct)
+Processing ansible_3...
+  Skipping tier 1 for ansible-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-3, already done
+  Skipping tier 5 for ansible-3 (conditional: Tier 2 not yet correct)
+Processing ansible_4...
+  Skipping tier 1 for ansible-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-4 (conditional: Tier 2 not yet correct)
+Processing ansible_5...
+  Skipping tier 1 for ansible-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-5 (conditional: Tier 2 not yet correct)
+Processing ansible_6...
+  Skipping tier 1 for ansible-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-6 (conditional: Tier 2 not yet correct)
+Processing ansible_7...
+  Skipping tier 1 for ansible-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for ansible-7 (conditional: Tier 2 not yet correct)
+Processing ansible_8...
+  Skipping tier 1 for ansible-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-8, already done
+  Skipping tier 5 for ansible-8 (conditional: Tier 2 not yet correct)
+Processing ansible_9...
+  Skipping tier 1 for ansible-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for ansible-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for ansible-9, already done
+  Skipping tier 5 for ansible-9 (conditional: Tier 2 not yet correct)
+Processing black_1...
+  Skipping tier 1 for black-1, already done
+  Skipping tier 2 for black-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-1 (conditional: Tier 2 not yet correct)
+Processing black_10...
+  Skipping tier 1 for black-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-10, already done
+  Skipping tier 5 for black-10 (conditional: Tier 2 not yet correct)
+Processing black_11...
+  Skipping tier 1 for black-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-11 (conditional: Tier 2 not yet correct)
+Processing black_12...
+  Skipping tier 1 for black-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-12 (conditional: Tier 2 not yet correct)
+Processing black_13...
+  Skipping tier 1 for black-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-13 (conditional: Tier 2 not yet correct)
+Processing black_14...
+  Skipping tier 1 for black-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-14 (conditional: Tier 2 not yet correct)
+Processing black_15...
+  Skipping tier 1 for black-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-15 (conditional: Tier 2 not yet correct)
+Processing black_16...
+  Skipping tier 1 for black-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-16 (conditional: Tier 2 not yet correct)
+Processing black_17...
+  Skipping tier 1 for black-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-17 (conditional: Tier 2 not yet correct)
+Processing black_18...
+  Skipping tier 1 for black-18, already done
+  Skipping tier 2 for black-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-18 (gave up after 3 failed attempts)
+  Skipping tier 5 for black-18 (conditional: Tier 2 not yet correct)
+Processing black_19...
+  Skipping tier 1 for black-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-19 (conditional: Tier 2 not yet correct)
+Processing black_2...
+  Skipping tier 1 for black-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-2 (conditional: Tier 2 not yet correct)
+Processing black_20...
+  Skipping tier 1 for black-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-20 (conditional: Tier 2 not yet correct)
+Processing black_21...
+  Skipping tier 1 for black-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-21 (conditional: Tier 2 not yet correct)
+Processing black_22...
+  Skipping tier 1 for black-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-22 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-22, already done
+Processing black_23...
+  Skipping tier 1 for black-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-23 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-23 (conditional: Tier 2 not yet correct)
+Processing black_3...
+  Skipping tier 1 for black-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-3 (conditional: Tier 2 not yet correct)
+Processing black_4...
+  Skipping tier 1 for black-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-4 (conditional: Tier 2 not yet correct)
+Processing black_5...
+  Skipping tier 1 for black-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-5 (conditional: Tier 2 not yet correct)
+Processing black_6...
+  Skipping tier 1 for black-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-6 (conditional: Tier 2 not yet correct)
+Processing black_7...
+  Skipping tier 1 for black-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-7 (conditional: Tier 2 not yet correct)
+Processing black_8...
+  Skipping tier 1 for black-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-8 (conditional: Tier 2 not yet correct)
+Processing black_9...
+  Skipping tier 1 for black-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for black-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for black-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for black-9 (conditional: Tier 2 not yet correct)
+Processing cookiecutter_1...
+  Skipping tier 1 for cookiecutter-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for cookiecutter-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for cookiecutter-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for cookiecutter-1 (conditional: Tier 2 not yet correct)
+Processing cookiecutter_2...
+  Skipping tier 1 for cookiecutter-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for cookiecutter-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for cookiecutter-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for cookiecutter-2 (conditional: Tier 2 not yet correct)
+Processing cookiecutter_3...
+  Skipping tier 1 for cookiecutter-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for cookiecutter-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for cookiecutter-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for cookiecutter-3 (conditional: Tier 2 not yet correct)
+Processing cookiecutter_4...
+  Skipping tier 1 for cookiecutter-4, already done
+  Skipping tier 2 for cookiecutter-4, already done
+  Skipping tier 3 for cookiecutter-4, already done
+  Skipping tier 5 for cookiecutter-4, already done
+Processing fastapi_1...
+  Skipping tier 1 for fastapi-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-1, already done
+  Skipping tier 5 for fastapi-1 (conditional: Tier 2 not yet correct)
+Processing fastapi_10...
+  Skipping tier 1 for fastapi-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-10, already done
+  Skipping tier 5 for fastapi-10 (conditional: Tier 2 not yet correct)
+Processing fastapi_11...
+  Skipping tier 1 for fastapi-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-11, already done
+  Skipping tier 5 for fastapi-11 (conditional: Tier 2 not yet correct)
+Processing fastapi_12...
+  Skipping tier 1 for fastapi-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-12 (conditional: Tier 2 not yet correct)
+Processing fastapi_13...
+  Skipping tier 1 for fastapi-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-13, already done
+  Skipping tier 3 for fastapi-13, already done
+  Skipping tier 5 for fastapi-13 (gave up after 3 failed attempts)
+Processing fastapi_14...
+  Skipping tier 1 for fastapi-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-14 (conditional: Tier 2 not yet correct)
+Processing fastapi_15...
+  Skipping tier 1 for fastapi-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-15, already done
+  Skipping tier 5 for fastapi-15 (conditional: Tier 2 not yet correct)
+Processing fastapi_16...
+  Skipping tier 1 for fastapi-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-16, already done
+  Skipping tier 5 for fastapi-16 (conditional: Tier 2 not yet correct)
+Processing fastapi_2...
+  Skipping tier 1 for fastapi-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-2 (conditional: Tier 2 not yet correct)
+Processing fastapi_3...
+  Skipping tier 1 for fastapi-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-3 (conditional: Tier 2 not yet correct)
+Processing fastapi_4...
+  Skipping tier 1 for fastapi-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-4 (conditional: Tier 2 not yet correct)
+Processing fastapi_5...
+  Skipping tier 1 for fastapi-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-5 (conditional: Tier 2 not yet correct)
+Processing fastapi_6...
+  Skipping tier 1 for fastapi-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for fastapi-6 (conditional: Tier 2 not yet correct)
+Processing fastapi_7...
+  Skipping tier 1 for fastapi-7, already done
+  Skipping tier 2 for fastapi-7, already done
+  Skipping tier 3 for fastapi-7 (no code)
+  Skipping tier 5 for fastapi-7, already done
+Processing fastapi_8...
+  Skipping tier 1 for fastapi-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-8, already done
+  Skipping tier 5 for fastapi-8 (conditional: Tier 2 not yet correct)
+Processing fastapi_9...
+  Skipping tier 1 for fastapi-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for fastapi-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for fastapi-9, already done
+  Skipping tier 5 for fastapi-9 (conditional: Tier 2 not yet correct)
+Processing httpie_1...
+  Skipping tier 1 for httpie-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for httpie-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for httpie-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for httpie-1 (conditional: Tier 2 not yet correct)
+Processing httpie_2...
+  Skipping tier 1 for httpie-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for httpie-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for httpie-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for httpie-2 (conditional: Tier 2 not yet correct)
+Processing httpie_3...
+  Skipping tier 1 for httpie-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for httpie-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for httpie-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for httpie-3 (conditional: Tier 2 not yet correct)
+Processing httpie_4...
+  Skipping tier 1 for httpie-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for httpie-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for httpie-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for httpie-4 (conditional: Tier 2 not yet correct)
+Processing httpie_5...
+  Skipping tier 1 for httpie-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for httpie-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for httpie-5, already done
+  Skipping tier 5 for httpie-5, already done
+Processing keras_1...
+  Skipping tier 1 for keras-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-1 (conditional: Tier 2 not yet correct)
+Processing keras_10...
+  Skipping tier 1 for keras-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-10, already done
+  Skipping tier 5 for keras-10 (conditional: Tier 2 not yet correct)
+Processing keras_11...
+  Skipping tier 1 for keras-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-11 (conditional: Tier 2 not yet correct)
+Processing keras_13...
+  Skipping tier 1 for keras-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-13, already done
+  Skipping tier 3 for keras-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-13 (gave up after 3 failed attempts)
+Processing keras_14...
+  Skipping tier 1 for keras-14, already done
+  Skipping tier 2 for keras-14, already done
+  Skipping tier 3 for keras-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-14 (gave up after 3 failed attempts)
+Processing keras_15...
+  Skipping tier 1 for keras-15, already done
+  Skipping tier 2 for keras-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-15 (conditional: Tier 2 not yet correct)
+Processing keras_16...
+  Skipping tier 1 for keras-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-16, already done
+  Skipping tier 5 for keras-16 (conditional: Tier 2 not yet correct)
+Processing keras_17...
+  Skipping tier 1 for keras-17, already done
+  Skipping tier 2 for keras-17, already done
+  Skipping tier 3 for keras-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-17, already done
+Processing keras_18...
+  Skipping tier 1 for keras-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-18, already done
+  Skipping tier 5 for keras-18 (conditional: Tier 2 not yet correct)
+Processing keras_19...
+  Skipping tier 1 for keras-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-19 (conditional: Tier 2 not yet correct)
+Processing keras_2...
+  Skipping tier 1 for keras-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-2 (conditional: Tier 2 not yet correct)
+Processing keras_20...
+  Skipping tier 1 for keras-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-20 (conditional: Tier 2 not yet correct)
+Processing keras_21...
+  Skipping tier 1 for keras-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-21 (conditional: Tier 2 not yet correct)
+Processing keras_22...
+  Skipping tier 1 for keras-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-22, already done
+  Skipping tier 5 for keras-22 (conditional: Tier 2 not yet correct)
+Processing keras_23...
+  Skipping tier 1 for keras-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-23, already done
+  Skipping tier 5 for keras-23 (conditional: Tier 2 not yet correct)
+Processing keras_24...
+  Skipping tier 1 for keras-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-24 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-24 (conditional: Tier 2 not yet correct)
+Processing keras_25...
+  Skipping tier 1 for keras-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-25, already done
+  Skipping tier 5 for keras-25 (conditional: Tier 2 not yet correct)
+Processing keras_26...
+  Skipping tier 1 for keras-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-26, already done
+  Skipping tier 5 for keras-26 (conditional: Tier 2 not yet correct)
+Processing keras_27...
+  Skipping tier 1 for keras-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-27 (conditional: Tier 2 not yet correct)
+Processing keras_28...
+  Skipping tier 1 for keras-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-28, already done
+  Skipping tier 5 for keras-28 (conditional: Tier 2 not yet correct)
+Processing keras_29...
+  Skipping tier 1 for keras-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-29 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-29 (conditional: Tier 2 not yet correct)
+Processing keras_3...
+  Skipping tier 1 for keras-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-3, already done
+  Skipping tier 5 for keras-3 (conditional: Tier 2 not yet correct)
+Processing keras_30...
+  Skipping tier 1 for keras-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-30, already done
+  Skipping tier 5 for keras-30 (conditional: Tier 2 not yet correct)
+Processing keras_31...
+  Skipping tier 1 for keras-31 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-31 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-31, already done
+  Skipping tier 5 for keras-31 (conditional: Tier 2 not yet correct)
+Processing keras_32...
+  Skipping tier 1 for keras-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-32, already done
+  Skipping tier 5 for keras-32 (conditional: Tier 2 not yet correct)
+Processing keras_33...
+  Skipping tier 1 for keras-33 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-33 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-33, already done
+  Skipping tier 5 for keras-33 (conditional: Tier 2 not yet correct)
+Processing keras_34...
+  Skipping tier 1 for keras-34 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-34 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-34 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-34 (conditional: Tier 2 not yet correct)
+Processing keras_35...
+  Skipping tier 1 for keras-35 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-35 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-35 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-35 (conditional: Tier 2 not yet correct)
+Processing keras_36...
+  Skipping tier 1 for keras-36 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-36 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-36, already done
+  Skipping tier 5 for keras-36 (conditional: Tier 2 not yet correct)
+Processing keras_37...
+  Skipping tier 1 for keras-37 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-37 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-37 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-37 (conditional: Tier 2 not yet correct)
+Processing keras_38...
+  Skipping tier 1 for keras-38 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-38 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-38 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-38 (conditional: Tier 2 not yet correct)
+Processing keras_39...
+  Skipping tier 1 for keras-39 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-39 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-39 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-39 (conditional: Tier 2 not yet correct)
+Processing keras_4...
+  Skipping tier 1 for keras-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-4 (conditional: Tier 2 not yet correct)
+Processing keras_40...
+  Skipping tier 1 for keras-40 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-40 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-40 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-40 (conditional: Tier 2 not yet correct)
+Processing keras_41...
+  Skipping tier 1 for keras-41 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-41 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-41, already done
+  Skipping tier 5 for keras-41, already done
+Processing keras_42...
+  Skipping tier 1 for keras-42 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-42 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-42 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for keras-42 (conditional: Tier 2 not yet correct)
+Processing keras_43...
+  Skipping tier 1 for keras-43 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-43 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-43, already done
+  Skipping tier 5 for keras-43 (conditional: Tier 2 not yet correct)
+Processing keras_44...
+  Skipping tier 1 for keras-44 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-44 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-44, already done
+  Skipping tier 5 for keras-44 (conditional: Tier 2 not yet correct)
+Processing keras_45...
+  Skipping tier 1 for keras-45, already done
+  Skipping tier 2 for keras-45 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-45, already done
+  Skipping tier 5 for keras-45 (conditional: Tier 2 not yet correct)
+Processing keras_5...
+  Skipping tier 1 for keras-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-5, already done
+  Skipping tier 5 for keras-5 (conditional: Tier 2 not yet correct)
+Processing keras_6...
+  Skipping tier 1 for keras-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-6, already done
+  Skipping tier 5 for keras-6 (conditional: Tier 2 not yet correct)
+Processing keras_7...
+  Skipping tier 1 for keras-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-7, already done
+  Skipping tier 5 for keras-7 (conditional: Tier 2 not yet correct)
+Processing keras_8...
+  Skipping tier 1 for keras-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-8, already done
+  Skipping tier 5 for keras-8 (conditional: Tier 2 not yet correct)
+Processing keras_9...
+  Skipping tier 1 for keras-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for keras-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for keras-9, already done
+  Skipping tier 5 for keras-9 (conditional: Tier 2 not yet correct)
+Processing luigi_1...
+  Skipping tier 1 for luigi-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-1 (conditional: Tier 2 not yet correct)
+Processing luigi_10...
+  Skipping tier 1 for luigi-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-10 (conditional: Tier 2 not yet correct)
+Processing luigi_11...
+  Skipping tier 1 for luigi-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-11 (conditional: Tier 2 not yet correct)
+Processing luigi_12...
+  Skipping tier 1 for luigi-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-12 (conditional: Tier 2 not yet correct)
+Processing luigi_13...
+  Skipping tier 1 for luigi-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-13, already done
+  Skipping tier 3 for luigi-13, already done
+  Skipping tier 5 for luigi-13, already done
+Processing luigi_14...
+  Skipping tier 1 for luigi-14, already done
+  Skipping tier 2 for luigi-14, already done
+  Skipping tier 3 for luigi-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-14 (gave up after 3 failed attempts)
+Processing luigi_15...
+  Skipping tier 1 for luigi-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-15 (conditional: Tier 2 not yet correct)
+Processing luigi_16...
+  Skipping tier 1 for luigi-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-16 (conditional: Tier 2 not yet correct)
+Processing luigi_17...
+  Skipping tier 1 for luigi-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-17 (conditional: Tier 2 not yet correct)
+Processing luigi_18...
+  Skipping tier 1 for luigi-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-18 (conditional: Tier 2 not yet correct)
+Processing luigi_19...
+  Skipping tier 1 for luigi-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-19 (conditional: Tier 2 not yet correct)
+Processing luigi_2...
+  Skipping tier 1 for luigi-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-2, already done
+  Skipping tier 5 for luigi-2 (conditional: Tier 2 not yet correct)
+Processing luigi_20...
+  Skipping tier 1 for luigi-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-20, already done
+  Skipping tier 5 for luigi-20 (conditional: Tier 2 not yet correct)
+Processing luigi_21...
+  Skipping tier 1 for luigi-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-21, already done
+  Skipping tier 5 for luigi-21 (conditional: Tier 2 not yet correct)
+Processing luigi_22...
+  Skipping tier 1 for luigi-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-22 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-22 (conditional: Tier 2 not yet correct)
+Processing luigi_23...
+  Skipping tier 1 for luigi-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-23 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-23 (conditional: Tier 2 not yet correct)
+Processing luigi_24...
+  Skipping tier 1 for luigi-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-24, already done
+  Skipping tier 3 for luigi-24, already done
+  Skipping tier 5 for luigi-24 (gave up after 3 failed attempts)
+Processing luigi_25...
+  Skipping tier 1 for luigi-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-25 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-25 (conditional: Tier 2 not yet correct)
+Processing luigi_26...
+  Skipping tier 1 for luigi-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-26, already done
+  Skipping tier 5 for luigi-26 (conditional: Tier 2 not yet correct)
+Processing luigi_27...
+  Skipping tier 1 for luigi-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-27, already done
+  Skipping tier 5 for luigi-27 (conditional: Tier 2 not yet correct)
+Processing luigi_28...
+  Skipping tier 1 for luigi-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-28, already done
+  Skipping tier 5 for luigi-28 (conditional: Tier 2 not yet correct)
+Processing luigi_29...
+  Skipping tier 1 for luigi-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-29 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-29 (conditional: Tier 2 not yet correct)
+Processing luigi_3...
+  Skipping tier 1 for luigi-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-3, already done
+  Skipping tier 5 for luigi-3 (conditional: Tier 2 not yet correct)
+Processing luigi_30...
+  Skipping tier 1 for luigi-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-30 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-30 (conditional: Tier 2 not yet correct)
+Processing luigi_31...
+  Skipping tier 1 for luigi-31 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-31 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-31 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-31 (conditional: Tier 2 not yet correct)
+Processing luigi_32...
+  Skipping tier 1 for luigi-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-32 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-32 (conditional: Tier 2 not yet correct)
+Processing luigi_33...
+  Skipping tier 1 for luigi-33 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-33 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-33, already done
+  Skipping tier 5 for luigi-33 (conditional: Tier 2 not yet correct)
+Processing luigi_4...
+  Skipping tier 1 for luigi-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-4 (conditional: Tier 2 not yet correct)
+Processing luigi_5...
+  Skipping tier 1 for luigi-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-5 (conditional: Tier 2 not yet correct)
+Processing luigi_6...
+  Skipping tier 1 for luigi-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-6, already done
+  Skipping tier 5 for luigi-6 (conditional: Tier 2 not yet correct)
+Processing luigi_7...
+  Skipping tier 1 for luigi-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-7 (conditional: Tier 2 not yet correct)
+Processing luigi_8...
+  Skipping tier 1 for luigi-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-8 (conditional: Tier 2 not yet correct)
+Processing luigi_9...
+  Skipping tier 1 for luigi-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for luigi-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for luigi-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for luigi-9 (conditional: Tier 2 not yet correct)
+Processing matplotlib_1...
+  Skipping tier 1 for matplotlib-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-1 (conditional: Tier 2 not yet correct)
+Processing matplotlib_10...
+  Skipping tier 1 for matplotlib-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-10 (conditional: Tier 2 not yet correct)
+Processing matplotlib_11...
+  Skipping tier 1 for matplotlib-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-11 (conditional: Tier 2 not yet correct)
+Processing matplotlib_12...
+  Skipping tier 1 for matplotlib-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-12 (conditional: Tier 2 not yet correct)
+Processing matplotlib_13...
+  Skipping tier 1 for matplotlib-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-13 (conditional: Tier 2 not yet correct)
+Processing matplotlib_14...
+  Skipping tier 1 for matplotlib-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-14 (conditional: Tier 2 not yet correct)
+Processing matplotlib_15...
+  Skipping tier 1 for matplotlib-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-15, already done
+  Skipping tier 3 for matplotlib-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-15 (gave up after 3 failed attempts)
+Processing matplotlib_16...
+  Skipping tier 1 for matplotlib-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-16 (conditional: Tier 2 not yet correct)
+Processing matplotlib_17...
+  Skipping tier 1 for matplotlib-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-17 (conditional: Tier 2 not yet correct)
+Processing matplotlib_18...
+  Skipping tier 1 for matplotlib-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-18 (conditional: Tier 2 not yet correct)
+Processing matplotlib_19...
+  Skipping tier 1 for matplotlib-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-19 (conditional: Tier 2 not yet correct)
+Processing matplotlib_2...
+  Skipping tier 1 for matplotlib-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-2 (conditional: Tier 2 not yet correct)
+Processing matplotlib_20...
+  Skipping tier 1 for matplotlib-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-20, already done
+  Skipping tier 5 for matplotlib-20 (conditional: Tier 2 not yet correct)
+Processing matplotlib_21...
+  Skipping tier 1 for matplotlib-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-21 (conditional: Tier 2 not yet correct)
+Processing matplotlib_22...
+  Skipping tier 1 for matplotlib-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-22, already done
+  Skipping tier 5 for matplotlib-22 (conditional: Tier 2 not yet correct)
+Processing matplotlib_23...
+  Skipping tier 1 for matplotlib-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-23 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-23 (conditional: Tier 2 not yet correct)
+Processing matplotlib_24...
+  Skipping tier 1 for matplotlib-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-24 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-24 (conditional: Tier 2 not yet correct)
+Processing matplotlib_25...
+  Skipping tier 1 for matplotlib-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-25, already done
+  Skipping tier 5 for matplotlib-25 (conditional: Tier 2 not yet correct)
+Processing matplotlib_26...
+  Skipping tier 1 for matplotlib-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-26 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-26 (conditional: Tier 2 not yet correct)
+Processing matplotlib_27...
+  Skipping tier 1 for matplotlib-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-27 (conditional: Tier 2 not yet correct)
+Processing matplotlib_28...
+  Skipping tier 1 for matplotlib-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-28, already done
+  Skipping tier 5 for matplotlib-28 (conditional: Tier 2 not yet correct)
+Processing matplotlib_29...
+  Skipping tier 1 for matplotlib-29, already done
+  Skipping tier 2 for matplotlib-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-29 (gave up after 3 failed attempts)
+  Skipping tier 5 for matplotlib-29 (conditional: Tier 2 not yet correct)
+Processing matplotlib_3...
+  Skipping tier 1 for matplotlib-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-3 (conditional: Tier 2 not yet correct)
+Processing matplotlib_30...
+  Skipping tier 1 for matplotlib-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-30, already done
+  Skipping tier 5 for matplotlib-30 (conditional: Tier 2 not yet correct)
+Processing matplotlib_4...
+  Skipping tier 1 for matplotlib-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-4 (conditional: Tier 2 not yet correct)
+Processing matplotlib_5...
+  Skipping tier 1 for matplotlib-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-5 (conditional: Tier 2 not yet correct)
+Processing matplotlib_6...
+  Skipping tier 1 for matplotlib-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-6 (conditional: Tier 2 not yet correct)
+Processing matplotlib_7...
+  Skipping tier 1 for matplotlib-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-7 (conditional: Tier 2 not yet correct)
+Processing matplotlib_8...
+  Skipping tier 1 for matplotlib-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-8 (conditional: Tier 2 not yet correct)
+Processing matplotlib_9...
+  Skipping tier 1 for matplotlib-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for matplotlib-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for matplotlib-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for matplotlib-9 (conditional: Tier 2 not yet correct)
+Processing pandas_1...
+  Skipping tier 1 for pandas-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-1 (conditional: Tier 2 not yet correct)
+Processing pandas_10...
+  Skipping tier 1 for pandas-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-10 (conditional: Tier 2 not yet correct)
+Processing pandas_100...
+  Skipping tier 1 for pandas-100 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-100 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-100, already done
+  Skipping tier 5 for pandas-100 (conditional: Tier 2 not yet correct)
+Processing pandas_101...
+  Skipping tier 1 for pandas-101 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-101 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-101 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-101 (conditional: Tier 2 not yet correct)
+Processing pandas_102...
+  Skipping tier 1 for pandas-102 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-102 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-102, already done
+  Skipping tier 5 for pandas-102 (conditional: Tier 2 not yet correct)
+Processing pandas_103...
+  Skipping tier 1 for pandas-103 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-103 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-103 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-103 (conditional: Tier 2 not yet correct)
+Processing pandas_104...
+  Skipping tier 1 for pandas-104 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-104 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-104, already done
+  Skipping tier 5 for pandas-104 (conditional: Tier 2 not yet correct)
+Processing pandas_105...
+  Skipping tier 1 for pandas-105 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-105 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-105, already done
+  Skipping tier 5 for pandas-105 (conditional: Tier 2 not yet correct)
+Processing pandas_106...
+  Skipping tier 1 for pandas-106 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-106 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-106 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-106 (conditional: Tier 2 not yet correct)
+Processing pandas_107...
+  Skipping tier 1 for pandas-107 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-107 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-107, already done
+  Skipping tier 5 for pandas-107, already done
+Processing pandas_108...
+  Skipping tier 1 for pandas-108 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-108 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-108 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-108 (conditional: Tier 2 not yet correct)
+Processing pandas_109...
+  Skipping tier 1 for pandas-109 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-109 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-109, already done
+  Skipping tier 5 for pandas-109 (conditional: Tier 2 not yet correct)
+Processing pandas_11...
+  Skipping tier 1 for pandas-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-11 (conditional: Tier 2 not yet correct)
+Processing pandas_110...
+  Skipping tier 1 for pandas-110 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-110 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-110 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-110 (conditional: Tier 2 not yet correct)
+Processing pandas_111...
+  Skipping tier 1 for pandas-111 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-111 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-111 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-111 (conditional: Tier 2 not yet correct)
+Processing pandas_112...
+  Skipping tier 1 for pandas-112 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-112 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-112 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-112 (conditional: Tier 2 not yet correct)
+Processing pandas_113...
+  Skipping tier 1 for pandas-113 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-113, already done
+  Skipping tier 3 for pandas-113, already done
+  Skipping tier 5 for pandas-113 (conditional: Tier 2 not yet correct)
+Processing pandas_114...
+  Skipping tier 1 for pandas-114 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-114 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-114 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-114 (conditional: Tier 2 not yet correct)
+Processing pandas_115...
+  Skipping tier 1 for pandas-115 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-115 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-115 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-115 (conditional: Tier 2 not yet correct)
+Processing pandas_116...
+  Skipping tier 1 for pandas-116 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-116 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-116 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-116 (conditional: Tier 2 not yet correct)
+Processing pandas_117...
+  Skipping tier 1 for pandas-117 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-117 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-117 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-117 (conditional: Tier 2 not yet correct)
+Processing pandas_118...
+  Skipping tier 1 for pandas-118 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-118 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-118, already done
+  Skipping tier 5 for pandas-118 (conditional: Tier 2 not yet correct)
+Processing pandas_119...
+  Skipping tier 1 for pandas-119 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-119 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-119 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-119 (conditional: Tier 2 not yet correct)
+Processing pandas_12...
+  Skipping tier 1 for pandas-12, already done
+  Skipping tier 2 for pandas-12, already done
+  Skipping tier 3 for pandas-12 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-12, already done
+Processing pandas_120...
+  Skipping tier 1 for pandas-120 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-120 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-120 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-120 (conditional: Tier 2 not yet correct)
+Processing pandas_121...
+  Skipping tier 1 for pandas-121 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-121 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-121 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-121 (conditional: Tier 2 not yet correct)
+Processing pandas_122...
+  Skipping tier 1 for pandas-122 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-122 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-122, already done
+  Skipping tier 5 for pandas-122 (conditional: Tier 2 not yet correct)
+Processing pandas_123...
+  Skipping tier 1 for pandas-123 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-123 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-123 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-123 (conditional: Tier 2 not yet correct)
+Processing pandas_124...
+  Skipping tier 1 for pandas-124 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-124 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-124 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-124, already done
+Processing pandas_125...
+  Skipping tier 1 for pandas-125 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-125 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-125, already done
+  Skipping tier 5 for pandas-125 (conditional: Tier 2 not yet correct)
+Processing pandas_126...
+  Skipping tier 1 for pandas-126 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-126 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-126, already done
+  Skipping tier 5 for pandas-126 (conditional: Tier 2 not yet correct)
+Processing pandas_127...
+  Skipping tier 1 for pandas-127 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-127 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-127 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-127 (conditional: Tier 2 not yet correct)
+Processing pandas_128...
+  Skipping tier 1 for pandas-128 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-128 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-128, already done
+  Skipping tier 5 for pandas-128 (conditional: Tier 2 not yet correct)
+Processing pandas_129...
+  Skipping tier 1 for pandas-129 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-129 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-129 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-129 (conditional: Tier 2 not yet correct)
+Processing pandas_13...
+  Skipping tier 1 for pandas-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-13 (conditional: Tier 2 not yet correct)
+Processing pandas_130...
+  Skipping tier 1 for pandas-130 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-130 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-130 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-130 (conditional: Tier 2 not yet correct)
+Processing pandas_131...
+  Skipping tier 1 for pandas-131 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-131 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-131 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-131 (conditional: Tier 2 not yet correct)
+Processing pandas_132...
+  Skipping tier 1 for pandas-132 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-132 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-132, already done
+  Skipping tier 5 for pandas-132 (conditional: Tier 2 not yet correct)
+Processing pandas_133...
+  Skipping tier 1 for pandas-133 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-133 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-133 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-133 (conditional: Tier 2 not yet correct)
+Processing pandas_134...
+  Skipping tier 1 for pandas-134 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-134 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-134 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-134 (conditional: Tier 2 not yet correct)
+Processing pandas_135...
+  Skipping tier 1 for pandas-135 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-135 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-135, already done
+  Skipping tier 5 for pandas-135 (conditional: Tier 2 not yet correct)
+Processing pandas_136...
+  Skipping tier 1 for pandas-136 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-136 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-136 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-136 (conditional: Tier 2 not yet correct)
+Processing pandas_137...
+  Skipping tier 1 for pandas-137 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-137 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-137, already done
+  Skipping tier 5 for pandas-137 (conditional: Tier 2 not yet correct)
+Processing pandas_138...
+  Skipping tier 1 for pandas-138 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-138, already done
+  Skipping tier 3 for pandas-138 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-138 (conditional: Tier 2 not yet correct)
+Processing pandas_139...
+  Skipping tier 1 for pandas-139 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-139 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-139 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-139 (conditional: Tier 2 not yet correct)
+Processing pandas_14...
+  Skipping tier 1 for pandas-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-14 (conditional: Tier 2 not yet correct)
+Processing pandas_140...
+  Skipping tier 1 for pandas-140 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-140 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-140 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-140 (conditional: Tier 2 not yet correct)
+Processing pandas_141...
+  Skipping tier 1 for pandas-141 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-141 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-141, already done
+  Skipping tier 5 for pandas-141 (conditional: Tier 2 not yet correct)
+Processing pandas_142...
+  Skipping tier 1 for pandas-142 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-142 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-142 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-142 (conditional: Tier 2 not yet correct)
+Processing pandas_143...
+  Skipping tier 1 for pandas-143 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-143 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-143, already done
+  Skipping tier 5 for pandas-143 (conditional: Tier 2 not yet correct)
+Processing pandas_144...
+  Skipping tier 1 for pandas-144 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-144 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-144, already done
+  Skipping tier 5 for pandas-144 (conditional: Tier 2 not yet correct)
+Processing pandas_145...
+  Skipping tier 1 for pandas-145 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-145 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-145 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-145 (conditional: Tier 2 not yet correct)
+Processing pandas_146...
+  Skipping tier 1 for pandas-146 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-146 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-146 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-146 (conditional: Tier 2 not yet correct)
+Processing pandas_147...
+  Skipping tier 1 for pandas-147 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-147 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-147 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-147 (conditional: Tier 2 not yet correct)
+Processing pandas_148...
+  Skipping tier 1 for pandas-148, already done
+  Skipping tier 2 for pandas-148, already done
+  Skipping tier 3 for pandas-148, already done
+  Skipping tier 5 for pandas-148 (gave up after 3 failed attempts)
+Processing pandas_149...
+  Skipping tier 1 for pandas-149 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-149 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-149, already done
+  Skipping tier 5 for pandas-149 (conditional: Tier 2 not yet correct)
+Processing pandas_15...
+  Skipping tier 1 for pandas-15, already done
+  Skipping tier 2 for pandas-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-15 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-15 (conditional: Tier 2 not yet correct)
+Processing pandas_150...
+  Skipping tier 1 for pandas-150 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-150 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-150 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-150 (conditional: Tier 2 not yet correct)
+Processing pandas_151...
+  Skipping tier 1 for pandas-151 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-151 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-151 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-151 (conditional: Tier 2 not yet correct)
+Processing pandas_152...
+  Skipping tier 1 for pandas-152 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-152 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-152 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-152 (conditional: Tier 2 not yet correct)
+Processing pandas_153...
+  Skipping tier 1 for pandas-153, already done
+  Skipping tier 2 for pandas-153 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-153 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-153 (conditional: Tier 2 not yet correct)
+Processing pandas_154...
+  Skipping tier 1 for pandas-154, already done
+  Skipping tier 2 for pandas-154, already done
+  Skipping tier 3 for pandas-154 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-154, already done
+Processing pandas_155...
+  Skipping tier 1 for pandas-155 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-155 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-155 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-155 (conditional: Tier 2 not yet correct)
+Processing pandas_156...
+  Skipping tier 1 for pandas-156 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-156 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-156 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-156 (conditional: Tier 2 not yet correct)
+Processing pandas_157...
+  Skipping tier 1 for pandas-157 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-157, already done
+  Skipping tier 3 for pandas-157, already done
+  Skipping tier 5 for pandas-157 (conditional: Tier 2 not yet correct)
+Processing pandas_158...
+  Skipping tier 1 for pandas-158 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-158 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-158, already done
+  Skipping tier 5 for pandas-158 (conditional: Tier 2 not yet correct)
+Processing pandas_159...
+  Skipping tier 1 for pandas-159, already done
+  Skipping tier 2 for pandas-159, already done
+  Skipping tier 3 for pandas-159, already done
+  Skipping tier 5 for pandas-159 (conditional: Tier 2 not yet correct)
+Processing pandas_16...
+  Skipping tier 1 for pandas-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-16 (conditional: Tier 2 not yet correct)
+Processing pandas_160...
+  Skipping tier 1 for pandas-160 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-160 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-160 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-160 (conditional: Tier 2 not yet correct)
+Processing pandas_161...
+  Skipping tier 1 for pandas-161 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-161 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-161, already done
+  Skipping tier 5 for pandas-161 (conditional: Tier 2 not yet correct)
+Processing pandas_162...
+  Skipping tier 1 for pandas-162 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-162 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-162 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-162 (conditional: Tier 2 not yet correct)
+Processing pandas_163...
+  Skipping tier 1 for pandas-163 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-163 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-163 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-163 (conditional: Tier 2 not yet correct)
+Processing pandas_164...
+  Skipping tier 1 for pandas-164 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-164 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-164 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-164 (conditional: Tier 2 not yet correct)
+Processing pandas_165...
+  Skipping tier 1 for pandas-165 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-165 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-165 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-165 (conditional: Tier 2 not yet correct)
+Processing pandas_166...
+  Skipping tier 1 for pandas-166 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-166 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-166, already done
+  Skipping tier 5 for pandas-166 (conditional: Tier 2 not yet correct)
+Processing pandas_167...
+  Skipping tier 1 for pandas-167 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-167 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-167 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-167 (conditional: Tier 2 not yet correct)
+Processing pandas_168...
+  Skipping tier 1 for pandas-168 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-168 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-168 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-168 (conditional: Tier 2 not yet correct)
+Processing pandas_169...
+  Skipping tier 1 for pandas-169 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-169 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-169, already done
+  Skipping tier 5 for pandas-169 (conditional: Tier 2 not yet correct)
+Processing pandas_17...
+  Skipping tier 1 for pandas-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-17 (conditional: Tier 2 not yet correct)
+Processing pandas_18...
+  Skipping tier 1 for pandas-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-18 (conditional: Tier 2 not yet correct)
+Processing pandas_19...
+  Skipping tier 1 for pandas-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-19, already done
+  Skipping tier 5 for pandas-19 (conditional: Tier 2 not yet correct)
+Processing pandas_2...
+  Skipping tier 1 for pandas-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-2, already done
+  Skipping tier 5 for pandas-2 (conditional: Tier 2 not yet correct)
+Processing pandas_20...
+  Skipping tier 1 for pandas-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-20 (conditional: Tier 2 not yet correct)
+Processing pandas_21...
+  Skipping tier 1 for pandas-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-21 (conditional: Tier 2 not yet correct)
+Processing pandas_22...
+  Skipping tier 1 for pandas-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-22 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-22 (conditional: Tier 2 not yet correct)
+Processing pandas_23...
+  Skipping tier 1 for pandas-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-23 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-23 (conditional: Tier 2 not yet correct)
+Processing pandas_24...
+  Skipping tier 1 for pandas-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-24 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-24 (conditional: Tier 2 not yet correct)
+Processing pandas_25...
+  Skipping tier 1 for pandas-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-25, already done
+  Skipping tier 5 for pandas-25 (conditional: Tier 2 not yet correct)
+Processing pandas_26...
+  Skipping tier 1 for pandas-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-26, already done
+  Skipping tier 5 for pandas-26 (conditional: Tier 2 not yet correct)
+Processing pandas_27...
+  Skipping tier 1 for pandas-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-27 (conditional: Tier 2 not yet correct)
+Processing pandas_28...
+  Skipping tier 1 for pandas-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-28 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-28 (conditional: Tier 2 not yet correct)
+Processing pandas_29...
+  Skipping tier 1 for pandas-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-29, already done
+  Skipping tier 5 for pandas-29 (conditional: Tier 2 not yet correct)
+Processing pandas_3...
+  Skipping tier 1 for pandas-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-3 (conditional: Tier 2 not yet correct)
+Processing pandas_30...
+  Skipping tier 1 for pandas-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-30, already done
+  Skipping tier 5 for pandas-30 (conditional: Tier 2 not yet correct)
+Processing pandas_31...
+  Skipping tier 1 for pandas-31, already done
+  Skipping tier 2 for pandas-31, already done
+  Skipping tier 3 for pandas-31, already done
+  Skipping tier 5 for pandas-31 (conditional: Tier 2 not yet correct)
+Processing pandas_32...
+  Skipping tier 1 for pandas-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-32, already done
+  Skipping tier 5 for pandas-32 (conditional: Tier 2 not yet correct)
+Processing pandas_33...
+  Skipping tier 1 for pandas-33 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-33 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-33 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-33 (conditional: Tier 2 not yet correct)
+Processing pandas_34...
+  Skipping tier 1 for pandas-34 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-34 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-34 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-34 (conditional: Tier 2 not yet correct)
+Processing pandas_35...
+  Skipping tier 1 for pandas-35 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-35 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-35, already done
+  Skipping tier 5 for pandas-35 (conditional: Tier 2 not yet correct)
+Processing pandas_36...
+  Skipping tier 1 for pandas-36, already done
+  Skipping tier 2 for pandas-36, already done
+  Skipping tier 3 for pandas-36 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-36 (conditional: Tier 2 not yet correct)
+Processing pandas_37...
+  Skipping tier 1 for pandas-37 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-37 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-37 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-37 (conditional: Tier 2 not yet correct)
+Processing pandas_38...
+  Skipping tier 1 for pandas-38 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-38 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-38 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-38 (conditional: Tier 2 not yet correct)
+Processing pandas_39...
+  Skipping tier 1 for pandas-39 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-39 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-39 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-39 (conditional: Tier 2 not yet correct)
+Processing pandas_4...
+  Skipping tier 1 for pandas-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-4 (conditional: Tier 2 not yet correct)
+Processing pandas_40...
+  Skipping tier 1 for pandas-40, already done
+  Skipping tier 2 for pandas-40 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-40 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-40 (conditional: Tier 2 not yet correct)
+Processing pandas_41...
+  Skipping tier 1 for pandas-41, already done
+  Skipping tier 2 for pandas-41, already done
+  Skipping tier 3 for pandas-41 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-41 (conditional: Tier 2 not yet correct)
+Processing pandas_42...
+  Skipping tier 1 for pandas-42 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-42 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-42 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-42 (conditional: Tier 2 not yet correct)
+Processing pandas_43...
+  Skipping tier 1 for pandas-43 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-43 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-43, already done
+  Skipping tier 5 for pandas-43 (conditional: Tier 2 not yet correct)
+Processing pandas_44...
+  Skipping tier 1 for pandas-44 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-44, already done
+  Skipping tier 3 for pandas-44 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-44 (conditional: Tier 2 not yet correct)
+Processing pandas_45...
+  Skipping tier 1 for pandas-45 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-45 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-45, already done
+  Skipping tier 5 for pandas-45 (conditional: Tier 2 not yet correct)
+Processing pandas_46...
+  Skipping tier 1 for pandas-46 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-46 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-46 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-46 (conditional: Tier 2 not yet correct)
+Processing pandas_47...
+  Skipping tier 1 for pandas-47 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-47 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-47 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-47, already done
+Processing pandas_48...
+  Skipping tier 1 for pandas-48 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-48 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-48 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-48 (conditional: Tier 2 not yet correct)
+Processing pandas_49...
+  Skipping tier 1 for pandas-49 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-49 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-49 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-49 (conditional: Tier 2 not yet correct)
+Processing pandas_5...
+  Skipping tier 1 for pandas-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-5 (conditional: Tier 2 not yet correct)
+Processing pandas_50...
+  Skipping tier 1 for pandas-50 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-50 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-50, already done
+  Skipping tier 5 for pandas-50 (conditional: Tier 2 not yet correct)
+Processing pandas_51...
+  Skipping tier 1 for pandas-51 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-51 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-51 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-51 (conditional: Tier 2 not yet correct)
+Processing pandas_52...
+  Skipping tier 1 for pandas-52 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-52 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-52 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-52 (conditional: Tier 2 not yet correct)
+Processing pandas_53...
+  Skipping tier 1 for pandas-53 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-53 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-53 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-53 (conditional: Tier 2 not yet correct)
+Processing pandas_54...
+  Skipping tier 1 for pandas-54 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-54 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-54 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-54 (conditional: Tier 2 not yet correct)
+Processing pandas_55...
+  Skipping tier 1 for pandas-55 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-55 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-55 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-55 (conditional: Tier 2 not yet correct)
+Processing pandas_56...
+  Skipping tier 1 for pandas-56 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-56 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-56 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-56, already done
+Processing pandas_57...
+  Skipping tier 1 for pandas-57 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-57 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-57 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-57 (conditional: Tier 2 not yet correct)
+Processing pandas_58...
+  Skipping tier 1 for pandas-58 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-58 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-58, already done
+  Skipping tier 5 for pandas-58 (conditional: Tier 2 not yet correct)
+Processing pandas_59...
+  Skipping tier 1 for pandas-59 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-59 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-59 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-59 (conditional: Tier 2 not yet correct)
+Processing pandas_6...
+  Skipping tier 1 for pandas-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-6 (conditional: Tier 2 not yet correct)
+Processing pandas_60...
+  Skipping tier 1 for pandas-60 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-60 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-60 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-60 (conditional: Tier 2 not yet correct)
+Processing pandas_61...
+  Skipping tier 1 for pandas-61 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-61 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-61 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-61, already done
+Processing pandas_62...
+  Skipping tier 1 for pandas-62 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-62 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-62 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-62 (conditional: Tier 2 not yet correct)
+Processing pandas_63...
+  Skipping tier 1 for pandas-63 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-63 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-63, already done
+  Skipping tier 5 for pandas-63 (conditional: Tier 2 not yet correct)
+Processing pandas_64...
+  Skipping tier 1 for pandas-64 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-64 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-64, already done
+  Skipping tier 5 for pandas-64 (conditional: Tier 2 not yet correct)
+Processing pandas_65...
+  Skipping tier 1 for pandas-65 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-65, already done
+  Skipping tier 3 for pandas-65 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-65 (conditional: Tier 2 not yet correct)
+Processing pandas_66...
+  Skipping tier 1 for pandas-66 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-66 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-66, already done
+  Skipping tier 5 for pandas-66 (conditional: Tier 2 not yet correct)
+Processing pandas_67...
+  Skipping tier 1 for pandas-67 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-67, already done
+  Skipping tier 3 for pandas-67 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-67 (conditional: Tier 2 not yet correct)
+Processing pandas_68...
+  Skipping tier 1 for pandas-68 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-68, already done
+  Skipping tier 3 for pandas-68, already done
+  Skipping tier 5 for pandas-68 (conditional: Tier 2 not yet correct)
+Processing pandas_69...
+  Skipping tier 1 for pandas-69 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-69 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-69 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-69 (conditional: Tier 2 not yet correct)
+Processing pandas_7...
+  Skipping tier 1 for pandas-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-7 (conditional: Tier 2 not yet correct)
+Processing pandas_70...
+  Skipping tier 1 for pandas-70 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-70 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-70 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-70 (conditional: Tier 2 not yet correct)
+Processing pandas_71...
+  Skipping tier 1 for pandas-71, already done
+  Skipping tier 2 for pandas-71, already done
+  Skipping tier 3 for pandas-71 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-71 (conditional: Tier 2 not yet correct)
+Processing pandas_72...
+  Skipping tier 1 for pandas-72 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-72 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-72 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-72 (conditional: Tier 2 not yet correct)
+Processing pandas_73...
+  Skipping tier 1 for pandas-73 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-73 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-73 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-73 (conditional: Tier 2 not yet correct)
+Processing pandas_74...
+  Skipping tier 1 for pandas-74 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-74 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-74 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-74 (conditional: Tier 2 not yet correct)
+Processing pandas_75...
+  Skipping tier 1 for pandas-75 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-75 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-75 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-75 (conditional: Tier 2 not yet correct)
+Processing pandas_76...
+  Skipping tier 1 for pandas-76 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-76 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-76, already done
+  Skipping tier 5 for pandas-76 (conditional: Tier 2 not yet correct)
+Processing pandas_77...
+  Skipping tier 1 for pandas-77 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-77 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-77 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-77 (conditional: Tier 2 not yet correct)
+Processing pandas_78...
+  Skipping tier 1 for pandas-78 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-78 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-78 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-78 (conditional: Tier 2 not yet correct)
+Processing pandas_79...
+  Skipping tier 1 for pandas-79, already done
+  Skipping tier 2 for pandas-79, already done
+  Skipping tier 3 for pandas-79 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-79 (conditional: Tier 2 not yet correct)
+Processing pandas_8...
+  Skipping tier 1 for pandas-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-8 (conditional: Tier 2 not yet correct)
+Processing pandas_80...
+  Skipping tier 1 for pandas-80 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-80 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-80, already done
+  Skipping tier 5 for pandas-80 (conditional: Tier 2 not yet correct)
+Processing pandas_81...
+  Skipping tier 1 for pandas-81 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-81, already done
+  Skipping tier 3 for pandas-81 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-81 (conditional: Tier 2 not yet correct)
+Processing pandas_82...
+  Skipping tier 1 for pandas-82 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-82 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-82 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-82 (conditional: Tier 2 not yet correct)
+Processing pandas_83...
+  Skipping tier 1 for pandas-83 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-83 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-83 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-83 (conditional: Tier 2 not yet correct)
+Processing pandas_84...
+  Skipping tier 1 for pandas-84 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-84 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-84, already done
+  Skipping tier 5 for pandas-84 (conditional: Tier 2 not yet correct)
+Processing pandas_85...
+  Skipping tier 1 for pandas-85 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-85 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-85 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-85 (conditional: Tier 2 not yet correct)
+Processing pandas_86...
+  Skipping tier 1 for pandas-86 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-86 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-86 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-86 (conditional: Tier 2 not yet correct)
+Processing pandas_87...
+  Skipping tier 1 for pandas-87 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-87 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-87 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-87 (conditional: Tier 2 not yet correct)
+Processing pandas_88...
+  Skipping tier 1 for pandas-88 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-88 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-88 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-88 (conditional: Tier 2 not yet correct)
+Processing pandas_89...
+  Skipping tier 1 for pandas-89 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-89 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-89, already done
+  Skipping tier 5 for pandas-89 (conditional: Tier 2 not yet correct)
+Processing pandas_9...
+  Skipping tier 1 for pandas-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-9, already done
+  Skipping tier 5 for pandas-9 (conditional: Tier 2 not yet correct)
+Processing pandas_90...
+  Skipping tier 1 for pandas-90, already done
+  Skipping tier 2 for pandas-90, already done
+  Skipping tier 3 for pandas-90 (gave up after 3 failed attempts)
+  Skipping tier 5 for pandas-90 (conditional: Tier 2 not yet correct)
+Processing pandas_91...
+  Skipping tier 1 for pandas-91 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-91 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-91 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-91 (conditional: Tier 2 not yet correct)
+Processing pandas_92...
+  Skipping tier 1 for pandas-92 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-92 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-92 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-92 (conditional: Tier 2 not yet correct)
+Processing pandas_93...
+  Skipping tier 1 for pandas-93 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-93 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-93 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-93 (conditional: Tier 2 not yet correct)
+Processing pandas_94...
+  Skipping tier 1 for pandas-94 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-94 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-94 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-94 (conditional: Tier 2 not yet correct)
+Processing pandas_95...
+  Skipping tier 1 for pandas-95 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-95 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-95 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-95 (conditional: Tier 2 not yet correct)
+Processing pandas_96...
+  Skipping tier 1 for pandas-96 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-96 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-96 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-96 (conditional: Tier 2 not yet correct)
+Processing pandas_97...
+  Skipping tier 1 for pandas-97 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-97 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-97, already done
+  Skipping tier 5 for pandas-97 (conditional: Tier 2 not yet correct)
+Processing pandas_98...
+  Skipping tier 1 for pandas-98 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-98 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-98 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-98 (conditional: Tier 2 not yet correct)
+Processing pandas_99...
+  Skipping tier 1 for pandas-99 (gave up after 3 failed attempts)
+  Skipping tier 2 for pandas-99 (gave up after 3 failed attempts)
+  Skipping tier 3 for pandas-99 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for pandas-99 (conditional: Tier 2 not yet correct)
+Processing sanic_1...
+  Skipping tier 1 for sanic-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for sanic-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for sanic-1, already done
+  Skipping tier 5 for sanic-1 (conditional: Tier 2 not yet correct)
+Processing sanic_2...
+  Skipping tier 1 for sanic-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for sanic-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for sanic-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for sanic-2 (conditional: Tier 2 not yet correct)
+Processing sanic_3...
+  Skipping tier 1 for sanic-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for sanic-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for sanic-3, already done
+  Skipping tier 5 for sanic-3 (conditional: Tier 2 not yet correct)
+Processing sanic_4...
+  Skipping tier 1 for sanic-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for sanic-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for sanic-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for sanic-4 (conditional: Tier 2 not yet correct)
+Processing sanic_5...
+  Skipping tier 1 for sanic-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for sanic-5, already done
+  Skipping tier 3 for sanic-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for sanic-5 (gave up after 3 failed attempts)
+Processing scrapy_1...
+  Skipping tier 1 for scrapy-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-1 (conditional: Tier 2 not yet correct)
+Processing scrapy_10...
+  Skipping tier 1 for scrapy-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-10 (conditional: Tier 2 not yet correct)
+Processing scrapy_11...
+  Skipping tier 1 for scrapy-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-11 (conditional: Tier 2 not yet correct)
+Processing scrapy_12...
+  Skipping tier 1 for scrapy-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-12, already done
+  Skipping tier 5 for scrapy-12, already done
+Processing scrapy_13...
+  Skipping tier 1 for scrapy-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-13, already done
+  Skipping tier 5 for scrapy-13 (conditional: Tier 2 not yet correct)
+Processing scrapy_14...
+  Skipping tier 1 for scrapy-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-14 (conditional: Tier 2 not yet correct)
+Processing scrapy_15...
+  Skipping tier 1 for scrapy-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-15, already done
+  Skipping tier 5 for scrapy-15 (conditional: Tier 2 not yet correct)
+Processing scrapy_16...
+  Skipping tier 1 for scrapy-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-16 (conditional: Tier 2 not yet correct)
+Processing scrapy_17...
+  Skipping tier 1 for scrapy-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-17, already done
+  Skipping tier 5 for scrapy-17 (conditional: Tier 2 not yet correct)
+Processing scrapy_18...
+  Skipping tier 1 for scrapy-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-18 (conditional: Tier 2 not yet correct)
+Processing scrapy_19...
+  Skipping tier 1 for scrapy-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-19 (conditional: Tier 2 not yet correct)
+Processing scrapy_2...
+  Skipping tier 1 for scrapy-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-2 (conditional: Tier 2 not yet correct)
+Processing scrapy_20...
+  Skipping tier 1 for scrapy-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-20 (conditional: Tier 2 not yet correct)
+Processing scrapy_21...
+  Skipping tier 1 for scrapy-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-21, already done
+  Skipping tier 5 for scrapy-21 (conditional: Tier 2 not yet correct)
+Processing scrapy_22...
+  Skipping tier 1 for scrapy-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-22 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-22 (conditional: Tier 2 not yet correct)
+Processing scrapy_23...
+  Skipping tier 1 for scrapy-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-23, already done
+  Skipping tier 5 for scrapy-23 (conditional: Tier 2 not yet correct)
+Processing scrapy_24...
+  Skipping tier 1 for scrapy-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-24, already done
+  Skipping tier 5 for scrapy-24 (conditional: Tier 2 not yet correct)
+Processing scrapy_25...
+  Skipping tier 1 for scrapy-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-25, already done
+  Skipping tier 5 for scrapy-25 (conditional: Tier 2 not yet correct)
+Processing scrapy_26...
+  Skipping tier 1 for scrapy-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-26 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-26 (conditional: Tier 2 not yet correct)
+Processing scrapy_27...
+  Skipping tier 1 for scrapy-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-27 (conditional: Tier 2 not yet correct)
+Processing scrapy_28...
+  Skipping tier 1 for scrapy-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-28 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-28 (conditional: Tier 2 not yet correct)
+Processing scrapy_29...
+  Skipping tier 1 for scrapy-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-29 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-29 (conditional: Tier 2 not yet correct)
+Processing scrapy_3...
+  Skipping tier 1 for scrapy-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-3 (conditional: Tier 2 not yet correct)
+Processing scrapy_30...
+  Skipping tier 1 for scrapy-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-30 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-30 (conditional: Tier 2 not yet correct)
+Processing scrapy_31...
+  Skipping tier 1 for scrapy-31 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-31 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-31 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-31 (conditional: Tier 2 not yet correct)
+Processing scrapy_32...
+  Skipping tier 1 for scrapy-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-32 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-32 (conditional: Tier 2 not yet correct)
+Processing scrapy_33...
+  Skipping tier 1 for scrapy-33 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-33 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-33 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-33 (conditional: Tier 2 not yet correct)
+Processing scrapy_34...
+  Skipping tier 1 for scrapy-34 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-34 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-34 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-34 (conditional: Tier 2 not yet correct)
+Processing scrapy_35...
+  Skipping tier 1 for scrapy-35 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-35 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-35 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-35 (conditional: Tier 2 not yet correct)
+Processing scrapy_36...
+  Skipping tier 1 for scrapy-36 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-36 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-36 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-36 (conditional: Tier 2 not yet correct)
+Processing scrapy_37...
+  Skipping tier 1 for scrapy-37 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-37 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-37 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-37 (conditional: Tier 2 not yet correct)
+Processing scrapy_38...
+  Skipping tier 1 for scrapy-38 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-38 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-38 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-38 (conditional: Tier 2 not yet correct)
+Processing scrapy_39...
+  Skipping tier 1 for scrapy-39 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-39, already done
+  Skipping tier 3 for scrapy-39 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-39 (gave up after 3 failed attempts)
+Processing scrapy_4...
+  Skipping tier 1 for scrapy-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-4 (conditional: Tier 2 not yet correct)
+Processing scrapy_40...
+  Skipping tier 1 for scrapy-40 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-40 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-40 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-40 (conditional: Tier 2 not yet correct)
+Processing scrapy_5...
+  Skipping tier 1 for scrapy-5, already done
+  Skipping tier 2 for scrapy-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-5 (conditional: Tier 2 not yet correct)
+Processing scrapy_6...
+  Skipping tier 1 for scrapy-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-6 (conditional: Tier 2 not yet correct)
+Processing scrapy_7...
+  Skipping tier 1 for scrapy-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-7 (conditional: Tier 2 not yet correct)
+Processing scrapy_8...
+  Skipping tier 1 for scrapy-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-8 (conditional: Tier 2 not yet correct)
+Processing scrapy_9...
+  Skipping tier 1 for scrapy-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for scrapy-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for scrapy-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for scrapy-9 (conditional: Tier 2 not yet correct)
+Processing spacy_1...
+  Skipping tier 1 for spacy-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-1 (conditional: Tier 2 not yet correct)
+Processing spacy_10...
+  Skipping tier 1 for spacy-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-10 (conditional: Tier 2 not yet correct)
+Processing spacy_2...
+  Skipping tier 1 for spacy-2, already done
+  Skipping tier 2 for spacy-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-2 (conditional: Tier 2 not yet correct)
+Processing spacy_3...
+  Skipping tier 1 for spacy-3, already done
+  Skipping tier 2 for spacy-3, already done
+  Skipping tier 3 for spacy-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-3 (gave up after 3 failed attempts)
+Processing spacy_4...
+  Skipping tier 1 for spacy-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-4 (conditional: Tier 2 not yet correct)
+Processing spacy_5...
+  Skipping tier 1 for spacy-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-5 (conditional: Tier 2 not yet correct)
+Processing spacy_6...
+  Skipping tier 1 for spacy-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-6 (conditional: Tier 2 not yet correct)
+Processing spacy_7...
+  Skipping tier 1 for spacy-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-7 (conditional: Tier 2 not yet correct)
+Processing spacy_8...
+  Skipping tier 1 for spacy-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-8 (conditional: Tier 2 not yet correct)
+Processing spacy_9...
+  Skipping tier 1 for spacy-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for spacy-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for spacy-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for spacy-9 (conditional: Tier 2 not yet correct)
+Processing thefuck_1...
+  Skipping tier 1 for thefuck-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-1 (conditional: Tier 2 not yet correct)
+Processing thefuck_10...
+  Skipping tier 1 for thefuck-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-10, already done
+  Skipping tier 5 for thefuck-10 (conditional: Tier 2 not yet correct)
+Processing thefuck_11...
+  Skipping tier 1 for thefuck-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-11 (conditional: Tier 2 not yet correct)
+Processing thefuck_12...
+  Skipping tier 1 for thefuck-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-12, already done
+  Skipping tier 5 for thefuck-12 (conditional: Tier 2 not yet correct)
+Processing thefuck_13...
+  Skipping tier 1 for thefuck-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-13 (conditional: Tier 2 not yet correct)
+Processing thefuck_14...
+  Skipping tier 1 for thefuck-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-14 (conditional: Tier 2 not yet correct)
+Processing thefuck_15...
+  Skipping tier 1 for thefuck-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-15 (conditional: Tier 2 not yet correct)
+Processing thefuck_16...
+  Skipping tier 1 for thefuck-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-16 (conditional: Tier 2 not yet correct)
+Processing thefuck_17...
+  Skipping tier 1 for thefuck-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-17, already done
+  Skipping tier 5 for thefuck-17 (conditional: Tier 2 not yet correct)
+Processing thefuck_18...
+  Skipping tier 1 for thefuck-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-18 (conditional: Tier 2 not yet correct)
+Processing thefuck_19...
+  Skipping tier 1 for thefuck-19 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-19 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-19 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-19 (conditional: Tier 2 not yet correct)
+Processing thefuck_2...
+  Skipping tier 1 for thefuck-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-2 (conditional: Tier 2 not yet correct)
+Processing thefuck_20...
+  Skipping tier 1 for thefuck-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-20 (conditional: Tier 2 not yet correct)
+Processing thefuck_21...
+  Skipping tier 1 for thefuck-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-21 (conditional: Tier 2 not yet correct)
+Processing thefuck_22...
+  Skipping tier 1 for thefuck-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-22, already done
+  Skipping tier 5 for thefuck-22 (conditional: Tier 2 not yet correct)
+Processing thefuck_23...
+  Skipping tier 1 for thefuck-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-23, already done
+  Skipping tier 5 for thefuck-23 (conditional: Tier 2 not yet correct)
+Processing thefuck_24...
+  Skipping tier 1 for thefuck-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-24 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-24 (conditional: Tier 2 not yet correct)
+Processing thefuck_25...
+  Skipping tier 1 for thefuck-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-25 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-25 (conditional: Tier 2 not yet correct)
+Processing thefuck_26...
+  Skipping tier 1 for thefuck-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-26, already done
+  Skipping tier 5 for thefuck-26 (conditional: Tier 2 not yet correct)
+Processing thefuck_27...
+  Skipping tier 1 for thefuck-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-27, already done
+  Skipping tier 3 for thefuck-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-27, already done
+Processing thefuck_28...
+  Skipping tier 1 for thefuck-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-28, already done
+  Skipping tier 5 for thefuck-28 (conditional: Tier 2 not yet correct)
+Processing thefuck_29...
+  Skipping tier 1 for thefuck-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-29 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-29 (conditional: Tier 2 not yet correct)
+Processing thefuck_3...
+  Skipping tier 1 for thefuck-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-3 (conditional: Tier 2 not yet correct)
+Processing thefuck_30...
+  Skipping tier 1 for thefuck-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-30 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-30 (conditional: Tier 2 not yet correct)
+Processing thefuck_31...
+  Skipping tier 1 for thefuck-31 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-31 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-31 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-31 (conditional: Tier 2 not yet correct)
+Processing thefuck_32...
+  Skipping tier 1 for thefuck-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-32 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-32 (conditional: Tier 2 not yet correct)
+Processing thefuck_4...
+  Skipping tier 1 for thefuck-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-4 (conditional: Tier 2 not yet correct)
+Processing thefuck_5...
+  Skipping tier 1 for thefuck-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-5 (conditional: Tier 2 not yet correct)
+Processing thefuck_6...
+  Skipping tier 1 for thefuck-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-6 (conditional: Tier 2 not yet correct)
+Processing thefuck_7...
+  Skipping tier 1 for thefuck-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-7 (conditional: Tier 2 not yet correct)
+Processing thefuck_8...
+  Skipping tier 1 for thefuck-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-8 (conditional: Tier 2 not yet correct)
+Processing thefuck_9...
+  Skipping tier 1 for thefuck-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for thefuck-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for thefuck-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for thefuck-9 (conditional: Tier 2 not yet correct)
+Processing tornado_1...
+  Skipping tier 1 for tornado-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-1 (conditional: Tier 2 not yet correct)
+Processing tornado_10...
+  Skipping tier 1 for tornado-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-10 (conditional: Tier 2 not yet correct)
+Processing tornado_11...
+  Skipping tier 1 for tornado-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-11 (conditional: Tier 2 not yet correct)
+Processing tornado_12...
+  Skipping tier 1 for tornado-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-12 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-12 (conditional: Tier 2 not yet correct)
+Processing tornado_13...
+  Skipping tier 1 for tornado-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-13 (conditional: Tier 2 not yet correct)
+Processing tornado_14...
+  Skipping tier 1 for tornado-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-14, already done
+  Skipping tier 3 for tornado-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-14 (gave up after 3 failed attempts)
+Processing tornado_15...
+  Skipping tier 1 for tornado-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-15, already done
+  Skipping tier 3 for tornado-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-15 (conditional: Tier 2 not yet correct)
+Processing tornado_16...
+  Skipping tier 1 for tornado-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-16 (conditional: Tier 2 not yet correct)
+Processing tornado_2...
+  Skipping tier 1 for tornado-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-2 (conditional: Tier 2 not yet correct)
+Processing tornado_3...
+  Skipping tier 1 for tornado-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-3 (conditional: Tier 2 not yet correct)
+Processing tornado_4...
+  Skipping tier 1 for tornado-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-4 (conditional: Tier 2 not yet correct)
+Processing tornado_5...
+  Skipping tier 1 for tornado-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-5 (conditional: Tier 2 not yet correct)
+Processing tornado_6...
+  Skipping tier 1 for tornado-6, already done
+  Skipping tier 2 for tornado-6, already done
+  Skipping tier 3 for tornado-6, already done
+  Skipping tier 5 for tornado-6 (conditional: Tier 2 not yet correct)
+Processing tornado_7...
+  Skipping tier 1 for tornado-7, already done
+  Skipping tier 2 for tornado-7, already done
+  Skipping tier 3 for tornado-7, already done
+  Skipping tier 5 for tornado-7 (conditional: Tier 2 not yet correct)
+Processing tornado_8...
+  Skipping tier 1 for tornado-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-8 (conditional: Tier 2 not yet correct)
+Processing tornado_9...
+  Skipping tier 1 for tornado-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for tornado-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for tornado-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tornado-9 (conditional: Tier 2 not yet correct)
+Processing tqdm_1...
+  Skipping tier 1 for tqdm-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-1 (conditional: Tier 2 not yet correct)
+Processing tqdm_2...
+  Skipping tier 1 for tqdm-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-2 (conditional: Tier 2 not yet correct)
+Processing tqdm_3...
+  Skipping tier 1 for tqdm-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-3 (conditional: Tier 2 not yet correct)
+Processing tqdm_4...
+  Skipping tier 1 for tqdm-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-4 (conditional: Tier 2 not yet correct)
+Processing tqdm_5...
+  Skipping tier 1 for tqdm-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-5 (conditional: Tier 2 not yet correct)
+Processing tqdm_6...
+  Skipping tier 1 for tqdm-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-6 (conditional: Tier 2 not yet correct)
+Processing tqdm_7...
+  Skipping tier 1 for tqdm-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-7 (conditional: Tier 2 not yet correct)
+Processing tqdm_8...
+  Skipping tier 1 for tqdm-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-8 (conditional: Tier 2 not yet correct)
+Processing tqdm_9...
+  Skipping tier 1 for tqdm-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for tqdm-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for tqdm-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for tqdm-9 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_1...
+  Skipping tier 1 for youtube-dl-1 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-1 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-1 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-1 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_10...
+  Skipping tier 1 for youtube-dl-10 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-10 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-10 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-10 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_11...
+  Skipping tier 1 for youtube-dl-11 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-11 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-11 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-11 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_12...
+  Skipping tier 1 for youtube-dl-12 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-12, already done
+  Skipping tier 3 for youtube-dl-12 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-12 (gave up after 3 failed attempts)
+Processing youtube-dl_13...
+  Skipping tier 1 for youtube-dl-13 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-13 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-13 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-13 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_14...
+  Skipping tier 1 for youtube-dl-14 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-14 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-14 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-14 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_15...
+  Skipping tier 1 for youtube-dl-15 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-15 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-15 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-15 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_16...
+  Skipping tier 1 for youtube-dl-16 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-16 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-16 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-16 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_17...
+  Skipping tier 1 for youtube-dl-17 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-17 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-17 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-17 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_18...
+  Skipping tier 1 for youtube-dl-18 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-18 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-18 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-18 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_19...
+  Skipping tier 1 for youtube-dl-19, already done
+  Skipping tier 2 for youtube-dl-19, already done
+  Skipping tier 3 for youtube-dl-19 (gave up after 3 failed attempts)
+  Skipping tier 5 for youtube-dl-19 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_2...
+  Skipping tier 1 for youtube-dl-2 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-2 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-2 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-2 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_20...
+  Skipping tier 1 for youtube-dl-20 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-20 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-20 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-20 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_21...
+  Skipping tier 1 for youtube-dl-21 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-21 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-21 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-21 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_22...
+  Skipping tier 1 for youtube-dl-22 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-22 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-22 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-22 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_23...
+  Skipping tier 1 for youtube-dl-23 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-23 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-23 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-23 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_24...
+  Skipping tier 1 for youtube-dl-24 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-24 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-24 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-24 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_25...
+  Skipping tier 1 for youtube-dl-25 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-25 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-25 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-25 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_26...
+  Skipping tier 1 for youtube-dl-26 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-26 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-26 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-26 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_27...
+  Skipping tier 1 for youtube-dl-27 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-27 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-27 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-27 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_28...
+  Skipping tier 1 for youtube-dl-28 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-28 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-28 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-28 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_29...
+  Skipping tier 1 for youtube-dl-29 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-29 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-29 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-29 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_3...
+  Skipping tier 1 for youtube-dl-3 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-3 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-3 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-3 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_30...
+  Skipping tier 1 for youtube-dl-30 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-30 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-30 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-30 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_31...
+  Skipping tier 1 for youtube-dl-31 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-31 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-31 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-31 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_32...
+  Skipping tier 1 for youtube-dl-32 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-32 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-32 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-32 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_33...
+  Skipping tier 1 for youtube-dl-33 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-33 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-33 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-33 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_34...
+  Skipping tier 1 for youtube-dl-34 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-34 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-34 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-34 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_35...
+  Skipping tier 1 for youtube-dl-35, already done
+  Skipping tier 2 for youtube-dl-35, already done
+  Skipping tier 3 for youtube-dl-35 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-35, already done
+Processing youtube-dl_36...
+  Skipping tier 1 for youtube-dl-36 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-36 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-36 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-36 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_37...
+  Skipping tier 1 for youtube-dl-37 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-37 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-37 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-37 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_38...
+  Skipping tier 1 for youtube-dl-38 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-38 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-38 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-38 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_39...
+  Skipping tier 1 for youtube-dl-39 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-39 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-39 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-39 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_4...
+  Skipping tier 1 for youtube-dl-4 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-4 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-4 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-4 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_40...
+  Skipping tier 1 for youtube-dl-40 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-40 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-40 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-40 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_41...
+  Skipping tier 1 for youtube-dl-41 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-41 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-41 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-41 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_42...
+  Skipping tier 1 for youtube-dl-42 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-42 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-42 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-42 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_43...
+  Skipping tier 1 for youtube-dl-43 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-43 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-43 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-43 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_5...
+  Skipping tier 1 for youtube-dl-5 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-5 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-5 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-5 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_6...
+  Skipping tier 1 for youtube-dl-6 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-6 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-6 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-6 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_7...
+  Skipping tier 1 for youtube-dl-7 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-7 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-7 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-7 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_8...
+  Skipping tier 1 for youtube-dl-8 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-8 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-8 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-8 (conditional: Tier 2 not yet correct)
+Processing youtube-dl_9...
+  Skipping tier 1 for youtube-dl-9 (gave up after 3 failed attempts)
+  Skipping tier 2 for youtube-dl-9 (gave up after 3 failed attempts)
+  Skipping tier 3 for youtube-dl-9 (conditional: Tier 1 not yet correct)
+  Skipping tier 5 for youtube-dl-9 (conditional: Tier 2 not yet correct)
+Done! Results saved to /home/grads/gsanjana/llm-bug-study/results/python/results_fivetier_python_deepseek-v4-flash-thinking.csv
