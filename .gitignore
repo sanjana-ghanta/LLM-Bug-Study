@@ -13,3 +13,5 @@ scripts/run/*.log
 *.log
 *.bak*
 tables_out.txt
+pyrepos/
+pyrepos/
