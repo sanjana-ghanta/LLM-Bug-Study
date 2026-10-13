@@ -28,7 +28,8 @@ BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 BUGS_DIR = os.path.join(BASE, "data/pybugs")
 RESULTS_DIR = os.path.join(BASE, "results/python")
 
-MAX_TOKENS = 1024
+MAX_TOKENS = 7000
+REASONING_EFFORT = None  # set from --reasoning-effort
 RETRY_WAIT_SECONDS = 90
 BETWEEN_CALL_SLEEP_SECONDS = 20
 
@@ -83,6 +84,7 @@ Code:
                 system_prompt="You are a careful code reviewer.",
                 user_prompt=prompt,
                 max_tokens=MAX_TOKENS,
+                reasoning_effort=REASONING_EFFORT,
             )
         except Exception as e:
             err_str = str(e).lower()
@@ -223,9 +225,13 @@ def process_bug(model_key, data_json_path, writer, completed, correctness, failu
 def main():
     parser = argparse.ArgumentParser(description="Run Python tiered-detection experiment against any model")
     parser.add_argument("--model", required=True, help="Model key from lib.config.MODELS")
+    parser.add_argument("--reasoning-effort", default=None, choices=["low", "medium", "high"],
+                        help="Reasoning effort for models that support it")
     parser.add_argument("--project", default="all",
                          help="Comma-separated project names (e.g. pandas,black) or 'all' (default)")
     args = parser.parse_args()
+    global REASONING_EFFORT
+    REASONING_EFFORT = args.reasoning_effort
 
     wanted_projects = None if args.project == "all" else set(args.project.split(","))
 

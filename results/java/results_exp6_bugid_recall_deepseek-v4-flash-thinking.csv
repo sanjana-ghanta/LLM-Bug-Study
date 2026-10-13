@@ -1,0 +1,12 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+Jsoup,91,1,11,9,pattern_matched_clean,"LINE: 11 REASON: The `String` constructor passes only an `IOException` to `super`, so the resulting exception message is not the intended message; it should call `super(message, new IOException(message))`."
+Lang,6,1,95,95,pattern_matched_clean,"LINE: 95 REASON: The loop advances `pos` using `Character.codePointAt(input, pt)` instead of `Character.codePointAt(input, pos)`, so the index is wrong when consuming multiple codepoints."
+Mockito,9,1,39,7,pattern_matched_clean,"LINE: 39 REASON: For abstract methods, it calls GloballyConfiguredAnswer instead of returning a default empty value, which can cause infinite recursion when the global default answer is CALLS_REAL_METHODS."
+Compress,39,2,274,30,wrong,"LINE: 274 REASON: The sanitize method uses the full input length without limiting it to 255 characters, so it violates the documented maximum length."
+JacksonDatabind,109,1,132,36,pattern_matched_clean,"LINE: 132 REASON: `isEmpty()` calls `valueToString()`, which is overridden in this class to throw `IllegalStateException`, causing empty-value checks for BigDecimal-as-string serialization to fail."
+JacksonDatabind,4,1,100,58,pattern_matched_clean,"LINE: 100 REASON: The custom element deserializer's null value should be obtained with `deser.getNullValue(ctxt)` rather than the no-argument `deser.getNullValue()`, so context-dependent null handling is not applied."
+JacksonDatabind,4,2,143,58,wrong,"LINE: 143 REASON: It contextualizes a directly assigned element deserializer without passing the element target type (String.class), so custom contextual deserializers may not be properly initialized."
+JacksonDatabind,71,2,364,75,wrong,"LINE: 364 REASON: The `_byToStringResolver` field is never assigned after constructing the toString-based `EnumResolver`, so the lazy cache remains `null`."
+Jsoup,13,1,321,106,pattern_matched_clean,"LINE: 321 REASON: The remainder loop starts at i = 0, so it incorrectly treats the wrapping node itself as a remainder and tries to append it to itself instead of starting at i = 1."
+Jsoup,25,1,142,218,pattern_matched_clean,"LINE: 142 REASON: The static `isKnownTag(String)` performs a case-sensitive map lookup, so known tags passed with uppercase or mixed-case names are incorrectly reported as unknown."
+Jsoup,75,2,371,,wrong,"LINE: 371 REASON: The clone method modifies the original object's keys array instead of the clone's array, because the assignment lacks the ""clone."" prefix."

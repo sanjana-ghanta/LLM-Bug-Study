@@ -36,6 +36,7 @@ BUGS_DIR = os.path.join(BASE, "data/bugs")
 RESULTS_DIR = os.path.join(BASE, "results/java")
 
 MAX_TOKENS = 7000
+REASONING_EFFORT = None  # set from --reasoning-effort
 BETWEEN_CALL_SLEEP_SECONDS = 8
 RETRY_WAIT_SECONDS = 30
 
@@ -54,7 +55,7 @@ LINE: <line number, or NONE if there is no bug>
 REASON: <one sentence explanation of what specifically is wrong>"""
 
 
-MAX_FILE_LINES = 250  # files longer than this are excluded from Experiment 6
+MAX_FILE_LINES = 1000  # files longer than this are excluded from Experiment 6
 # entirely, rather than windowed -- any window centered on (or near) the
 # real bug line would leak its approximate location, since this
 # experiment's task is naming an exact line number, unlike the main
@@ -73,6 +74,7 @@ def ask_model(model_key, code, file_path, project, bug_id, center_line=None):
                 system_prompt="You are a careful code reviewer with knowledge of common software benchmarks.",
                 user_prompt=prompt,
                 max_tokens=MAX_TOKENS,
+                reasoning_effort=REASONING_EFFORT,
             )
         except Exception as e:
             err_str = str(e).lower()
@@ -132,7 +134,11 @@ def load_completed(csv_path):
 def main():
     parser = argparse.ArgumentParser(description="Experiment 6: Bug ID Recall Test")
     parser.add_argument("--model", required=True, help="Model key from lib.config.MODELS")
+    parser.add_argument("--reasoning-effort", default=None, choices=["low", "medium", "high"],
+                        help="Reasoning effort for models that support it")
     args = parser.parse_args()
+    global REASONING_EFFORT
+    REASONING_EFFORT = args.reasoning_effort
 
     misses_path = os.path.join(BASE, f"tier2_misses_java_{args.model}.txt")
     if not os.path.exists(misses_path):

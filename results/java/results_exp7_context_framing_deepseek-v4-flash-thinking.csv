@@ -1,0 +1,10 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+Lang,6,1,95,95,pattern_matched_clean,"LINE: 95 REASON: The loop uses `pt` instead of `pos` as the index for `Character.codePointAt`, so it advances the position based on code points from the start of the input rather than the current translation position."
+Mockito,6,1,292,122,pattern_matched_clean,"LINE: 292 REASON: The `any(Class<T>)` method uses `new InstanceOf(clazz)`, which performs a type check, but it is documented as an alias to `anyObject()` and should match any object regardless of the provided class."
+Mockito,9,1,39,7,pattern_matched_clean,"LINE: 39 REASON: It uses `GloballyConfiguredAnswer` for abstract methods, which can recurse infinitely if the global default answer is `CallsRealMethods`, instead of using the default answer."
+Compress,39,2,276,30,wrong,"LINE: 276 REASON: The `sanitize` loop does not enforce the documented 255-character output limit, so it can produce strings longer than 255 chars."
+JacksonDatabind,109,1,132,36,pattern_matched_clean,"LINE: 132 REASON: `isEmpty` calls `valueToString(value)`, which is implemented to always throw `IllegalStateException`, instead of checking the value directly."
+JacksonXml,4,2,205,203,correct,"LINE: 205 REASON: `_serializeXmlNull` always initializes the root name to `ROOT_NAME_FOR_NULL`, ignoring any explicitly configured XML root name."
+Jsoup,91,1,11,9,pattern_matched_clean,"LINE: 11 REASON: The `String` constructor passes only the new `IOException` as the cause, causing `getMessage()` to return `""java.io.IOException: <message>""` instead of the intended message; it should use `super(message, new IOException(message))`."
+Lang,46,2,244,86,wrong,"LINE: 244 REASON: The forward slash case unconditionally writes a backslash, so `escapeJava` incorrectly escapes `/` even though only JavaScript should escape forward slashes."
+Time,1,2,228,,wrong,"LINE: 228 REASON: `compareTo` should always return zero, but it incorrectly returns 1 when compared to a supported duration field, violating its documented contract."
