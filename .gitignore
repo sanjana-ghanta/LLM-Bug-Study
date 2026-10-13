@@ -10,3 +10,6 @@ data/bugs/*/patched/
 checkout_lang_log.txt
 scripts/run/*.log
 *.tar.gz
+*.log
+*.bak*
+tables_out.txt
