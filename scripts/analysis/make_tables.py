@@ -9,6 +9,20 @@ LANGS = {
 }
 TRUE = ("true", "1", "yes", "y")
 
+
+import json as _json, os as _os
+_TL = {}
+_p = _os.path.join(_os.path.expanduser("~/llm-bug-study"), "results", "python", "true_bug_lines.json")
+if _os.path.exists(_p):
+    _TL = _json.load(open(_p))
+
+def actual(r):
+    """Ground-truth bug line. Python bugs use the corrected first-changed line
+    (the stored one is the diff hunk start, 3 context lines early); Java unchanged."""
+    k = f"{r['project']}_{r['bug_id']}"
+    return _TL[k]["true"] if k in _TL else r["actual_line"]
+
+
 def usable_set(dirn):
     s = set()
     for d in sorted(os.listdir(os.path.join(BASE, dirn))):
@@ -70,7 +84,7 @@ for lang, cfg in LANGS.items():
     for m in MODELS:
         a1 = [data[m][(p, b, "1")] for p, b in common]; a2 = [data[m][(p, b, "2")] for p, b in common]
         print(f"{m:<28} T1 {pct(sum(a1),len(a1)):>7}   T2 {pct(sum(a2),len(a2)):>7}   bal {((sum(a1)+sum(a2))/(2*len(a1))*100 if a1 else float('nan')):.1f}%")
-    print("\n-- Probes (T2 = real buggy code; exact line vs old +-5; earliest row, usable bugs) --")
+    print("\n-- Probes (T2 = real buggy code; exact line (Python: corrected true line) vs old +-5; earliest row, usable bugs) --")
     for m in MODELS:
         P = {}
         for tag in ("p6", "p7"):
@@ -86,7 +100,7 @@ for lang, cfg in LANGS.items():
             t2 = [r for k, r in P[tag].items() if k[2] == "2"]; t1 = [r for k, r in P[tag].items() if k[2] == "1"]
             ex = w5 = 0
             for r in t2:
-                a, b = to_int(r["reported_line"]), to_int(r["actual_line"])
+                a, b = to_int(r["reported_line"]), to_int(actual(r))
                 if a is not None and b is not None:
                     ex += a == b; w5 += abs(a - b) <= 5
             fa = sum(to_int(r["reported_line"]) is not None for r in t1)
@@ -94,7 +108,7 @@ for lang, cfg in LANGS.items():
         if "p6" in P and "p7" in P:
             keys = [k for k in P["p6"] if k[2] == "2" and k in P["p7"]]
             def hit(r):
-                a, b = to_int(r["reported_line"]), to_int(r["actual_line"]); return a is not None and b is not None and a == b
+                a, b = to_int(r["reported_line"]), to_int(actual(r)); return a is not None and b is not None and a == b
             b6 = sum(hit(P["p6"][k]) and not hit(P["p7"][k]) for k in keys)
             c7 = sum(hit(P["p7"][k]) and not hit(P["p6"][k]) for k in keys)
             print(f"{'':<28}paired T2 bugs={len(keys)}  Exp6-only exact={b6}  Exp7-only exact={c7}  McNemar p={mcnemar_p(b6, c7):.3f}")
