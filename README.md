@@ -6,7 +6,7 @@ An empirical study on Defects4J (Java) and BugsInPy (Python) with three thinking
 | Model key | VT ARC model ID | Reasoning level |
 |---|---|---|
 | `glm-5.3-thinking` | `GLM-5.3-thinking-high` | high |
-| `deepseek-v4-flash-thinking` | `DeepSeek-V4.1-Flash-thinking-max` | max |
+| `deepseek-v4-flash-thinking` | `DeepSeek-V4.1-Flash-thinking-max` | low |
 | `gpt-oss-thinking` | `gpt-oss-120b-thinking-high` | high |
 
 Reasoning level is set by the model ID in `scripts/lib/config.py` and is not matched across models.
