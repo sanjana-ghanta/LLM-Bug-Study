@@ -140,7 +140,7 @@ def main():
     global REASONING_EFFORT
     REASONING_EFFORT = args.reasoning_effort
 
-    misses_path = os.path.join(BASE, f"tier2_misses_python_{args.model}.txt")
+    misses_path = os.path.join(BASE, "results", "tier2_misses", f"tier2_misses_python_{args.model}.txt")
     if not os.path.exists(misses_path):
         print(f"No Tier-2-misses file found at {misses_path}. Run find_tier2_misses.py first.")
         sys.exit(1)

@@ -37,10 +37,10 @@ scripts/lib/                            llm_clients.py, config.py (model keys)
 scripts/inject/                         tier 3 / tier 5 (disguise) generation
 scripts/legacy/                         earlier experiment iterations (not part of the final pipeline)
 results/java/, results/python/          result CSVs and failure counters
-tier2_misses_<lang>_<model>.txt         bugs each model missed at Tier 2 (probe inputs)
-make_tables.py                          builds the paper tables from the CSVs
-summarize_probes.py                     probe summaries
-rescore_exact.py, patch_effort.py, make_py_probes.py   one-off helpers
+results/tier2_misses/tier2_misses_<lang>_<model>.txt         bugs each model missed at Tier 2 (probe inputs)
+scripts/analysis/make_tables.py                          builds the paper tables from the CSVs
+scripts/analysis/summarize_probes.py                     probe summaries
+scripts/analysis/rescore_exact.py, scripts/analysis/patch_effort.py, scripts/analysis/make_py_probes.py   one-off helpers
 ```
 
 A bug is "usable" if its `data.json` has `original_bug_line`.
@@ -67,7 +67,7 @@ python3 scripts/run/find_tier2_misses.py java glm-5.3-thinking      # build the 
 python3 -u scripts/run/run_experiment6_bugid_recall.py --model glm-5.3-thinking 2>&1 | tee exp6.log
 python3 -u scripts/run/run_experiment7_context_framing.py --model glm-5.3-thinking 2>&1 | tee exp7.log
 # Python probes: run_experiment6_bugid_recall_python.py / run_experiment7_context_framing_python.py
-python3 make_tables.py | tee tables_out.txt
+python3 scripts/analysis/make_tables.py | tee tables_out.txt
 ```
 
 Options: `--project <name>` (detection), `--reasoning-effort low|medium|high` (all runner scripts).
@@ -81,7 +81,7 @@ Options: `--project <name>` (detection), `--reasoning-effort low|medium|high` (a
   those calls are not saved. DeepSeek and GPT-OSS are affected most.
 - **Probe coverage is limited** by the 1,000-line file cap and by empty responses.
 - **Nodes can kill jobs.** Check that a log's modification time is close to `date`; `tmux` sessions are per node.
-- `make_tables.py` drops unusable bugs, removes duplicate rows (earliest kept) and scores probes by exact line.
+- `scripts/analysis/make_tables.py` drops unusable bugs, removes duplicate rows (earliest kept) and scores probes by exact line.
 
 ## Known limitations
 

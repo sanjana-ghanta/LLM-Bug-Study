@@ -46,7 +46,7 @@ def main():
     misses = find_misses(language, model)
     print(f"{model} ({language}): {len(misses)} bugs missed on Tier 2")
 
-    out_path = os.path.join(BASE, f"tier2_misses_{language}_{model}.txt")
+    out_path = os.path.join(BASE, "results", "tier2_misses", f"tier2_misses_{language}_{model}.txt")
     with open(out_path, "w") as f:
         for project, bug_id in misses:
             f.write(f"{project}_{bug_id}\n")
