@@ -33,6 +33,10 @@ REASONING_EFFORT = None  # set from --reasoning-effort
 RETRY_WAIT_SECONDS = 90
 BETWEEN_CALL_SLEEP_SECONDS = 20
 
+TIER5_WRITER = os.environ.get("TIER5_WRITER", "glm-5.3-thinking")
+_SFX = "" if TIER5_WRITER == "glm-5.3-thinking" else f"__t5-{TIER5_WRITER}"
+TIER5_ONLY = os.environ.get("TIER5_ONLY") == "1"
+
 TIERS = {
     1: ("patched_code", "NO BUG", "original_bug_line"),
     2: ("buggy_code", "BUG", "original_bug_line"),
@@ -156,6 +160,8 @@ def process_bug(model_key, data_json_path, writer, completed, correctness, failu
 
     for tier_num, (code_key, expected, line_field) in TIERS.items():
         tier_str = str(tier_num)
+        if TIER5_ONLY and tier_num != 5:
+            continue
         if (project, bug_id, tier_str) in completed:
             print(f"  Skipping tier {tier_num} for {project}-{bug_id}, already done")
             continue
@@ -180,8 +186,8 @@ def process_bug(model_key, data_json_path, writer, completed, correctness, failu
             # tier 5 uses GLM's shared disguise for ALL models being
             # tested (see Java pipeline for the full rationale), not the
             # old flat tier5_code field from the original single-model run.
-            code = data.get("tier5_code_by_model", {}).get("glm-5.3-thinking")
-            if code is None:
+            code = data.get("tier5_code_by_model", {}).get(TIER5_WRITER)
+            if code is None and TIER5_WRITER == "glm-5.3-thinking":
                 # fall back to the old shared field only if GLM's rewrite
                 # isn't generated yet for this specific bug
                 code = data.get("tier5_code")
@@ -235,8 +241,8 @@ def main():
 
     wanted_projects = None if args.project == "all" else set(args.project.split(","))
 
-    out_csv = os.path.join(RESULTS_DIR, f"results_fivetier_python_{args.model}.csv")
-    failures_path = os.path.join(RESULTS_DIR, f"results_fivetier_python_{args.model}_failures.json")
+    out_csv = os.path.join(RESULTS_DIR, f"results_fivetier_python_{args.model}{_SFX}.csv")
+    failures_path = os.path.join(RESULTS_DIR, f"results_fivetier_python_{args.model}{_SFX}_failures.json")
     fields = ["project", "bug_id", "tier", "expected", "verdict", "correct", "response"]
     completed, correctness = load_completed(out_csv)
     failure_counts = load_failure_counts(failures_path)

@@ -25,6 +25,10 @@ import time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
 from lib.config import PROJECTS, BUGS_DIR, RESULTS_DIR
+
+TIER5_WRITER = os.environ.get("TIER5_WRITER", "glm-5.3-thinking")
+_SFX = "" if TIER5_WRITER == "glm-5.3-thinking" else f"__t5-{TIER5_WRITER}"
+TIER5_ONLY = os.environ.get("TIER5_ONLY") == "1"
 from lib.llm_clients import call_llm
 
 # Thinking/reasoning models spend part of their token budget on internal
@@ -179,6 +183,8 @@ def process_bug(model_key, data_json_path, writer, completed, correctness,
 
     for tier_num, (code_key, expected, line_field) in TIERS.items():
         tier_str = str(tier_num)
+        if TIER5_ONLY and tier_num != 5:
+            continue
         if (project, bug_id, tier_str) in completed:
             print(f"  Skipping tier {tier_num} for {project}-{bug_id}, already done")
             continue
@@ -211,8 +217,8 @@ def process_bug(model_key, data_json_path, writer, completed, correctness,
             # advantage on its own disguise, since DeepSeek/GPT-OSS are
             # being tested on someone else's rewrite. Noted as a paper
             # limitation rather than a design flaw.
-            code = data.get("tier5_code_by_model", {}).get("glm-5.3-thinking")
-            if code is None:
+            code = data.get("tier5_code_by_model", {}).get(TIER5_WRITER)
+            if code is None and TIER5_WRITER == "glm-5.3-thinking":
                 # fall back to the old shared field if GLM's rewrite isn't
                 # generated yet for this bug, so existing data still works
                 code = data.get("tier5_code")
@@ -294,8 +300,8 @@ def main():
         if unknown:
             raise ValueError(f"Unknown project(s): {unknown}. Found in data: {sorted(all_projects_in_data)}")
 
-    out_csv = os.path.join(RESULTS_DIR, f"results_fivetier_{args.model}.csv")
-    failures_path = os.path.join(RESULTS_DIR, f"results_fivetier_{args.model}_failures.json")
+    out_csv = os.path.join(RESULTS_DIR, f"results_fivetier_{args.model}{_SFX}.csv")
+    failures_path = os.path.join(RESULTS_DIR, f"results_fivetier_{args.model}{_SFX}_failures.json")
     fields = ["project", "bug_id", "tier", "expected", "verdict", "correct", "response"]
     completed, correctness = load_completed(out_csv)
     failure_counts = load_failure_counts(failures_path)
