@@ -20,7 +20,7 @@ Reasoning level is set by the model ID in `scripts/lib/config.py` and is not mat
 **Stage 2 (only for bugs that passed Stage 1)**
 - Tier 3: clean code with a synthetic bug injected. Scored only where Tier 1 was correct.
 - Tier 4: the real bug in disguised (semantically rewritten) code. Scored only where Tier 2 was correct.
-  Stored internally as "tier 5": `tier5_code_by_model` in each `data.json`. The disguise used for all models is currently written by GLM.
+  Stored internally as "tier 5": `tier5_code_by_model` in each `data.json`. The disguise used for all models is currently written by Sonnet.
 
 **Follow-up probes** (run on each model's own Tier 2 misses; whole file sent; files over 1,000 lines skipped)
 - Experiment 6: names the benchmark, project and bug ID, asks for the bug line.
