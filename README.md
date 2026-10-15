@@ -79,12 +79,14 @@ ARC allows 20 concurrent requests per key.
 Run inside `tmux`, from the repo root, logging with `tee`:
 
 ```bash
-python3 scripts/run/run_experiment.py --model <model> --lang java|python [--project Chart,Lang] [--reasoning-effort low]   # Tiers 1-4
+python3 -u scripts/run/run_experiment.py --model glm-5.3-thinking --lang java   2>&1 | tee detect.log   # Java, Tiers 1-4
+python3 -u scripts/run/run_experiment.py --model glm-5.3-thinking --lang python 2>&1 | tee detect.log   # Python, Tiers 1-4
 python3 scripts/run/find_tier2_misses.py java glm-5.3-thinking      # build the miss list for the probes
 python3 -u scripts/run/run_experiment6_bugid_recall.py --model glm-5.3-thinking 2>&1 | tee exp6.log
 python3 -u scripts/run/run_experiment7_context_framing.py --model glm-5.3-thinking 2>&1 | tee exp7.log
 # Python probes: run_experiment6_bugid_recall_python.py / run_experiment7_context_framing_python.py
-python3 scripts/analysis/make_tables.py | tee tables_out.txt
+python3 scripts/analysis/make_tables.py | tee tables_out.txt   # main tables, plus an "Additional models" section for any other model run with run_experiment.py
+python3 scripts/analysis/quick_summary.py results/java/results_fivetier_glm-5.3-thinking__t5-claude-sonnet-win.csv   # per-tier accuracy for one results file
 ```
 
 Options: `--project <name>` (detection), `--reasoning-effort low|medium|high` (all runner scripts).
