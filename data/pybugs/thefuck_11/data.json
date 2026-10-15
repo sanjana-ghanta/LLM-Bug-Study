@@ -13,6 +13,14 @@
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
   "tier5_code_by_model": {
-    "glm-5.3-thinking": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    has_push = 'push' in command.script\n    has_upstream_hint = 'set-upstream' in command.stderr\n    return has_push and has_upstream_hint\n\n\n@git_support\ndef get_new_command(command):\n    lines = command.stderr.split('\\n')\n    hint_line = lines[-3].strip()\n    suggested = hint_line.partition('git ')[2]\n    return replace_argument(command.script, 'push', suggested)"
+    "glm-5.3-thinking": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    has_push = 'push' in command.script\n    has_upstream_hint = 'set-upstream' in command.stderr\n    return has_push and has_upstream_hint\n\n\n@git_support\ndef get_new_command(command):\n    lines = command.stderr.split('\\n')\n    hint_line = lines[-3].strip()\n    suggested = hint_line.partition('git ')[2]\n    return replace_argument(command.script, 'push', suggested)",
+    "claude-sonnet": "from thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    has_push = 'push' in command.script\n    has_upstream_hint = 'set-upstream' in command.stderr\n    return has_push and has_upstream_hint\n\n\n@git_support\ndef get_new_command(command):\n    error_lines = command.stderr.split('\\n')\n    suggestion_line = error_lines[-3].strip()\n    upstream_cmd = suggestion_line.partition('git ')[2]\n    return replace_argument(command.script, 'push', upstream_cmd)"
+  },
+  "tier5_meta_by_model": {
+    "claude-sonnet": {
+      "model_id": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "struct_ok": true
+    }
   }
 }

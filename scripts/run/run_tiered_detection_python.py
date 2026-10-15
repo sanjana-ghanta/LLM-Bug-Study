@@ -28,7 +28,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 BUGS_DIR = os.path.join(BASE, "data/pybugs")
 RESULTS_DIR = os.path.join(BASE, "results/python")
 
-MAX_TOKENS = 7000
+MAX_TOKENS = int(os.environ.get("DET_MAX_TOKENS", "7000"))
 REASONING_EFFORT = None  # set from --reasoning-effort
 RETRY_WAIT_SECONDS = 90
 BETWEEN_CALL_SLEEP_SECONDS = 20

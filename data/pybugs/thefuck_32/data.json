@@ -13,6 +13,14 @@
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
   "tier5_code_by_model": {
-    "glm-5.3-thinking": "def match(command, settings):\n    script_text = command.script\n    return 'ls' in script_text and 'ls -' not in script_text\n\n\ndef get_new_command(command, settings):\n    parts = command.script.split(' ')\n    parts[0] = 'ls -lah'\n    return ' '.join(parts)"
+    "glm-5.3-thinking": "def match(command, settings):\n    script_text = command.script\n    return 'ls' in script_text and 'ls -' not in script_text\n\n\ndef get_new_command(command, settings):\n    parts = command.script.split(' ')\n    parts[0] = 'ls -lah'\n    return ' '.join(parts)",
+    "claude-sonnet": "def match(command, settings):\n    script_text = command.script\n    if 'ls' not in script_text:\n        return False\n    return 'ls -' not in script_text\n\n\ndef get_new_command(command, settings):\n    parts = command.script.split(' ')\n    parts[0] = 'ls -lah'\n    return ' '.join(parts)"
+  },
+  "tier5_meta_by_model": {
+    "claude-sonnet": {
+      "model_id": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "struct_ok": true
+    }
   }
 }

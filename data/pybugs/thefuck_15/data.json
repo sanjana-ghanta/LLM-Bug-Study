@@ -13,6 +13,14 @@
   "tier4_mutation_line": null,
   "tier4_mutation_type": null,
   "tier5_code_by_model": {
-    "glm-5.3-thinking": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    err = command.stderr\n    return ('did not match any file(s) known to git.' in err\n            and \"Did you forget to 'git add'?\" in err)\n\n\n@git_support\ndef get_new_command(command):\n    pattern = (r\"error: pathspec '([^']*)' \"\n               r\"did not match any file\\(s\\) known to git.\")\n    unmatched_path = re.findall(pattern, command.stderr)[0]\n\n    template = shell.and_('git add -- {}', '{}')\n    return template.format(unmatched_path, command.script)"
+    "glm-5.3-thinking": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    err = command.stderr\n    return ('did not match any file(s) known to git.' in err\n            and \"Did you forget to 'git add'?\" in err)\n\n\n@git_support\ndef get_new_command(command):\n    pattern = (r\"error: pathspec '([^']*)' \"\n               r\"did not match any file\\(s\\) known to git.\")\n    unmatched_path = re.findall(pattern, command.stderr)[0]\n\n    template = shell.and_('git add -- {}', '{}')\n    return template.format(unmatched_path, command.script)",
+    "claude-sonnet": "import re\nfrom thefuck.shells import shell\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    err_text = command.stderr\n    first_part = 'did not match any file(s) known to git.' in err_text\n    second_part = \"Did you forget to 'git add'?\" in err_text\n    return first_part and second_part\n\n\n@git_support\ndef get_new_command(command):\n    pattern = (r\"error: pathspec '([^']*)' \"\n               r\"did not match any file\\(s\\) known to git.\")\n    found_items = re.findall(pattern, command.stderr)\n    target = found_items[0]\n\n    template = shell.and_('git add -- {}', '{}')\n    return template.format(target, command.script)"
+  },
+  "tier5_meta_by_model": {
+    "claude-sonnet": {
+      "model_id": "claude-sonnet-5-5",
+      "stop_reason": "end_turn",
+      "struct_ok": true
+    }
   }
 }

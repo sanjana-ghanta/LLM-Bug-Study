@@ -36,7 +36,7 @@ from lib.llm_clients import call_llm
 # original Claude-only version used (confirmed necessary: see the earlier
 # smoke test where gpt-oss-thinking returned an empty response at
 # max_tokens=16).
-MAX_TOKENS = 7000
+MAX_TOKENS = int(os.environ.get("DET_MAX_TOKENS", "7000"))
 RETRY_WAIT_SECONDS = 90
 BETWEEN_CALL_SLEEP_SECONDS = 20
 
