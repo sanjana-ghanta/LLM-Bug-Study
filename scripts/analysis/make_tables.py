@@ -76,7 +76,11 @@ for lang, cfg in LANGS.items():
             ev = [v for k, v in d.items() if k[2] == tier and d.get((k[0], k[1], pre)) is True]
             allr = [k for k in d if k[2] == tier]
             return len(ev), sum(ev), len(allr) - len(ev)
-        n3, c3, x3 = gated("3", "1"); n5, c5, x5 = gated("5", "2")
+        n3, c3, x3 = gated("3", "1")
+        _wp = os.path.join(BASE, cfg["res"], cfg["five"].format(m=m)).replace(".csv", "__t5-claude-sonnet-win.csv")
+        _w = load_five(_wp, U, collections.Counter())[0] if os.path.exists(_wp) else {}
+        _ev = [v for k, v in _w.items() if k[2] == "5" and d.get((k[0], k[1], "2")) is True]
+        n5, c5 = len(_ev), sum(_ev); x5 = sum(1 for k in _w if k[2] == "5") - n5
         bal = (c1/len(t1) + c2/len(t2))/2*100 if t1 and t2 else float("nan")
         print(f"{m:<28}{len(t1):>6}{pct(c1,len(t1)):>8}{len(t2):>6}{pct(c2,len(t2)):>8}{bal:>7.1f}%{n3:>6}{pct(c3,n3):>8}{x3:>8}{n5:>6}{pct(c5,n5):>8}{x5:>8}")
     common = {(p, b) for (p, b) in U if all(((p, b, "1") in data[m] and (p, b, "2") in data[m]) for m in MODELS)}
@@ -114,3 +118,51 @@ for lang, cfg in LANGS.items():
             print(f"{'':<28}paired T2 bugs={len(keys)}  Exp6-only exact={b6}  Exp7-only exact={c7}  McNemar p={mcnemar_p(b6, c7):.3f}")
     print()
 print("raw 'correct' values seen:", dict(raw))
+
+# ---- Tier 4 writer comparison: GLM-written vs Claude-written rewrites ----
+print("\n" + "=" * 78)
+print("LEGACY: TIER 4 WRITER COMPARISON, TRUNCATED VIEW (superseded by the matched-window arm)")
+print("=" * 78)
+for lang, cfg in LANGS.items():
+    U = usable_set(cfg["data"])
+    print(f"\n{lang.upper()}")
+    print(f"{'model':<28}{'GLM n':>7}{'GLM acc':>9}{'Cl n':>7}{'Cl acc':>9} | {'paired n':>9}{'GLM':>8}{'Claude':>8}{'GLM-only':>9}{'Cl-only':>8}{'p':>8}")
+    for m in MODELS:
+        pm = os.path.join(BASE, cfg["res"], cfg["five"].format(m=m))
+        pc = pm.replace(".csv", "__t5-claude-sonnet.csv")
+        g, _, _ = load_five(pm, U, collections.Counter())
+        c, _, _ = load_five(pc, U, collections.Counter())
+        gate = lambda p, b: g.get((p, b, "2"))
+        G = {(p, b): v for (p, b, t), v in g.items() if t == "5" and gate(p, b)}
+        C = {(p, b): v for (p, b, t), v in c.items() if t == "5" and gate(p, b)}
+        both = sorted(set(G) & set(C))
+        gb = sum(G[k] and not C[k] for k in both)
+        cb = sum(C[k] and not G[k] for k in both)
+        print(f"{m:<28}{len(G):>7}{pct(sum(G.values()), len(G)):>9}{len(C):>7}{pct(sum(C.values()), len(C)):>9} | "
+              f"{len(both):>9}{pct(sum(G[k] for k in both), len(both)):>8}{pct(sum(C[k] for k in both), len(both)):>8}"
+              f"{gb:>9}{cb:>8}{mcnemar_p(gb, cb):>8.3f}")
+
+
+# ---- Tier 4 view ablation: truncated (old) vs matched window (new), same writer ----
+print("\n" + "=" * 78)
+print("TIER 4 VIEW ABLATION: first-120-lines view (old) vs matched +-60 window (new), Claude-written")
+print("=" * 78)
+for lang, cfg in LANGS.items():
+    U = usable_set(cfg["data"])
+    print(f"\n{lang.upper()}")
+    print(f"{'model':<28}{'old n':>7}{'old acc':>9}{'new n':>7}{'new acc':>9} | {'paired n':>9}{'old':>8}{'new':>8}{'old-only':>9}{'new-only':>9}{'p':>8}")
+    for m in MODELS:
+        pm = os.path.join(BASE, cfg["res"], cfg["five"].format(m=m))
+        po = pm.replace(".csv", "__t5-claude-sonnet.csv"); pw = pm.replace(".csv", "__t5-claude-sonnet-win.csv")
+        if not (os.path.exists(po) and os.path.exists(pw)): print(f"{m:<28} (missing file)"); continue
+        g, _, _ = load_five(pm, U, collections.Counter())
+        o, _, _ = load_five(po, U, collections.Counter())
+        w, _, _ = load_five(pw, U, collections.Counter())
+        gate = lambda p, b: g.get((p, b, "2"))
+        O = {(p, b): v for (p, b, t), v in o.items() if t == "5" and gate(p, b)}
+        W = {(p, b): v for (p, b, t), v in w.items() if t == "5" and gate(p, b)}
+        both = sorted(set(O) & set(W))
+        ob = sum(O[k] and not W[k] for k in both); wb = sum(W[k] and not O[k] for k in both)
+        print(f"{m:<28}{len(O):>7}{pct(sum(O.values()), len(O)):>9}{len(W):>7}{pct(sum(W.values()), len(W)):>9} | "
+              f"{len(both):>9}{pct(sum(O[k] for k in both), len(both)):>8}{pct(sum(W[k] for k in both), len(both)):>8}"
+              f"{ob:>9}{wb:>9}{mcnemar_p(ob, wb):>8.3f}")

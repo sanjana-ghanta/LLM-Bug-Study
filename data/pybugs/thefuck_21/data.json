@@ -14,13 +14,18 @@
   "tier4_mutation_type": null,
   "tier5_code_by_model": {
     "glm-5.3-thinking": "from thefuck import utils\nfrom thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    parts = command.script.split()\n    return parts[1] == 'stash' and 'usage:' in command.stderr\n\n# git's output here is too complicated to be parsed (see the test file)\nstash_commands = [\n    'apply',\n    'branch',\n    'clear',\n    'drop',\n    'list',\n    'pop',\n    'save',\n    'show']\n\n\n@git_support\ndef get_new_command(command):\n    sub = command.script.split()[2]\n    suggestion = utils.get_closest(sub, stash_commands, fallback_to_first=False)\n\n    if suggestion is not None:\n        return replace_argument(command.script, sub, suggestion)\n\n    words = command.script.split()\n    words.insert(2, 'save')\n    return ' '.join(words)",
-    "claude-sonnet": "from thefuck import utils\nfrom thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    parts = command.script.split()\n    return ('usage:' in command.stderr) if parts[1] == 'stash' else False\n\n# git's output here is too complicated to be parsed (see the test file)\nstash_commands = (\n    'apply',\n    'branch',\n    'clear',\n    'drop',\n    'list',\n    'pop',\n    'save',\n    'show')\n\n\n@git_support\ndef get_new_command(command):\n    tokens = command.script.split()\n    wrong_sub = tokens[2]\n    closest = utils.get_closest(wrong_sub, stash_commands, fallback_to_first=False)\n\n    if closest is None:\n        words = command.script.split()\n        words.insert(2, 'save')\n        return ' '.join(words)\n    return replace_argument(command.script, wrong_sub, closest)"
+    "claude-sonnet": "from thefuck import utils\nfrom thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    parts = command.script.split()\n    return ('usage:' in command.stderr) if parts[1] == 'stash' else False\n\n# git's output here is too complicated to be parsed (see the test file)\nstash_commands = (\n    'apply',\n    'branch',\n    'clear',\n    'drop',\n    'list',\n    'pop',\n    'save',\n    'show')\n\n\n@git_support\ndef get_new_command(command):\n    tokens = command.script.split()\n    wrong_sub = tokens[2]\n    closest = utils.get_closest(wrong_sub, stash_commands, fallback_to_first=False)\n\n    if closest is None:\n        words = command.script.split()\n        words.insert(2, 'save')\n        return ' '.join(words)\n    return replace_argument(command.script, wrong_sub, closest)",
+    "claude-sonnet-win": "from thefuck import utils\nfrom thefuck.utils import replace_argument\nfrom thefuck.specific.git import git_support\n\n\n@git_support\ndef match(command):\n    parts = command.script.split()\n    return ('usage:' in command.stderr) if parts[1] == 'stash' else False\n\n# git's output here is too complicated to be parsed (see the test file)\nstash_commands = (\n    'apply',\n    'branch',\n    'clear',\n    'drop',\n    'list',\n    'pop',\n    'save',\n    'show')\n\n\n@git_support\ndef get_new_command(command):\n    tokens = command.script.split()\n    wrong_sub = tokens[2]\n    closest = utils.get_closest(wrong_sub, stash_commands, fallback_to_first=False)\n\n    if closest is None:\n        words = command.script.split()\n        words.insert(2, 'save')\n        return ' '.join(words)\n    return replace_argument(command.script, wrong_sub, closest)"
   },
   "tier5_meta_by_model": {
     "claude-sonnet": {
       "model_id": "claude-sonnet-5-5",
       "stop_reason": "end_turn",
       "struct_ok": true
+    },
+    "claude-sonnet-win": {
+      "copied_from": "claude-sonnet",
+      "window": "whole-file(<=120)"
     }
   }
 }

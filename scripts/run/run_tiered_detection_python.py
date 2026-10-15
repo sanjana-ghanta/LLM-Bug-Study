@@ -60,6 +60,8 @@ def window_code(code, center_line, window=60):
     lines = code.splitlines()
     if len(lines) <= 2 * window:
         return code
+    if center_line is None and os.environ.get('T5_NO_TRUNCATE')=='1':
+        return code
     if center_line is None:
         return truncate_code(code, max_lines=2 * window)
     start = max(0, center_line - window - 1)

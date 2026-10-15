@@ -79,6 +79,8 @@ def window_code(code, center_line, window=60):
     lines = code.splitlines()
     if len(lines) <= 2 * window:
         return code  # short enough to send whole
+    if center_line is None and os.environ.get('T5_NO_TRUNCATE')=='1':
+        return code
     if center_line is None:
         return truncate_code(code, max_lines=2 * window)
 
@@ -132,6 +134,9 @@ Code:
                   f"token budget on reasoning -- consider raising MAX_TOKENS)")
             return None, None
 
+    if not response_text:
+        print("  WARNING: no response after retries (rate limit?); skipping this cell for now")
+        return None, None
     verdict = "BUG" if "VERDICT: BUG" in response_text else "NO BUG"
     return verdict, response_text
 

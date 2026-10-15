@@ -35,7 +35,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 BUGS_DIR = os.path.join(BASE, "data/bugs")
 RESULTS_DIR = os.path.join(BASE, "results/java")
 
-MAX_TOKENS = 7000
+MAX_TOKENS = int(__import__("os").environ.get("DET_MAX_TOKENS", "7000"))
 REASONING_EFFORT = None  # set from --reasoning-effort
 BETWEEN_CALL_SLEEP_SECONDS = 8
 RETRY_WAIT_SECONDS = 30
