@@ -109,17 +109,11 @@ python3 scripts/analysis/quick_summary.py results/java/results_fivetier_glm-5.3-
 - **Jobs resume.** Every result row is saved to CSV; rerunning the same command skips finished rows.
 - **Detection is conditional.** Tier 3 runs only if Tier 1 was correct, Tier 4 only if Tier 2 was correct.
   After 3 failed passes an item is permanently "given up" (`*_failures.json`).
-- **Default output limit is 7,000 tokens** (`DET_MAX_TOKENS` overrides it; the scripts stream, so up to 12,000 works on ARC; non-streaming requests are capped at 8,000). Thinking models sometimes spend all of it reasoning and return nothing; those calls are retried, then given up and not saved. DeepSeek and GPT-OSS are affected most. Some DeepSeek Java and probe runs used 12,000; most DeepSeek runs used `--reasoning-effort low`.
 - **Probe coverage is limited** by the 1,000-line file cap and by empty responses.
 - **Nodes can kill jobs.** Check that a log's modification time is close to `date`; `tmux` sessions are per node.
 - `scripts/analysis/make_tables.py` drops unusable bugs, removes duplicate rows (earliest kept) and scores probes by exact line.
 
 ## Known limitations
-- **Tier 4 truncation bug (fixed).** The first Tier 4 runs had no center line, so the code was cut to the first 120 lines and often did not contain the bug (298 of 356 Java and 136 of 189 Python rewrites affected). Tier 4 was redone with matched-window rewrites; the old truncated results are kept only as a labelled ablation.
-- **Tier 4 differs from Tiers 1-3 in view:** rewritten window, no line-number prefixes.
-- **Single rewriter.** All disguises are written by Claude Sonnet 5.5; they are instructed to preserve the bug but are not verified.
-- **Tier 3 is a rule-based mutation** at the first eligible location; it changes behaviour, and bugs with no eligible site are excluded from Tier 3.
-- **Results are single runs;** individual cells can change between reruns.
 - **Coverage is uneven.** DeepSeek (and some GPT-OSS Python cells) have many empty-response cells. Report accuracy with denominators.
 - **Budgets and reasoning effort differ across runs** (see above).
 - **Gating uses a snapshot of Tier 2.** Bugs that became Tier 2-correct later need one more Tier 4 pass.
