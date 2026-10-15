@@ -14,7 +14,7 @@ WINDOW = 60
 SYSTEM = "You are a precise code transformation tool. Follow instructions exactly."
 MODELS = ["glm-5.3-thinking", "deepseek-v4-flash-thinking", "gpt-oss-thinking"]
 LANGS = {"java": ("data/bugs", "results/java", "Java"), "python": ("data/pybugs", "results/python", "Python")}
-BATCH_LOG = os.path.join(ROOT, "batches_tier5_win.json")
+BATCH_LOG = os.path.join(ROOT, "batch_logs/batches_tier5_win.json")
 def ok(v): return str(v).strip().lower() in ("true", "1", "yes")
 def nl(s): return s.count("\n") + 1
 
