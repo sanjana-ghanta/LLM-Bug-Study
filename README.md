@@ -72,7 +72,7 @@ pip install -r requirements.txt
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
 5. To add a model, add an entry to `MODELS` in `scripts/lib/config.py` (backend, base_url, model_id, api_key_env). No paths in the code are machine-specific.
 
-ARC allows 20 concurrent requests per key; a full run of one model takes days at that limit.
+ARC allows 20 concurrent requests per key.
 
 ## Running experiments
 
