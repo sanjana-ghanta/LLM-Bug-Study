@@ -23,6 +23,11 @@ def find_misses(language, model):
         path = os.path.join(BASE, "results/java", f"results_fivetier_{model}.csv")
 
     if not os.path.exists(path):
+        # models run with run_experiment.py keep all tiers in the matched-window file
+        alt = path.replace(".csv", "__t5-claude-sonnet-win.csv")
+        if os.path.exists(alt):
+            path = alt
+    if not os.path.exists(path):
         print(f"No results file found for {model} ({language})")
         return []
 
@@ -47,6 +52,7 @@ def main():
     print(f"{model} ({language}): {len(misses)} bugs missed on Tier 2")
 
     out_path = os.path.join(BASE, "results", "tier2_misses", f"tier2_misses_{language}_{model}.txt")
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w") as f:
         for project, bug_id in misses:
             f.write(f"{project}_{bug_id}\n")

@@ -192,3 +192,45 @@ for _lang, _cfg in LANGS.items():
         print(f"{_lang:<8}{_m:<30}{_acc('1'):>18}{_acc('2'):>18}{_acc('3','1'):>18}{_acc('5','2'):>18}   {len(_U)}")
 if not _any:
     print("(none: no results files found for models outside the main three)")
+
+
+# ---- ADDITIONAL MODELS: probes (Exp6 / Exp7) ----
+print("\n\nADDITIONAL MODELS: PROBES (exact line match is primary; +-5 secondary)")
+_anyp = False
+for _lang, _cfg in LANGS.items():
+    _U = usable_set(_cfg["data"])
+    _pre = _cfg["five"].format(m="")[:-4]
+    _suf = "__t5-claude-sonnet-win.csv"
+    _ms = sorted({os.path.basename(_pp)[len(_pre):-len(_suf)] for _pp in _glob.glob(os.path.join(BASE, _cfg["res"], _pre + "*" + _suf))} - set(MODELS))
+    for _m in _ms:
+        _P = {}
+        for _tag in ("p6", "p7"):
+            _rows = rd(os.path.join(BASE, _cfg["res"], _cfg[_tag].format(m=_m)))
+            if _rows is None: continue
+            _first = {}
+            for _rw in _rows:
+                _k = (_rw["project"], str(_rw["bug_id"]), _rw["tier"])
+                if (_k[0], _k[1]) in _U and _k not in _first: _first[_k] = _rw
+            _P[_tag] = _first
+        for _tag, _name in (("p6", "Exp6 bug-ID"), ("p7", "Exp7 context")):
+            if _tag not in _P:
+                print(f"{_lang:<8}{_m:<30}{_name:<14} (no file)"); continue
+            _t2 = [_rw for _k, _rw in _P[_tag].items() if _k[2] == "2"]
+            _t1 = [_rw for _k, _rw in _P[_tag].items() if _k[2] == "1"]
+            _ex = _w5 = 0
+            for _rw in _t2:
+                _a, _b = to_int(_rw["reported_line"]), to_int(actual(_rw))
+                if _a is not None and _b is not None:
+                    _ex += _a == _b; _w5 += abs(_a - _b) <= 5
+            _fa = sum(to_int(_rw["reported_line"]) is not None for _rw in _t1)
+            _anyp = True
+            print(f"{_lang:<8}{_m:<30}{_name:<14} T2 n={len(_t2):>3} exact={_ex:>3} ({pct(_ex,len(_t2))}) +-5={_w5:>3} ({pct(_w5,len(_t2))}) | T1 n={len(_t1):>3} gave a line={_fa:>3} ({pct(_fa,len(_t1))})")
+        if "p6" in _P and "p7" in _P:
+            _keys = [_k for _k in _P["p6"] if _k[2] == "2" and _k in _P["p7"]]
+            def _hit(_rw):
+                _a, _b = to_int(_rw["reported_line"]), to_int(actual(_rw)); return _a is not None and _b is not None and _a == _b
+            _b6 = sum(_hit(_P["p6"][_k]) and not _hit(_P["p7"][_k]) for _k in _keys)
+            _c7 = sum(_hit(_P["p7"][_k]) and not _hit(_P["p6"][_k]) for _k in _keys)
+            print(f"{'':<38}paired T2 bugs={len(_keys)}  Exp6-only exact={_b6}  Exp7-only exact={_c7}  McNemar p={mcnemar_p(_b6, _c7):.3f}")
+if not _anyp:
+    print("(none: no probe results for models outside the main three)")

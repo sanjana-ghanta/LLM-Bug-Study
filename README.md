@@ -84,7 +84,7 @@ pip install -r requirements.txt
    export OPEN_MODEL_API_KEY=dummy   # local servers ignore the key, but the variable must be set
    python3 scripts/run/run_experiment.py --model my-open-model --lang java --max-tokens 4000
 ```
-   Lower `--max-tokens` for models with a small context window (prompt plus output must fit), and read a few raw responses in the CSV first: scoring needs `VERDICT: BUG` or `VERDICT: NO BUG` in the answer. Other options: `--project Chart,Lang`, `--reasoning-effort low|medium|high` (only for models that support it). No paths in the code are machine-specific.
+   Lower `--max-tokens` for models with a small context window (prompt plus output must fit), and read a few raw responses in the CSV first: scoring needs `VERDICT: BUG` or `VERDICT: NO BUG` in the answer. Add `--with-probes` to also run Exp6 and Exp7 on the model's Tier 2 misses (the probes send whole files of up to 1,000 lines, so the model needs a large enough context window), and `--lang both` to run Java and Python. Other options: `--project Chart,Lang`, `--reasoning-effort low|medium|high` (only for models that support it). No paths in the code are machine-specific.
 
 ARC allows 20 concurrent requests per key.
 
@@ -95,6 +95,7 @@ Run inside `tmux`, from the repo root, logging with `tee`:
 ```bash
 python3 -u scripts/run/run_experiment.py --model glm-5.3-thinking --lang java   2>&1 | tee detect.log   # Java, Tiers 1-4
 python3 -u scripts/run/run_experiment.py --model glm-5.3-thinking --lang python 2>&1 | tee detect.log   # Python, Tiers 1-4
+python3 -u scripts/run/run_experiment.py --model glm-5.3-thinking --lang both --with-probes 2>&1 | tee run.log   # everything for one model: Tiers 1-4, Tier 2 miss list, Exp6, Exp7
 python3 scripts/run/find_tier2_misses.py java glm-5.3-thinking      # build the miss list for the probes
 python3 -u scripts/run/run_experiment6_bugid_recall.py --model glm-5.3-thinking 2>&1 | tee exp6.log
 python3 -u scripts/run/run_experiment7_context_framing.py --model glm-5.3-thinking 2>&1 | tee exp7.log
