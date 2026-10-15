@@ -70,7 +70,21 @@ pip install -r requirements.txt
 4. End-to-end check on 3 small bugs (about 10 calls):
    `python3 scripts/run/run_experiment.py --model glm-5.3-thinking --lang python --project PySnooper`, then `python3 scripts/analysis/quick_summary.py results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win.csv` for per-tier accuracy
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
-5. To add a model, add an entry to `MODELS` in `scripts/lib/config.py` (backend, base_url, model_id, api_key_env). No paths in the code are machine-specific.
+5. To add a model (for example an open model served locally with vLLM or Ollama), add an entry to `MODELS` in `scripts/lib/config.py`:
+```python
+   "my-open-model": {
+       "backend": "openai_compatible",
+       "base_url": "http://localhost:8000/v1",   # vLLM default; Ollama: http://localhost:11434/v1
+       "model_id": "<exact model name your server reports>",
+       "api_key_env": "OPEN_MODEL_API_KEY",
+   },
+```
+   Then run it:
+```bash
+   export OPEN_MODEL_API_KEY=dummy   # local servers ignore the key, but the variable must be set
+   python3 scripts/run/run_experiment.py --model my-open-model --lang java --max-tokens 4000
+```
+   Lower `--max-tokens` for models with a small context window (prompt plus output must fit), and read a few raw responses in the CSV first: scoring needs `VERDICT: BUG` or `VERDICT: NO BUG` in the answer. Other options: `--project Chart,Lang`, `--reasoning-effort low|medium|high` (only for models that support it). No paths in the code are machine-specific.
 
 ARC allows 20 concurrent requests per key.
 
@@ -88,9 +102,6 @@ python3 -u scripts/run/run_experiment7_context_framing.py --model glm-5.3-thinki
 python3 scripts/analysis/make_tables.py | tee tables_out.txt   # main tables, plus an "Additional models" section for any other model run with run_experiment.py
 python3 scripts/analysis/quick_summary.py results/java/results_fivetier_glm-5.3-thinking__t5-claude-sonnet-win.csv   # per-tier accuracy for one results file
 ```
-
-Options: `--project <name>` (detection), `--reasoning-effort low|medium|high` (all runner scripts).
-Tier 4 and budget flags (detection scripts; `--max-tokens` also works on the probe scripts): `--tier4-writer claude-sonnet-win` (which Tier 4 rewrite to use; **the default is still the old GLM-written arm, so pass this for the matched-window results**), `--tier4-only` (run only Tier 4), `--no-truncate` (required with the matched-window rewrites), `--max-tokens N` (output budget, default 7000). They are aliases for the environment variables `TIER5_WRITER`, `TIER5_ONLY`, `T5_NO_TRUNCATE` and `DET_MAX_TOKENS`, which still work.
 
 ## Things to know
 
