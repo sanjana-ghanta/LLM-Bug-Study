@@ -6,10 +6,10 @@ An empirical study on Defects4J (Java) and BugsInPy (Python) with three thinking
 | Model key | VT ARC model ID | Reasoning level |
 |---|---|---|
 | `glm-5.3-thinking` | `GLM-5.3-thinking-high` | high |
-| `deepseek-v4-flash-thinking` | `DeepSeek-V4.1-Flash-thinking-low` | low |
+| `deepseek-v4-flash-thinking` | `DeepSeek-V4.1-Flash-thinking-max` | `--reasoning-effort low` on most runs |
 | `gpt-oss-thinking` | `gpt-oss-120b-thinking-high` | high |
 
-Reasoning level is set by the model ID in `scripts/lib/config.py` and is not matched across models.
+Reasoning level is set by the model ID in `scripts/lib/config.py` (GLM, GPT-OSS) and, for DeepSeek, mostly by `--reasoning-effort low` per request. It is not matched across models.
 
 ## Design
 
@@ -71,19 +71,19 @@ pip install -r requirements.txt
    `python3 scripts/run/run_experiment.py --model glm-5.3-thinking --lang python --project PySnooper`, then `python3 scripts/analysis/quick_summary.py results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win.csv` for per-tier accuracy
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
 5. To add a model (for example an open model served locally with vLLM or Ollama), add an entry to `MODELS` in `scripts/lib/config.py`:
-```python
+   ```python
    "my-open-model": {
        "backend": "openai_compatible",
        "base_url": "http://localhost:8000/v1",   # vLLM default; Ollama: http://localhost:11434/v1
        "model_id": "<exact model name your server reports>",
        "api_key_env": "OPEN_MODEL_API_KEY",
    },
-```
+   ```
    Then run it:
-```bash
+   ```bash
    export OPEN_MODEL_API_KEY=dummy   # local servers ignore the key, but the variable must be set
    python3 scripts/run/run_experiment.py --model my-open-model --lang java --max-tokens 4000
-```
+   ```
    Lower `--max-tokens` for models with a small context window (prompt plus output must fit), and read a few raw responses in the CSV first: scoring needs `VERDICT: BUG` or `VERDICT: NO BUG` in the answer. Add `--with-probes` to also run Exp6 and Exp7 on the model's Tier 2 misses (the probes send whole files of up to 1,000 lines, so the model needs a large enough context window), and `--lang both` to run Java and Python. Other options: `--project Chart,Lang`, `--reasoning-effort low|medium|high` (only for models that support it). No paths in the code are machine-specific.
 
 ARC allows 20 concurrent requests per key.
@@ -115,6 +115,11 @@ python3 scripts/analysis/quick_summary.py results/java/results_fivetier_glm-5.3-
 - `scripts/analysis/make_tables.py` drops unusable bugs, removes duplicate rows (earliest kept) and scores probes by exact line.
 
 ## Known limitations
+- **Tier 4 truncation bug (fixed).** The first Tier 4 runs had no center line, so the code was cut to the first 120 lines and often did not contain the bug (298 of 356 Java and 136 of 189 Python rewrites affected). Tier 4 was redone with matched-window rewrites; the old truncated results are kept only as a labelled ablation.
+- **Tier 4 differs from Tiers 1-3 in view:** rewritten window, no line-number prefixes.
+- **Single rewriter.** All disguises are written by Claude Sonnet 5.5; they are instructed to preserve the bug but are not verified.
+- **Tier 3 is a rule-based mutation** at the first eligible location; it changes behaviour, and bugs with no eligible site are excluded from Tier 3.
+- **Results are single runs;** individual cells can change between reruns.
 - **Coverage is uneven.** DeepSeek (and some GPT-OSS Python cells) have many empty-response cells. Report accuracy with denominators.
 - **Budgets and reasoning effort differ across runs** (see above).
 - **Gating uses a snapshot of Tier 2.** Bugs that became Tier 2-correct later need one more Tier 4 pass.
