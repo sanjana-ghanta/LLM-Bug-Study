@@ -68,11 +68,20 @@ pip install -r requirements.txt
 2. `pip install -r requirements.txt`.
 3. Set the key for the model you use: `VT_ARC_API_KEY` (GLM, DeepSeek, GPT-OSS via VT ARC) or `ANTHROPIC_API_KEY` (Claude). Endpoints, model IDs and key variable names live in `scripts/lib/config.py`.
 4. End-to-end check on 3 small bugs (about 10 calls):
-   `python3 scripts/run/run_tiered_detection_python.py --model glm-5.3-thinking --project PySnooper --tier4-writer claude-sonnet-win --no-truncate`
+   `python3 scripts/run/run_experiment.py --model glm-5.3-thinking --lang python --project PySnooper`, then `python3 scripts/analysis/quick_summary.py results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win.csv` for per-tier accuracy
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
 5. To add a model, add an entry to `MODELS` in `scripts/lib/config.py` (backend, base_url, model_id, api_key_env). No paths in the code are machine-specific.
 
 ARC allows 20 concurrent requests per key.
+
+## Quick start (one command)
+
+```bash
+python3 scripts/run/run_experiment.py --model <model> --lang java|python [--project Chart,Lang] [--reasoning-effort low]
+python3 scripts/analysis/quick_summary.py results/<lang>/results_fivetier[_python]_<model>__t5-claude-sonnet-win.csv
+```
+
+`run_experiment.py` runs Tiers 1 to 4 in one pass, with Tier 4 as the Claude Sonnet 5.5 matched-window rewrite, and saves one CSV per model and language. Use this for any new model. The lower-level scripts below default to the older GLM-written Tier 4, so call them directly only if you know you need that.
 
 ## Running experiments
 
