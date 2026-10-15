@@ -1,7 +1,7 @@
 # --- friendly aliases for env-var options (see README) ---
 import os as _os, sys as _sys
 def _apply_flag_aliases(_a=_sys.argv):
-    _map = {"--max-tokens": ("DET_MAX_TOKENS", True)}
+    _map = {"--max-tokens": ("DET_MAX_TOKENS", True), "--shard": ("PROBE_SHARD", True)}
     _out = [_a[0]]
     _i = 1
     while _i < len(_a):
@@ -174,6 +174,12 @@ def main():
     with open(misses_path) as f:
         target_bugs = [line.strip() for line in f if line.strip()]
     print(f"Loaded {len(target_bugs)} Tier-2-missed bugs for {args.model}")
+    _shard = os.environ.get("PROBE_SHARD")
+    if _shard:
+        _i, _n = (int(x) for x in _shard.split("/"))
+        assert 0 <= _i < _n, "--shard must be i/n with 0 <= i < n"
+        target_bugs = [b for k, b in enumerate(target_bugs) if k % _n == _i]
+        print(f"Shard {_i}/{_n}: running {len(target_bugs)} of the bugs")
 
     out_csv = os.path.join(RESULTS_DIR, f"results_exp7_context_framing_{args.model}.csv")
     fields = ["project", "bug_id", "tier", "reported_line", "actual_line", "classification", "response"]
