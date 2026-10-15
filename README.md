@@ -74,22 +74,12 @@ pip install -r requirements.txt
 
 ARC allows 20 concurrent requests per key.
 
-## Quick start (one command)
-
-```bash
-python3 scripts/run/run_experiment.py --model <model> --lang java|python [--project Chart,Lang] [--reasoning-effort low]
-python3 scripts/analysis/quick_summary.py results/<lang>/results_fivetier[_python]_<model>__t5-claude-sonnet-win.csv
-```
-
-`run_experiment.py` runs Tiers 1 to 4 in one pass, with Tier 4 as the Claude Sonnet 5.5 matched-window rewrite, and saves one CSV per model and language. Use this for any new model. The lower-level scripts below default to the older GLM-written Tier 4, so call them directly only if you know you need that.
-
 ## Running experiments
 
 Run inside `tmux`, from the repo root, logging with `tee`:
 
 ```bash
-python3 -u scripts/run/run_tiered_detection.py --model glm-5.3-thinking 2>&1 | tee detect.log          # Java, Stage 1+2
-python3 -u scripts/run/run_tiered_detection_python.py --model glm-5.3-thinking 2>&1 | tee detect.log   # Python
+python3 scripts/run/run_experiment.py --model <model> --lang java|python [--project Chart,Lang] [--reasoning-effort low]   # Tiers 1-4
 python3 scripts/run/find_tier2_misses.py java glm-5.3-thinking      # build the miss list for the probes
 python3 -u scripts/run/run_experiment6_bugid_recall.py --model glm-5.3-thinking 2>&1 | tee exp6.log
 python3 -u scripts/run/run_experiment7_context_framing.py --model glm-5.3-thinking 2>&1 | tee exp7.log
