@@ -1,3 +1,26 @@
+# --- friendly aliases for env-var options (see README) ---
+import os as _os, sys as _sys
+def _apply_flag_aliases(_a=_sys.argv):
+    _map = {"--max-tokens": ("DET_MAX_TOKENS", True)}
+    _out = [_a[0]]
+    _i = 1
+    while _i < len(_a):
+        _k, _eq, _v = _a[_i].partition("=")
+        if _k in _map:
+            _env, _takes = _map[_k]
+            if _takes:
+                if not _eq:
+                    _i += 1
+                    _v = _a[_i]
+                _os.environ[_env] = _v
+            else:
+                _os.environ[_env] = "1"
+        else:
+            _out.append(_a[_i])
+        _i += 1
+    _a[:] = _out
+_apply_flag_aliases()
+# --- end aliases ---
 """
 Experiment 6: Bug ID Recall Test -- adapted from the original design
 (results/java/Experiment6.md) for GLM/DeepSeek/GPT-OSS instead of Claude.

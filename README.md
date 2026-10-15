@@ -20,7 +20,7 @@ Reasoning level is set by the model ID in `scripts/lib/config.py` and is not mat
 **Stage 2 (only for bugs that passed Stage 1)**
 - Tier 3: clean code with a synthetic bug injected. Scored only where Tier 1 was correct.
 - Tier 4: the real bug in disguised (semantically rewritten) code. Scored only where Tier 2 was correct.
-  Stored internally as "tier 5": `tier5_code_by_model` in each `data.json`. The disguise is written by Claude Sonnet 5.5 (`claude-sonnet-5-5`, key `claude-sonnet-win`). It rewrites only the +/-60-line window around the bug, the same window the other tiers show, so every tier sees matched context. The rewritten snippet has no line-number prefixes. Run Tier 4 with `TIER5_WRITER=claude-sonnet-win T5_NO_TRUNCATE=1`. Five bugs have no usable rewrite and are excluded: keras_16, keras_28, keras_32, Lang_19, Collections_17.
+  Stored internally as "tier 5": `tier5_code_by_model` in each `data.json`. The disguise is written by Claude Sonnet 5.5 (`claude-sonnet-5-5`, key `claude-sonnet-win`). It rewrites only the +/-60-line window around the bug, the same window the other tiers show, so every tier sees matched context. The rewritten snippet has no line-number prefixes. Run Tier 4 with `--tier4-writer claude-sonnet-win --no-truncate`. Five bugs have no usable rewrite and are excluded: keras_16, keras_28, keras_32, Lang_19, Collections_17.
 
 **Follow-up probes** (run on each model's own Tier 2 misses; whole file sent; files over 1,000 lines skipped)
 - Experiment 6: names the benchmark, project and bug ID, asks for the bug line.
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 2. `pip install -r requirements.txt`.
 3. Set the key for the model you use: `VT_ARC_API_KEY` (GLM, DeepSeek, GPT-OSS via VT ARC) or `ANTHROPIC_API_KEY` (Claude). Endpoints, model IDs and key variable names live in `scripts/lib/config.py`.
 4. End-to-end check on 3 small bugs (about 10 calls):
-   `TIER5_WRITER=claude-sonnet-win T5_NO_TRUNCATE=1 python3 scripts/run/run_tiered_detection_python.py --model glm-5.3-thinking --project PySnooper`
+   `python3 scripts/run/run_tiered_detection_python.py --model glm-5.3-thinking --project PySnooper --tier4-writer claude-sonnet-win --no-truncate`
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
 5. To add a model, add an entry to `MODELS` in `scripts/lib/config.py` (backend, base_url, model_id, api_key_env). No paths in the code are machine-specific.
 
@@ -89,7 +89,7 @@ python3 scripts/analysis/make_tables.py | tee tables_out.txt
 ```
 
 Options: `--project <name>` (detection), `--reasoning-effort low|medium|high` (all runner scripts).
-Environment variables: `TIER5_WRITER` (which Tier 4 rewrite to use), `TIER5_ONLY=1` (run only Tier 4), `T5_NO_TRUNCATE=1` (do not truncate Tier 4 snippets), `DET_MAX_TOKENS` (output budget, default 7000).
+Tier 4 and budget flags (detection scripts; `--max-tokens` also works on the probe scripts): `--tier4-writer claude-sonnet-win` (which Tier 4 rewrite to use; **the default is still the old GLM-written arm, so pass this for the matched-window results**), `--tier4-only` (run only Tier 4), `--no-truncate` (required with the matched-window rewrites), `--max-tokens N` (output budget, default 7000). They are aliases for the environment variables `TIER5_WRITER`, `TIER5_ONLY`, `T5_NO_TRUNCATE` and `DET_MAX_TOKENS`, which still work.
 
 ## Things to know
 
