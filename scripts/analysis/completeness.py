@@ -1,5 +1,5 @@
 import csv, json, os
-B = os.path.expanduser("~/llm-bug-study")
+B = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 M = ["glm-5.3-thinking", "deepseek-v4-flash-thinking", "gpt-oss-thinking"]
 L = {"java": ("data/bugs", "results/java", "results_fivetier_{m}.csv"),
      "python": ("data/pybugs", "results/python", "results_fivetier_python_{m}.csv")}

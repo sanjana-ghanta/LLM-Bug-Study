@@ -1,5 +1,5 @@
 import csv, json, os, collections, math
-BASE = os.path.expanduser("~/llm-bug-study")
+BASE = (os.environ.get("LLM_BUG_STUDY_ROOT") or os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(globals().get("__file__", os.path.join(os.getcwd(), "scripts", "analysis", "x")))), "..", "..")))
 MODELS = ["glm-5.3-thinking", "deepseek-v4-flash-thinking", "gpt-oss-thinking"]
 LANGS = {
     "java":   dict(data="data/bugs",   res="results/java",   five="results_fivetier_{m}.csv",
@@ -12,7 +12,7 @@ TRUE = ("true", "1", "yes", "y")
 
 import json as _json, os as _os
 _TL = {}
-_p = _os.path.join(_os.path.expanduser("~/llm-bug-study"), "results", "python", "true_bug_lines.json")
+_p = _os.path.join((os.environ.get("LLM_BUG_STUDY_ROOT") or os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(globals().get("__file__", os.path.join(os.getcwd(), "scripts", "analysis", "x")))), "..", ".."))), "results", "python", "true_bug_lines.json")
 if _os.path.exists(_p):
     _TL = _json.load(open(_p))
 
@@ -166,3 +166,29 @@ for lang, cfg in LANGS.items():
         print(f"{m:<28}{len(O):>7}{pct(sum(O.values()), len(O)):>9}{len(W):>7}{pct(sum(W.values()), len(W)):>9} | "
               f"{len(both):>9}{pct(sum(O[k] for k in both), len(both)):>8}{pct(sum(W[k] for k in both), len(both)):>8}"
               f"{ob:>9}{wb:>9}{mcnemar_p(ob, wb):>8.3f}")
+
+
+# ---- ADDITIONAL MODELS: any model run with scripts/run/run_experiment.py (one file, Tiers 1-4) ----
+import glob as _glob
+print("\n\nADDITIONAL MODELS (T3 scored where T1 correct, T4 where T2 correct; usable bugs only)")
+_any = False
+for _lang, _cfg in LANGS.items():
+    _U = usable_set(_cfg["data"])
+    _pre = _cfg["five"].format(m="")[:-4]
+    _suf = "__t5-claude-sonnet-win.csv"
+    for _pp in sorted(_glob.glob(os.path.join(BASE, _cfg["res"], _pre + "*" + _suf))):
+        _m = os.path.basename(_pp)[len(_pre):-len(_suf)]
+        if not _m or _m in MODELS: continue
+        _d, _, _ = load_five(_pp, _U, collections.Counter())
+        _bugs = {}
+        for (_pj, _b, _t), _v in _d.items():
+            _bugs.setdefault((_pj, _b), {})[_t] = _v
+        def _acc(t, gate=None):
+            sel = [x for x in _bugs.values() if t in x and (gate is None or x.get(gate))]
+            c = sum(1 for x in sel if x[t])
+            return f"{c}/{len(sel)} ({pct(c, len(sel))})"
+        if not _any:
+            print(f"{'lang':<8}{'model':<30}{'T1':>18}{'T2':>18}{'T3':>18}{'T4':>18}   usable bugs"); _any = True
+        print(f"{_lang:<8}{_m:<30}{_acc('1'):>18}{_acc('2'):>18}{_acc('3','1'):>18}{_acc('5','2'):>18}   {len(_U)}")
+if not _any:
+    print("(none: no results files found for models outside the main three)")
