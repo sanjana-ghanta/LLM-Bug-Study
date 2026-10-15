@@ -72,7 +72,7 @@ pip install -r requirements.txt
    If the repo's committed CSV already holds those cells the run only prints "already done"; delete `results/python/results_fivetier_python_glm-5.3-thinking__t5-claude-sonnet-win*` first to force real calls.
 5. To add a model, add an entry to `MODELS` in `scripts/lib/config.py` (backend, base_url, model_id, api_key_env). No paths in the code are machine-specific.
 
-ARC allows 20 concurrent requests per key; a full run of one model takes days at that limit.
+ARC allows 20 concurrent requests per key.
 
 ## Running experiments
 
@@ -102,11 +102,6 @@ Tier 4 and budget flags (detection scripts; `--max-tokens` also works on the pro
 - `scripts/analysis/make_tables.py` drops unusable bugs, removes duplicate rows (earliest kept) and scores probes by exact line.
 
 ## Known limitations
-
-- **Tier 4 truncation bug (fixed).** The first Tier 4 runs had no center line, so the code was cut to the first 120 lines and often did not contain the bug (298 of 356 Java and 136 of 189 Python rewrites affected). Tier 4 was redone with matched-window rewrites. The old truncated results are kept only as a labelled ablation.
-- **Tier 4 differs from Tiers 1-3 in view:** rewritten window, no line-number prefixes.
-- **Single rewriter.** All disguises are written by Claude Sonnet 5.5. They are instructed to preserve the bug but are not verified.
-- **Tier 3 is a rule-based mutation** at the first eligible location. It changes behaviour, and bugs with no eligible site are excluded from Tier 3.
 - **Coverage is uneven.** DeepSeek (and some GPT-OSS Python cells) have many empty-response cells. Report accuracy with denominators.
 - **Budgets and reasoning effort differ across runs** (see above).
 - **Gating uses a snapshot of Tier 2.** Bugs that became Tier 2-correct later need one more Tier 4 pass.
