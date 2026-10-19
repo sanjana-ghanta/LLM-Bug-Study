@@ -316,7 +316,25 @@ def main():
                          help="Optional: low/medium/high. Only meaningful for VT ARC models that "
                               "support it; ignored for Claude. Lower effort trades reasoning depth "
                               "for reliability/speed on models with a high empty-response rate.")
+    parser.add_argument("-n", "--num-bugs", type=int, default=None, help="run only N randomly chosen usable bugs")
+    parser.add_argument("--seed", type=int, default=0, help="seed for -n (default 0)")
+    parser.add_argument("--subset", default=None, help="file with one bug dir per line")
     args = parser.parse_args()
+    SUBSET = None
+    if args.subset:
+        SUBSET = set(l.strip() for l in open(args.subset) if l.strip())
+    elif args.num_bugs:
+        import json as _j, random as _r, os as _o
+        _u = []
+        for _d in sorted(_o.listdir(BUGS_DIR)):
+            try:
+                _x = _j.load(open(_o.path.join(BUGS_DIR, _d, "data.json"))).get("original_bug_line")
+            except Exception:
+                continue
+            if _x is not None: _u.append(_d)
+        SUBSET = set(_r.Random(args.seed).sample(_u, min(args.num_bugs, len(_u))))
+    if SUBSET is not None:
+        print(f"Subset: {len(SUBSET)} bugs, e.g. {sorted(SUBSET)[:5]}")
 
     all_projects_in_data = get_all_projects_in_data(BUGS_DIR)
 
@@ -353,6 +371,8 @@ def main():
             writer.writeheader()
 
         for bug_dir in sorted(os.listdir(BUGS_DIR)):
+
+            if SUBSET is not None and bug_dir not in SUBSET: continue
             bug_project = bug_dir.split("_")[0]
             if bug_project not in wanted_projects:
                 continue

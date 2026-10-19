@@ -260,7 +260,25 @@ def main():
                         help="Reasoning effort for models that support it")
     parser.add_argument("--project", default="all",
                          help="Comma-separated project names (e.g. pandas,black) or 'all' (default)")
+    parser.add_argument("-n", "--num-bugs", type=int, default=None, help="run only N randomly chosen usable bugs")
+    parser.add_argument("--seed", type=int, default=0, help="seed for -n (default 0)")
+    parser.add_argument("--subset", default=None, help="file with one bug dir per line")
     args = parser.parse_args()
+    SUBSET = None
+    if args.subset:
+        SUBSET = set(l.strip() for l in open(args.subset) if l.strip())
+    elif args.num_bugs:
+        import json as _j, random as _r, os as _o
+        _u = []
+        for _d in sorted(_o.listdir(BUGS_DIR)):
+            try:
+                _x = _j.load(open(_o.path.join(BUGS_DIR, _d, "data.json"))).get("original_bug_line")
+            except Exception:
+                continue
+            if _x is not None: _u.append(_d)
+        SUBSET = set(_r.Random(args.seed).sample(_u, min(args.num_bugs, len(_u))))
+    if SUBSET is not None:
+        print(f"Subset: {len(SUBSET)} bugs, e.g. {sorted(SUBSET)[:5]}")
     global REASONING_EFFORT
     REASONING_EFFORT = args.reasoning_effort
 
@@ -287,6 +305,8 @@ def main():
             writer.writeheader()
 
         for bug_dir in sorted(os.listdir(BUGS_DIR)):
+
+            if SUBSET is not None and bug_dir not in SUBSET: continue
             data_path = os.path.join(BUGS_DIR, bug_dir, "data.json")
             if not os.path.exists(data_path):
                 continue
