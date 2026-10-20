@@ -21,3 +21,5 @@ spacy,8,1,342,498,pattern_matched_clean,LINE: 342 REASON: The error message inco
 spacy,8,2,594,498,wrong,"LINE: 594 REASON: The warning code uses `inspect.stack()[-1]`, which selects the outermost entry-point frame instead of the actual caller frame, causing warnings to be reported at the wrong location."
 keras,33,1,291,38,pattern_matched_clean,LINE: 291 REASON: Words whose index is outside `num_words` are silently skipped instead of being replaced with the configured `oov_token`.
 keras,33,2,215,38,wrong,"LINE: 215 REASON: The OOV token is assigned after the existing vocabulary instead of being reserved at the front, so it can fall outside `num_words` and fail to replace out-of-vocabulary tokens correctly."
+luigi,5,1,245,274,pattern_matched_clean,"LINE: 245 REASON: It reads common parameter values from `task_instance.param_kwargs`, which may omit default or positional parameter values, causing `clone`/`inherits` to fail or pass incorrect parameters."
+luigi,5,2,405,274,wrong,"LINE: 405 REASON: The broad DateParameter check runs before the more specific DateHour/DateMinute/DateSecond checks, so those subclasses are incorrectly decremented by one day."
