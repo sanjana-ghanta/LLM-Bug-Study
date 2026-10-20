@@ -10,3 +10,5 @@ JxPath,2,1,92,18,pattern_matched_clean,"LINE: 92 REASON: A NodeSet already conta
 JxPath,2,2,75,18,wrong,"LINE: 75 REASON: Non-EvalContext results are blindly passed to ValueUtils.iterate, so a NodeSet result is treated as a regular object instead of iterating over its contained pointers/values."
 Lang,6,1,95,95,pattern_matched_clean,"LINE: 95 REASON: The code advances `pos` using `codePointAt(input, pt)` from the start of the input instead of using the current translation position, so surrogate pairs are counted incorrectly after translated codepoints."
 Lang,6,2,86,95,wrong,"LINE: 86 REASON: The position advancement for an untranslated character must account for the full UTF-16 length of the current code point, otherwise supplementary characters/surrogate pairs are mishandled."
+Jsoup,91,1,11,9,pattern_matched_clean,"LINE: 11 REASON: The constructor wraps the message only as the cause, so the unchecked exception’s own message becomes the IOException’s string representation instead of the supplied message."
+Jsoup,91,2,,9,none,LINE: NONE REASON: This class is just a wrapper for an IOException and does not contain the Jsoup bug 91 defect.

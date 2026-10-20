@@ -10,3 +10,5 @@ JxPath,2,1,124,18,pattern_matched_clean,"LINE: 124 REASON: It creates a NodePoin
 JxPath,2,2,90,18,wrong,"LINE: 90 REASON: The code dereferences the root context's current node pointer to get a locale, which can be null and cause a NullPointerException instead of using the context's locale directly."
 Lang,6,1,95,95,pattern_matched_clean,"LINE: 95 REASON: The code advances `pos` using `Character.codePointAt(input, pt)` instead of the current `pos`, so it computes character widths from the start of the input rather than from the consumed translation position."
 Lang,6,2,,95,none,LINE: NONE REASON: The provided file appears to contain the corrected code and no specific buggy line is evident in this source.
+Jsoup,91,1,11,9,pattern_matched_clean,"LINE: 11 REASON: The constructor wraps the message in a new IOException via the cause-only RuntimeException constructor, so the UncheckedIOException's own message becomes the cause's toString rather than the supplied message."
+Jsoup,91,2,,9,none,LINE: NONE REASON: There is no evident bug in this file; it correctly wraps an IOException in a RuntimeException and exposes the original cause.

@@ -7,3 +7,4 @@ JacksonDatabind_21
 JacksonDatabind_73
 JxPath_2
 Lang_6
+Jsoup_91

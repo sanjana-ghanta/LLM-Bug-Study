@@ -17,3 +17,5 @@ youtube-dl,38,1,129,11,pattern_matched_clean,"LINE: 129 REASON: The code indexes
 youtube-dl,38,2,25,11,wrong,"LINE: 25 REASON: The URL regex omits the valid Facebook `video.php` path, so URLs like `facebook.com/video.php?v=...` are incorrectly rejected."
 youtube-dl,39,1,150,12,pattern_matched_clean,"LINE: 150 REASON: The code blindly indexes and converts `video_data['video_duration']` with `int()`, which can fail when the duration is missing or not an integer-formatted value."
 youtube-dl,39,2,134,12,wrong,"LINE: 134 REASON: It calls `len(video_title)` even though `video_title` may be `None` when the alternative title regex does not match, causing a `TypeError` instead of falling back to the default title."
+spacy,8,1,341,498,pattern_matched_clean,LINE: 341 REASON: The error message tells users to call the nonexistent `nlp.create_pipeline('sentencizer')` method instead of the correct `nlp.create_pipe('sentencizer')`.
+spacy,8,2,478,498,wrong,"LINE: 478 REASON: The E164 message uses an unnamed `{}` placeholder instead of a named placeholder such as `{x}`, which breaks formatting when the error is formatted with keyword arguments."

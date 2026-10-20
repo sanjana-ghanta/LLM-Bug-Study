@@ -17,3 +17,5 @@ youtube-dl,38,1,128,11,pattern_matched_clean,"LINE: 128 REASON: The fallback use
 youtube-dl,38,2,25,11,wrong,"LINE: 25 REASON: The URL-matching regex omits the valid `video.php` Facebook video path, causing URLs like `facebook.com/video.php?v=...` to be rejected."
 youtube-dl,39,1,163,12,pattern_matched_clean,"LINE: 163 REASON: The extractor blindly converts `video_data['video_duration']` with `int()`, which can fail when the duration is missing or not an integer value."
 youtube-dl,39,2,134,12,wrong,"LINE: 134 REASON: `video_title` may be `None`, so calling `len(video_title)` can raise a `TypeError` before the fallback title is assigned."
+spacy,8,1,342,498,pattern_matched_clean,LINE: 342 REASON: The error message incorrectly tells users to call nonexistent `nlp.create_pipeline('sentencizer')` instead of the correct `nlp.create_pipe('sentencizer')`.
+spacy,8,2,594,498,wrong,"LINE: 594 REASON: The warning code uses `inspect.stack()[-1]`, which selects the outermost entry-point frame instead of the actual caller frame, causing warnings to be reported at the wrong location."

@@ -20,3 +20,7 @@ pandas_83
 youtube-dl_19
 youtube-dl_38
 youtube-dl_39
+tornado_9
+spacy_8
+youtube-dl_18
+youtube-dl_37
