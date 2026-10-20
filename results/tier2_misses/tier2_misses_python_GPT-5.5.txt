@@ -12,3 +12,11 @@ ansible_13
 black_19
 black_2
 cookiecutter_4
+matplotlib_17
+pandas_124
+pandas_40
+pandas_77
+pandas_83
+youtube-dl_19
+youtube-dl_38
+youtube-dl_39

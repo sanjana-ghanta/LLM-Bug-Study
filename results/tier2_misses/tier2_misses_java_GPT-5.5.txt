@@ -2,3 +2,8 @@ Compress_19
 JacksonDatabind_108
 JacksonDatabind_22
 Mockito_19
+Collections_27
+JacksonDatabind_21
+JacksonDatabind_73
+JxPath_2
+Lang_6

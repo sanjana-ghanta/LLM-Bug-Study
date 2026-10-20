@@ -3,3 +3,10 @@ Compress,19,1,144,259,pattern_matched_clean,"LINE: 144 REASON: `getLocalFileData
 Compress,19,2,142,259,wrong,"LINE: 142 REASON: `getLocalFileDataLength()` bases the local data length only on `size`, so it incorrectly returns zero when `compressedSize` is set but `size` is null even though the local Zip64 field requires both size values."
 Mockito,19,1,35,12,pattern_matched_clean,"LINE: 35 REASON: The Reporter exception is created but not thrown, so injection failures are swallowed instead of being reported."
 Mockito,19,2,34,12,wrong,"LINE: 34 REASON: The created injection failure exception is not thrown, so runtime errors during mock injection can be silently swallowed."
+Collections,27,1,,567,reasoned_no_bug_or_malformed,LINE: NONE REASON: The provided version already includes the deserialization validation for ReflectionFactory and no definite buggy line is evident in this file.
+Collections,27,2,133,567,wrong,"LINE: 133 REASON: The default constructor creates a backing `HashMap<K, V>` even though the map actually stores `Collection<V>` values for each key."
+JacksonDatabind,21,2,48,3,wrong,"LINE: 48 REASON: The implementation of `findEnumValues` that should honor `@JsonProperty` names for enum constants is missing at this point, leaving only its comments and causing annotated enum names to be ignored."
+JxPath,2,1,124,18,pattern_matched_clean,"LINE: 124 REASON: It creates a NodePointer using the overload that lacks namespace resolution, so non-Pointer values lose the context namespace information."
+JxPath,2,2,90,18,wrong,"LINE: 90 REASON: The code dereferences the root context's current node pointer to get a locale, which can be null and cause a NullPointerException instead of using the context's locale directly."
+Lang,6,1,95,95,pattern_matched_clean,"LINE: 95 REASON: The code advances `pos` using `Character.codePointAt(input, pt)` instead of the current `pos`, so it computes character widths from the start of the input rather than from the consumed translation position."
+Lang,6,2,,95,none,LINE: NONE REASON: The provided file appears to contain the corrected code and no specific buggy line is evident in this source.

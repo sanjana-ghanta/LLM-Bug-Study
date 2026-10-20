@@ -7,3 +7,13 @@ luigi,23,1,292,109,pattern_matched_clean,"LINE: 292 REASON: The truthiness check
 luigi,23,2,452,109,wrong,"LINE: 452 REASON: `build()` calls `Interface.run(...)` but does not return its boolean success result, so callers always receive `None`."
 luigi,8,1,468,332,pattern_matched_clean,"LINE: 468 REASON: `client.list(s3.path)` already returns full S3 paths, so prefixing it with `folder_path` creates invalid duplicated manifest URLs."
 luigi,8,2,461,332,wrong,"LINE: 461 REASON: `client.list(s3.path)` already returns full S3 paths, so prefixing `folder_path` again creates invalid duplicated manifest URLs."
+cookiecutter,4,1,51,81,pattern_matched_clean,"LINE: 51 REASON: The word ""contructed"" in the exception docstring is misspelled and should be ""constructed""."
+cookiecutter,4,2,51,81,wrong,LINE: 51 REASON: The docstring contains a typo: “contructed” should be “constructed”.
+pandas,77,1,243,277,pattern_matched_clean,"LINE: 243 REASON: The object-comparison branch fails to handle string scalar operands, so non-object arrays compared to strings fall through to NumPy and can incorrectly raise instead of producing the expected elementwise comparison."
+pandas,77,2,108,277,wrong,"LINE: 108 REASON: The reverse-power special case sets the mask to `False` when `y == 1`, causing `1 ** NaN` cases to be treated as missing instead of being computed as `1`."
+pandas,83,1,211,63,pattern_matched_clean,"LINE: 211 REASON: The `union_many` call does not propagate the `sort` argument, so `sort=False` is ignored when unioning DatetimeIndex-style indexes."
+pandas,83,2,168,63,wrong,"LINE: 168 REASON: A single list input is always sorted, ignoring the `sort=False` option and potentially reordering values unexpectedly."
+youtube-dl,38,1,129,11,pattern_matched_clean,"LINE: 129 REASON: The code indexes `video_data['sd_src']` directly, so a missing `sd_src` raises `KeyError` instead of allowing the following “Cannot find video URL” check to handle it."
+youtube-dl,38,2,25,11,wrong,"LINE: 25 REASON: The URL regex omits the valid Facebook `video.php` path, so URLs like `facebook.com/video.php?v=...` are incorrectly rejected."
+youtube-dl,39,1,150,12,pattern_matched_clean,"LINE: 150 REASON: The code blindly indexes and converts `video_data['video_duration']` with `int()`, which can fail when the duration is missing or not an integer-formatted value."
+youtube-dl,39,2,134,12,wrong,"LINE: 134 REASON: It calls `len(video_title)` even though `video_title` may be `None` when the alternative title regex does not match, causing a `TypeError` instead of falling back to the default title."
