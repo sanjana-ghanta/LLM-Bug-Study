@@ -123,3 +123,30 @@ python3 scripts/analysis/quick_summary.py results/java/results_fivetier_glm-5.3-
 
 `scripts/legacy/` holds earlier experiment iterations, including the original pilot (45 Java and 50 Python bugs)
 and a sycophancy challenge experiment. They are not part of the final pipeline.
+
+## Run the pipeline on a new model
+
+Any OpenAI-compatible model can be evaluated on a random sample of N usable bugs per
+language (Defects4J Java and BugsInPy Python) with one script. It runs the detection
+stages (Buggy, Fixed, Mutated, Rewritten) and the follow-up probes (Bug-ID Recall and
+Benchmark-Context Framing) on the model's own missed bugs.
+
+```bash
+pip install openai
+export MODEL_NAME=my-model              # label for result files (optional; defaults to MODEL_ID)
+export MODEL_API_KEY=...                # API key
+export MODEL_BASE_URL=https://.../v1    # OpenAI-compatible endpoint
+export MODEL_ID=...                     # exact model ID the endpoint expects
+
+./run_all_experiments.sh smoke          # 2 bugs per language; checks the setup and cleans up
+./run_all_experiments.sh -n 50          # 50 Java + 50 Python bugs (any N works)
+```
+
+- The sample is drawn with a fixed seed (0), so runs with the same N use the same bugs.
+- Re-running is safe: finished bugs are skipped.
+- If the endpoint rejects `reasoning_effort`, run with `REASONING_EFFORT=none`.
+- Outputs: `results/java/`, `results/python/`, `results/tier2_misses/`, packed into
+  `results_<MODEL_NAME>.tgz`; logs in `logs_<MODEL_NAME>/`.
+- The individual runners accept the same selection flags: `-n/--num-bugs`, `--seed`,
+  and `--subset FILE` (one bug directory per line), e.g.
+  `python3 scripts/run/run_tiered_detection.py --model KEY -n 50`.
