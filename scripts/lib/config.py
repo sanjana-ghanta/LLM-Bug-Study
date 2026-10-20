@@ -104,5 +104,14 @@ MODELS = {
     # To add another model, add an entry here. Any OpenAI-compatible
     # endpoint (VT ARC or otherwise) just needs backend/base_url/model_id/
     # api_key_env -- no other code changes needed.
+    # Local Ollama. Defaults to Ollama's standard port, but honours
+    # OLLAMA_OPENAI_BASE_URL so a batch job can serve on a free random port
+    # instead (compute nodes are shared -- 11434 may belong to someone else).
+    "qwen3.8:latest":{
+        "backend": "openai_compatible",
+        "base_url": os.environ.get("OLLAMA_OPENAI_BASE_URL", "http://localhost:11434/v1"),
+        "model_id": "qwen3.8:latest",
+        "api_key_env": "OPEN_MODEL_API_KEY",
+    }
 }
 

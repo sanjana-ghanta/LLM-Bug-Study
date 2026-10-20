@@ -1,0 +1,18 @@
+{
+  "black|10|2": 1,
+  "black|3|3": 1,
+  "keras|9|2": 1,
+  "luigi|18|2": 1,
+  "luigi|19|5": 1,
+  "matplotlib|27|1": 1,
+  "pandas|120|5": 1,
+  "pandas|141|2": 1,
+  "pandas|143|2": 1,
+  "pandas|162|5": 1,
+  "pandas|52|1": 1,
+  "pandas|84|5": 1,
+  "pandas|96|1": 1,
+  "spacy|4|2": 1,
+  "spacy|7|2": 1,
+  "tornado|4|1": 1
+}
