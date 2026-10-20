@@ -126,7 +126,7 @@ if [ "$MODE" = "smoke" ]; then
     echo; echo "SMOKE TEST PASSED. Now run:  ./run_all_experiments.sh"
     exit 0
   fi
-  echo; echo "SMOKE TEST FAILED. Send Sanjana the lines above and the files in $LOGDIR/."
+  echo; echo "SMOKE TEST FAILED. See the lines above and the files in $LOGDIR/."
   echo "Common fixes: wrong MODEL_ID / MODEL_BASE_URL / MODEL_API_KEY; 'max_tokens' or 'reasoning_effort' rejected."
   echo "If reasoning_effort is rejected, retry with:  REASONING_EFFORT=none ./run_all_experiments.sh smoke"
   exit 1
@@ -163,4 +163,4 @@ find results \( -name "*_${MODEL}.csv" -o -name "*_${MODEL}_failures.json" -o -n
 ls -lh "$OUT"
 echo
 echo "DONE. Rows in main results (incl. header): Java=$(wc -l < "$R_JAVA" 2>/dev/null || echo 0)  Python=$(wc -l < "$R_PY" 2>/dev/null || echo 0)"
-echo "Send $OUT to Sanjana (it contains no API key)."
+echo "Saved to $OUT"
