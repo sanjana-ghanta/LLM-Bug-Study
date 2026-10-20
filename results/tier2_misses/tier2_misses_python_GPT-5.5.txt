@@ -24,3 +24,7 @@ tornado_9
 spacy_8
 youtube-dl_18
 youtube-dl_37
+matplotlib_24
+black_22
+keras_33
+keras_35

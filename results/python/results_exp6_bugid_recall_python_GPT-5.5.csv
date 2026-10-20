@@ -19,3 +19,5 @@ youtube-dl,39,1,163,12,pattern_matched_clean,"LINE: 163 REASON: The extractor bl
 youtube-dl,39,2,134,12,wrong,"LINE: 134 REASON: `video_title` may be `None`, so calling `len(video_title)` can raise a `TypeError` before the fallback title is assigned."
 spacy,8,1,342,498,pattern_matched_clean,LINE: 342 REASON: The error message incorrectly tells users to call nonexistent `nlp.create_pipeline('sentencizer')` instead of the correct `nlp.create_pipe('sentencizer')`.
 spacy,8,2,594,498,wrong,"LINE: 594 REASON: The warning code uses `inspect.stack()[-1]`, which selects the outermost entry-point frame instead of the actual caller frame, causing warnings to be reported at the wrong location."
+keras,33,1,291,38,pattern_matched_clean,LINE: 291 REASON: Words whose index is outside `num_words` are silently skipped instead of being replaced with the configured `oov_token`.
+keras,33,2,215,38,wrong,"LINE: 215 REASON: The OOV token is assigned after the existing vocabulary instead of being reserved at the front, so it can fall outside `num_words` and fail to replace out-of-vocabulary tokens correctly."
