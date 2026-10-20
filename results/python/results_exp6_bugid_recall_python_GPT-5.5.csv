@@ -1,0 +1,9 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+keras,11,1,173,7,pattern_matched_clean,"LINE: 173 REASON: `epoch_logs` is initialized outside the epoch loop, causing the same log dictionary to be reused across epochs and stale callback/log values to carry over."
+keras,11,2,172,7,wrong,"LINE: 172 REASON: `epoch_logs` is initialized only once before the epoch loop, causing log values from previous epochs to persist instead of using a fresh log dictionary each epoch."
+keras,16,1,294,85,pattern_matched_clean,"LINE: 294 REASON: `name` is only initialized inside the preceding `if 'name' in config` block, so configs without a `name` key cause an unbound local variable error during deserialization."
+keras,16,2,133,85,wrong,"LINE: 133 REASON: The code checks `self._layers` instead of `self.layers`, so after popping all user-added layers a hidden `InputLayer` can remain and prevent a newly added layer from being treated as the first layer."
+luigi,23,1,452,109,pattern_matched_clean,"LINE: 452 REASON: `build()` calls `Interface.run(...)` but does not return its boolean success result, so callers always receive `None`."
+luigi,23,2,450,109,wrong,"LINE: 450 REASON: `build()` calls `Interface.run(...)` but fails to return its boolean result, so callers always receive `None`."
+luigi,8,1,671,332,pattern_matched_clean,"LINE: 671 REASON: `self.query` is a query string/property inherited from `PostgresQuery`, so calling it as `self.query()` will raise a `TypeError`; it should use `self.query.replace(...)` instead."
+luigi,8,2,463,332,wrong,"LINE: 463 REASON: `client.list(s3.path)` already returns full S3 paths, so prefixing each result with `folder_path` creates invalid duplicated manifest URLs."

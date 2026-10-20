@@ -1,0 +1,5 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+Compress,19,1,144,259,pattern_matched_clean,"LINE: 144 REASON: `getLocalFileDataLength()` only checks `size != null`, so it reports zero length when only `compressedSize` is set even though local Zip64 data must account for both size fields when either is present."
+Compress,19,2,142,259,wrong,"LINE: 142 REASON: `getLocalFileDataLength()` bases the local data length only on `size`, so it incorrectly returns zero when `compressedSize` is set but `size` is null even though the local Zip64 field requires both size values."
+Mockito,19,1,35,12,pattern_matched_clean,"LINE: 35 REASON: The Reporter exception is created but not thrown, so injection failures are swallowed instead of being reported."
+Mockito,19,2,34,12,wrong,"LINE: 34 REASON: The created injection failure exception is not thrown, so runtime errors during mock injection can be silently swallowed."

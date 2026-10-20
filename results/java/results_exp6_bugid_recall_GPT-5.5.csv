@@ -1,0 +1,5 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+Compress,19,1,144,259,pattern_matched_clean,"LINE: 144 REASON: `getLocalFileDataLength()` only checks `size != null`, so it incorrectly returns zero when `compressedSize` is set but `size` is null, instead of treating either size field as requiring Zip64 local data."
+Compress,19,2,259,259,correct,LINE: 259 REASON: The length check wrongly requires the Zip64 central directory extra field to be exactly the expected length instead of allowing longer fields with additional Zip64 data.
+Mockito,19,1,25,12,pattern_matched_clean,"LINE: 25 REASON: The filter injects whenever there is exactly one type-matching mock, ignoring whether that mock's name matches a different remaining candidate field, so it can inject the mock into the wrong field."
+Mockito,19,2,34,12,wrong,"LINE: 34 REASON: The caught injection failure is passed to `Reporter.cannotInjectDependency(...)` without throwing it, so the injection error can be swallowed and the mock treated as successfully injected."

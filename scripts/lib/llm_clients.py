@@ -34,7 +34,7 @@ def call_llm(model_key, system_prompt, user_prompt, max_tokens=512, temperature=
     elif cfg["backend"] == "openai_compatible":
         return _call_openai_compatible(
             api_key, cfg["base_url"], cfg["model_id"], system_prompt, user_prompt,
-            max_tokens, temperature, reasoning_effort
+            max_tokens, temperature, reasoning_effort, cfg.get("api_key_header")
         )
     else:
         raise ValueError(f"Unknown backend '{cfg['backend']}' for model '{model_key}'")
@@ -53,7 +53,7 @@ def _call_anthropic(api_key, model_id, system_prompt, user_prompt, max_tokens):
     return "".join(block.text for block in response.content if hasattr(block, "text"))
 
 
-def _call_openai_compatible(api_key, base_url, model_id, system_prompt, user_prompt, max_tokens, temperature, reasoning_effort=None):
+def _call_openai_compatible(api_key, base_url, model_id, system_prompt, user_prompt, max_tokens, temperature, reasoning_effort=None, api_key_header=None):
     """
     Uses streaming rather than a plain request-and-wait call. VT ARC's own
     documentation states that non-streaming requests with long outputs are
@@ -62,23 +62,32 @@ def _call_openai_compatible(api_key, base_url, model_id, system_prompt, user_pro
     function needs to change.
     """
     from openai import OpenAI
-    client = OpenAI(api_key=api_key, base_url=base_url)
+    # Some gateways (e.g. Azure API Management) want the key in their own header
+    # (such as "api-key") and reject "Authorization: Bearer".
+    headers = {api_key_header: api_key} if api_key_header else None
+    client = OpenAI(api_key=api_key, base_url=base_url, default_headers=headers)
     kwargs = {}
     if temperature is not None:
         kwargs["temperature"] = temperature
     if reasoning_effort is not None:
         kwargs["reasoning_effort"] = reasoning_effort
 
-    stream = client.chat.completions.create(
-        model=model_id,
-        max_tokens=max_tokens,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-        stream=True,
-        **kwargs,
-    )
+    import openai
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    try:
+        stream = client.chat.completions.create(
+            model=model_id, max_tokens=max_tokens, messages=messages, stream=True, **kwargs,
+        )
+    except openai.BadRequestError as e:
+        # Newer OpenAI models (GPT-5.x, o-series) reject max_tokens outright.
+        if "max_completion_tokens" not in str(e):
+            raise
+        stream = client.chat.completions.create(
+            model=model_id, max_completion_tokens=max_tokens, messages=messages, stream=True, **kwargs,
+        )
 
     chunks = []
     for chunk in stream:

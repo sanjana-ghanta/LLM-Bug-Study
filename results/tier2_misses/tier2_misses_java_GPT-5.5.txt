@@ -1,0 +1,4 @@
+Compress_19
+JacksonDatabind_108
+JacksonDatabind_22
+Mockito_19

@@ -268,15 +268,8 @@ def main():
     if args.subset:
         SUBSET = set(l.strip() for l in open(args.subset) if l.strip())
     elif args.num_bugs:
-        import json as _j, random as _r, os as _o
-        _u = []
-        for _d in sorted(_o.listdir(BUGS_DIR)):
-            try:
-                _x = _j.load(open(_o.path.join(BUGS_DIR, _d, "data.json"))).get("original_bug_line")
-            except Exception:
-                continue
-            if _x is not None: _u.append(_d)
-        SUBSET = set(_r.Random(args.seed).sample(_u, min(args.num_bugs, len(_u))))
+        from lib.sampling import sample_bugs
+        SUBSET = sample_bugs(BUGS_DIR, args.num_bugs, args.seed)
     if SUBSET is not None:
         print(f"Subset: {len(SUBSET)} bugs, e.g. {sorted(SUBSET)[:5]}")
     global REASONING_EFFORT

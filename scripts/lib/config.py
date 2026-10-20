@@ -71,6 +71,13 @@ def results_csv_path(project, suffix=""):
 #   the names below are best-guesses and may need correcting.
 # ---------------------------------------------------------------------------
 MODELS = {
+    "GPT-5.5": {  # added by run_all_experiments.sh
+        "backend": "openai_compatible",
+        "base_url": os.environ.get("MODEL_BASE_URL", ""),
+        "model_id": os.environ.get("MODEL_ID", ""),
+        "api_key_env": "MODEL_API_KEY",
+        "api_key_header": os.environ.get("MODEL_API_KEY_HEADER") or None,  # e.g. "api-key" for Azure APIM
+    },
     "claude": {
         "backend": "anthropic_native",
         "model_id": "claude-sonnet-4-6",

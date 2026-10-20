@@ -1,0 +1,9 @@
+project,bug_id,tier,reported_line,actual_line,classification,response
+keras,11,1,173,7,pattern_matched_clean,"LINE: 173 REASON: `epoch_logs` is initialized outside the epoch loop, so log values can leak from one epoch to the next instead of being reset for each epoch."
+keras,11,2,171,7,wrong,"LINE: 171 REASON: `epoch_logs` is initialized outside the epoch loop, so log values can persist across epochs instead of being reset for each epoch."
+keras,16,1,294,85,pattern_matched_clean,"LINE: 294 REASON: `name` is used to construct the model even though it is only initialized inside the preceding `if 'name' in config` block, so configs without a `name` key can raise an `UnboundLocalError`."
+keras,16,2,200,85,wrong,"LINE: 200 REASON: `pop()` removes only the last internal layer, so when the last real layer is popped it leaves the auto-generated `InputLayer` in `self._layers`, corrupting later additions/building."
+luigi,23,1,292,109,pattern_matched_clean,"LINE: 292 REASON: The truthiness check ignores valid parsed argument values like `0`, `False`, or `''`, so explicitly supplied falsey task parameters are not copied into `args`."
+luigi,23,2,452,109,wrong,"LINE: 452 REASON: `build()` calls `Interface.run(...)` but does not return its boolean success result, so callers always receive `None`."
+luigi,8,1,468,332,pattern_matched_clean,"LINE: 468 REASON: `client.list(s3.path)` already returns full S3 paths, so prefixing it with `folder_path` creates invalid duplicated manifest URLs."
+luigi,8,2,461,332,wrong,"LINE: 461 REASON: `client.list(s3.path)` already returns full S3 paths, so prefixing `folder_path` again creates invalid duplicated manifest URLs."
