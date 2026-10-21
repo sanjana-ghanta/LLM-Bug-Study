@@ -55,3 +55,5 @@ pandas_8
 black_6
 pandas_81
 pandas_159
+pandas_112
+pandas_131
