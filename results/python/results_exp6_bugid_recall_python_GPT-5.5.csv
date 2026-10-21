@@ -91,3 +91,7 @@ pandas,13,1,538,134,pattern_matched_clean,"LINE: 538 REASON: The boolean dtype b
 pandas,13,2,422,134,wrong,"LINE: 422 REASON: The `pd.NA` case only handles mismatches, so matching `pd.NA` values fall through to `left_value != right_value`, which produces an ambiguous missing boolean instead of treating them as equivalent."
 pandas,65,1,113,3,pattern_matched_clean,"LINE: 113 REASON: The `__fspath__()` result is returned directly, so path-like objects containing `~` are not passed through `_expand_user` and therefore are not expanded like string paths."
 pandas,65,2,108,3,wrong,"LINE: 108 REASON: Path-like objects using `__fspath__` are returned without applying `_expand_user`, so paths containing `~` are not expanded correctly."
+fastapi,8,1,432,348,pattern_matched_clean,"LINE: 432 REASON: The `APIWebSocketRoute` is created without passing `self.dependency_overrides_provider`, so dependency overrides are ignored for WebSocket routes."
+fastapi,8,2,430,348,wrong,"LINE: 430 REASON: The `APIWebSocketRoute` is created without passing `self.dependency_overrides_provider`, so dependency overrides are ignored for WebSocket routes."
+httpie,1,1,81,7,pattern_matched_clean,LINE: 81 REASON: The validation incorrectly rejects one-byte ranges by using `first_byte_pos >= last_byte_pos` instead of only rejecting `first_byte_pos > last_byte_pos`.
+httpie,1,2,80,7,wrong,LINE: 80 REASON: The validation rejects valid single-byte ranges because it uses `first_byte_pos >= last_byte_pos` instead of only rejecting `first_byte_pos > last_byte_pos`.

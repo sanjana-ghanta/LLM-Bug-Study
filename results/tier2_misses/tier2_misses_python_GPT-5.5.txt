@@ -102,3 +102,6 @@ luigi_12
 pandas_74
 pandas_13
 pandas_65
+fastapi_8
+httpie_1
+pandas_12
