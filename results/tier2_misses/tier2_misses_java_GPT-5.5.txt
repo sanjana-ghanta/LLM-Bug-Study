@@ -28,3 +28,4 @@ Math_15
 Compress_35
 JacksonDatabind_50
 Mockito_6
+Jsoup_7

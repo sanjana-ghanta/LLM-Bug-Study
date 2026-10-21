@@ -44,3 +44,5 @@ JacksonDatabind,50,1,715,8,pattern_matched_clean,"LINE: 715 REASON: The code adv
 JacksonDatabind,50,2,752,8,wrong,"LINE: 752 REASON: The unwrapped-property TokenBuffer is passed to processUnwrapped without first writing the matching END_OBJECT, leaving the buffered JSON object incomplete."
 Mockito,6,1,292,122,pattern_matched_clean,"LINE: 292 REASON: `any(Class)` incorrectly reports an `InstanceOf(clazz)` matcher, causing type checking even though this matcher is documented as an alias for `anyObject()` that should match any value."
 Mockito,6,2,292,122,wrong,"LINE: 292 REASON: The typed any(Class) matcher incorrectly reports the unrestricted Any.ANY matcher instead of an InstanceOf(clazz) matcher, so it matches values of any type."
+Jsoup,7,1,199,4,pattern_matched_clean,"LINE: 199 REASON: `OutputSettings` is a mutable non-static, non-cloneable inner class, so cloned `Document` instances cannot get an independent copy of their output settings."
+Jsoup,7,2,113,4,wrong,LINE: 113 REASON: `normalise()` fails to merge duplicate `<head>` and `<body>` elements and ensure they are parented under `<html>` before returning.
