@@ -78,3 +78,5 @@ Cli,40,1,50,103,pattern_matched_clean,"LINE: 50 REASON: The method blindly casts
 Cli,40,2,150,103,wrong,"LINE: 150 REASON: The method incorrectly parses every numeric string without a decimal point as a Long, causing valid numbers such as scientific notation or large integers to fail."
 Cli,34,1,398,72,pattern_matched_clean,"LINE: 398 REASON: `addValueForProcessing` is package-private even though subclasses are instructed to use it, so it should be accessible to subclasses, e.g. `protected`."
 Cli,34,2,124,72,wrong,"LINE: 124 REASON: The constructor only validates the short option and fails to reject the invalid case where both `opt` and `longOpt` are null, allowing an option with no identifier to be created."
+JacksonDatabind,105,1,24,22,pattern_matched_clean,"LINE: 24 REASON: The registered JDK type list includes `Void.class` but omits `Void.TYPE`, so primitive `void` is not recognized for nullifying deserialization."
+JacksonDatabind,105,2,22,22,correct,"LINE: 22 REASON: The JDK type whitelist omits `Void.class`, so `java.lang.Void` is not recognized and no nullifying deserializer can be returned for it."

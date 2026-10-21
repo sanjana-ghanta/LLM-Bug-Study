@@ -78,3 +78,5 @@ Cli,40,1,149,103,pattern_matched_clean,"LINE: 149 REASON: The number parser only
 Cli,40,2,49,103,wrong,"LINE: 49 REASON: The Object overload blindly casts `obj` to `Class<?>`, so a non-Class type value causes a `ClassCastException` instead of being handled as unsupported."
 Cli,34,1,677,72,pattern_matched_clean,"LINE: 677 REASON: The `numberOfArgs <= 0` check treats `UNINITIALIZED` or zero arguments as if unlimited arguments are allowed, so an option can incorrectly accept values when it should not."
 Cli,34,2,680,72,wrong,"LINE: 680 REASON: `acceptsArg()` incorrectly treats any non-positive `numberOfArgs` as allowing more arguments, so uninitialized or zero-argument options can wrongly accept values instead of only treating `UNLIMITED_VALUES` as unlimited."
+JacksonDatabind,105,1,49,22,pattern_matched_clean,"LINE: 49 REASON: The check only handles `Void.class` and misses the primitive `void` type (`Void.TYPE`), so no nullifying deserializer is returned for `void`."
+JacksonDatabind,105,2,22,22,correct,"LINE: 22 REASON: The JDK deserializer whitelist omits `Void.class`, so `java.lang.Void` is not recognized and cannot be handled by the nullifying deserializer."

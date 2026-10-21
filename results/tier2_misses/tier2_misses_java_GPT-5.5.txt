@@ -50,3 +50,5 @@ JacksonCore_21
 Cli_40
 Collections_25
 Cli_34
+JacksonDatabind_105
+Time_6
