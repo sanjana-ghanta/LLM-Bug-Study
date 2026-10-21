@@ -51,3 +51,5 @@ fastapi,3,1,501,48,pattern_matched_clean,"LINE: 501 REASON: `APIWebSocketRoute` 
 fastapi,3,2,482,48,wrong,"LINE: 482 REASON: `APIRouter.add_api_websocket_route` creates `APIWebSocketRoute` without passing `self.dependency_overrides_provider`, so dependency overrides are ignored for WebSocket routes."
 keras,25,1,136,38,pattern_matched_clean,"LINE: 136 REASON: The global `_IMAGENET_MEAN` is only initialized once, so later symbolic preprocessing calls can incorrectly reuse a mean tensor from a different mode or graph."
 keras,25,2,136,38,wrong,"LINE: 136 REASON: The ImageNet mean tensor is cached globally and only initialized once, so later symbolic preprocessing with a different mode or graph can reuse a stale mean constant."
+pandas,80,1,238,50,pattern_matched_clean,"LINE: 238 REASON: The condition only checks `dropna`, so `value_counts(dropna=False)` always appends an `NA` count even when the array has no missing values."
+pandas,80,2,234,50,wrong,"LINE: 234 REASON: The condition only checks `dropna`, so `dropna=False` appends an `<NA>` count even when the array has no missing values."
