@@ -17,3 +17,6 @@ Math_9
 JacksonDatabind_23
 Jsoup_44
 Mockito_4
+JacksonDatabind_62
+Jsoup_29
+Time_3
