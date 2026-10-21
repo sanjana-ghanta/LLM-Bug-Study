@@ -39,3 +39,5 @@ JacksonDatabind_60
 Jsoup_58
 Jsoup_67
 Csv_8
+Collections_26
+Jsoup_21

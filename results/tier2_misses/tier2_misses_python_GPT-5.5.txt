@@ -73,3 +73,6 @@ pandas_36
 black_18
 luigi_17
 pandas_17
+black_5
+pandas_1
+pandas_14

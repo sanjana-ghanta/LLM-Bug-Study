@@ -62,3 +62,7 @@ Jsoup,67,1,571,41,pattern_matched_clean,"LINE: 571 REASON: The condition uses `e
 Jsoup,67,2,567,41,wrong,"LINE: 567 REASON: The loop condition wrongly requires `excludeTag != null`, so calling `generateImpliedEndTags()` with no excluded tag never pops any implied end tags."
 Csv,8,1,232,315,pattern_matched_clean,"LINE: 232 REASON: The predefined MYSQL format ends without setting MySQL’s default null marker (`\N`), so null values are not handled correctly."
 Csv,8,2,401,315,wrong,"LINE: 401 REASON: `format()` calls `trim()` on the entire generated CSV output, which can remove meaningful leading or trailing whitespace from field data rather than only handling the record separator."
+Collections,26,1,168,277,pattern_matched_clean,"LINE: 168 REASON: The cached hash code is calculated from the constructor parameter `keys` instead of the stored `this.keys`, which can make it inconsistent with the actual key array when cloning is requested."
+Collections,26,2,276,277,correct,"LINE: 276 REASON: The `readResolve` method is private, so it is not inherited or invoked for deserialized subclasses, leaving the transient cached `hashCode` unrecalculated."
+Jsoup,21,1,83,63,pattern_matched_clean,LINE: 83 REASON: `Or.toString()` formats the evaluator as the non-selector string `:or[...]` instead of joining the alternatives with commas to represent an OR selector correctly.
+Jsoup,21,2,47,63,wrong,"LINE: 47 REASON: `And.toString()` joins conjunctive evaluators with a space, which misrepresents a same-element AND as a descendant selector."
