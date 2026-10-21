@@ -34,3 +34,5 @@ JacksonDatabind,62,1,246,183,pattern_matched_clean,"LINE: 246 REASON: The deseri
 JacksonDatabind,62,2,308,183,wrong,"LINE: 308 REASON: The exception is always wrapped in `JsonMappingException` here, ignoring `DeserializationFeature.WRAP_EXCEPTIONS` and failing to rethrow runtime exceptions when wrapping is disabled."
 Jsoup,29,1,83,2,pattern_matched_clean,"LINE: 83 REASON: `head()` can return null for a Document without a head element, so calling `head().appendElement(""title"")` can throw a NullPointerException instead of creating or normalising the head."
 Jsoup,29,2,69,2,wrong,"LINE: 69 REASON: The title text is only trimmed, but because `<title>` preserves whitespace it should normalize internal whitespace before returning."
+JacksonDatabind,87,1,502,46,pattern_matched_clean,"LINE: 502 REASON: The `case 6` branch is missing a `break`, so it falls through into `case 5` and inserts both time suffixes, corrupting the ISO-8601 date string."
+JacksonDatabind,87,2,527,46,wrong,LINE: 527 REASON: Appending a literal `Z` to a date-time string that has no timezone makes it parse as UTC instead of respecting the configured timezone for timezone-less ISO-8601 values.

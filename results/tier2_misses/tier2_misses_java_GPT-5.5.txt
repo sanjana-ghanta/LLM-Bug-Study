@@ -20,3 +20,4 @@ Mockito_4
 JacksonDatabind_62
 Jsoup_29
 Time_3
+JacksonDatabind_87

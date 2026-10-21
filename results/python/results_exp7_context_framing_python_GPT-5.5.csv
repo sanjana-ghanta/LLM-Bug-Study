@@ -43,3 +43,5 @@ pandas,71,1,344,14,pattern_matched_clean,"LINE: 344 REASON: The integer `q` bran
 pandas,71,2,414,14,wrong,"LINE: 414 REASON: The code constructs a `Categorical` with `categories=labels`, so duplicate bin labels become duplicate categories and raise an error instead of allowing repeated labels for different bins."
 pandas,32,1,418,9,pattern_matched_clean,"LINE: 418 REASON: It counts every blank 8-byte block in the final card as tail padding instead of only trailing padding, so legitimate blank data can cause the observation count to be too low."
 pandas,32,2,270,9,wrong,"LINE: 270 REASON: The code catches `UnicodeEncodeError`, but when `contents` is already `bytes`, `contents.encode(...)` raises `AttributeError`, causing binary file-like inputs to fail."
+pandas,81,1,403,19,pattern_matched_clean,"LINE: 403 REASON: The tuple of reconstructed ufunc results is created but not returned, causing tuple-output ufuncs to return None."
+pandas,81,2,403,19,wrong,"LINE: 403 REASON: The tuple result from a NumPy ufunc is constructed but not returned, causing `__array_ufunc__` to return `None` for tuple-valued ufuncs."
