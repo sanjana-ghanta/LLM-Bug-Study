@@ -105,3 +105,6 @@ pandas_65
 fastapi_8
 httpie_1
 pandas_12
+cookiecutter_1
+matplotlib_26
+pandas_45

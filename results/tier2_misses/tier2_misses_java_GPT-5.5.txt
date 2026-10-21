@@ -54,3 +54,5 @@ JacksonDatabind_105
 Time_6
 Closure_27
 Jsoup_92
+Cli_7
+Math_6
