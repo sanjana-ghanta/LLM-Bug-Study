@@ -60,3 +60,5 @@ Jsoup,58,1,103,250,pattern_matched_clean,"LINE: 103 REASON: The file’s absolut
 Jsoup,58,2,250,250,correct,"LINE: 250 REASON: `isValid` validates an already-parsed and normalized document, which can hide malformed input, instead of validating the raw body HTML with `Cleaner.isValidBodyHtml(bodyHtml)`."
 Jsoup,67,1,571,41,pattern_matched_clean,"LINE: 571 REASON: The condition uses `excludeTag != null`, so calls with `excludeTag == null` never generate any implied end tags; it should allow popping when no tag is excluded."
 Jsoup,67,2,567,41,wrong,"LINE: 567 REASON: The loop condition wrongly requires `excludeTag != null`, so calling `generateImpliedEndTags()` with no excluded tag never pops any implied end tags."
+Csv,8,1,232,315,pattern_matched_clean,"LINE: 232 REASON: The predefined MYSQL format ends without setting MySQL’s default null marker (`\N`), so null values are not handled correctly."
+Csv,8,2,401,315,wrong,"LINE: 401 REASON: `format()` calls `trim()` on the entire generated CSV output, which can remove meaningful leading or trailing whitespace from field data rather than only handling the record separator."
