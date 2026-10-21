@@ -80,3 +80,6 @@ pandas_138
 pandas_125
 pandas_27
 pandas_56
+matplotlib_1
+matplotlib_2
+tqdm_3

@@ -41,3 +41,5 @@ Jsoup_67
 Csv_8
 Collections_26
 Jsoup_21
+Compress_22
+Mockito_35

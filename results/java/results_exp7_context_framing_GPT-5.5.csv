@@ -66,3 +66,5 @@ Collections,26,1,168,277,pattern_matched_clean,"LINE: 168 REASON: The cached has
 Collections,26,2,276,277,correct,"LINE: 276 REASON: The `readResolve` method is private, so it is not inherited or invoked for deserialized subclasses, leaving the transient cached `hashCode` unrecalculated."
 Jsoup,21,1,83,63,pattern_matched_clean,LINE: 83 REASON: `Or.toString()` formats the evaluator as the non-selector string `:or[...]` instead of joining the alternatives with commas to represent an OR selector correctly.
 Jsoup,21,2,47,63,wrong,"LINE: 47 REASON: `And.toString()` joins conjunctive evaluators with a space, which misrepresents a same-element AND as a descendant selector."
+Mockito,35,1,479,362,pattern_matched_clean,"LINE: 479 REASON: `eq(T value)` unconditionally calls `value.getClass()`, so `eq(null)` throws a `NullPointerException` instead of registering a null equality matcher."
+Mockito,35,2,237,362,wrong,"LINE: 237 REASON: `any(Class<T>)` incorrectly delegates to `anyObject()`, ignoring the supplied class and therefore matching arguments of any type instead of only instances of `clazz`."
