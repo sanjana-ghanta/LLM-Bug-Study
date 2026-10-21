@@ -25,3 +25,4 @@ Jsoup_66
 Lang_56
 JacksonDatabind_66
 Math_15
+Compress_35
