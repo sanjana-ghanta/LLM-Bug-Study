@@ -56,3 +56,5 @@ Closure_27
 Jsoup_92
 Cli_7
 Math_6
+JacksonDatabind_26
+JacksonDatabind_4
