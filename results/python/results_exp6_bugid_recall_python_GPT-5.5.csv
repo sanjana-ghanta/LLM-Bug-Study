@@ -41,3 +41,5 @@ scrapy,33,1,75,16,pattern_matched_clean,"LINE: 75 REASON: The `engine_started` s
 scrapy,33,2,93,16,wrong,"LINE: 93 REASON: `unpause()` clears the paused flag but fails to schedule the next engine call, so crawling may not resume immediately after being unpaused."
 pandas,71,1,261,14,pattern_matched_clean,"LINE: 261 REASON: The monotonicity check casts bin edges to float and only checks for negative differences, allowing invalid bin edges such as NaN or precision-lost datetime/int64 decreases to pass instead of raising."
 pandas,71,2,251,14,wrong,"LINE: 251 REASON: Casting bin edges to float64 before checking monotonicity can lose precision for large integer or datetime-like values, allowing non-monotonic bins to go undetected."
+pandas,32,1,408,9,pattern_matched_clean,"LINE: 408 REASON: The condition should include records of exactly 80 bytes, otherwise the tail-padding heuristic is incorrectly applied and can undercount observations."
+pandas,32,2,270,9,wrong,"LINE: 270 REASON: The handler catches `UnicodeEncodeError`, but binary file-like inputs return `bytes` and `contents.encode(...)` raises `AttributeError`, so valid buffers fail instead of being accepted."

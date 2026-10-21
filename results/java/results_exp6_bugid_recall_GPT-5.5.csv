@@ -28,3 +28,5 @@ JacksonDatabind,23,1,124,53,pattern_matched_clean,"LINE: 124 REASON: ShortSerial
 JacksonDatabind,23,2,122,53,wrong,"LINE: 122 REASON: The Short serializer incorrectly declares its schema type as ""number"" even though Short is an integral type and should use ""integer""."
 Jsoup,44,1,51,60,pattern_matched_clean,"LINE: 51 REASON: The token is reset before checking whether it is EOF, which can clear the token state needed to terminate the parse loop correctly."
 Jsoup,44,2,61,60,correct,"LINE: 61 REASON: The cached `start` token is unconditionally reset and reused, which can corrupt the in-use current token during nested synthetic start-tag processing."
+Mockito,4,1,648,424,pattern_matched_clean,"LINE: 648 REASON: The message uses `details.getMessage()` from the wrapper/reflection exception instead of the underlying constructor or initialization exception cause, producing an uninformative or null error message."
+Mockito,4,2,677,424,wrong,"LINE: 677 REASON: It blindly calls `details.getCause().getMessage()`, which throws a `NullPointerException` when the exception has no cause instead of reporting the original exception message."

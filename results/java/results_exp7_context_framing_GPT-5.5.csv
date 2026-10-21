@@ -28,3 +28,5 @@ JacksonDatabind,23,1,124,53,pattern_matched_clean,"LINE: 124 REASON: `ShortSeria
 JacksonDatabind,23,2,122,53,wrong,"LINE: 122 REASON: The ShortSerializer incorrectly declares Short values with JSON schema type ""number"" instead of the integral type ""integer""."
 Jsoup,44,1,,60,reasoned_no_bug_or_malformed,LINE: NONE REASON: No specific faulty line is evident in this file; the token processing and guarded token reuse appear consistent.
 Jsoup,44,2,61,60,correct,"LINE: 61 REASON: The shared `start` token is reset and reused unconditionally, which can corrupt an in-use current start token during recursive parsing."
+Mockito,4,1,384,424,pattern_matched_clean,"LINE: 384 REASON: The in-order verification failure header is concatenated directly with the detailed message, missing a newline/separator before the invocation text."
+Mockito,4,2,677,424,wrong,"LINE: 677 REASON: The code unconditionally dereferences `details.getCause()`, which can be null and cause a `NullPointerException` while reporting the original injection failure."
