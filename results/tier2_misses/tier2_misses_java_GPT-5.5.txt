@@ -29,3 +29,6 @@ Compress_35
 JacksonDatabind_50
 Mockito_6
 Jsoup_7
+Closure_14
+Compress_39
+Time_9

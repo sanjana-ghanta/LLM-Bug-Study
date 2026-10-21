@@ -67,3 +67,6 @@ pandas_41
 pandas_114
 thefuck_19
 pandas_153
+fastapi_15
+pandas_108
+pandas_36

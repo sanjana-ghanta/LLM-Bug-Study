@@ -46,3 +46,5 @@ Mockito,6,1,292,122,pattern_matched_clean,"LINE: 292 REASON: `any(Class)` is doc
 Mockito,6,2,292,122,wrong,"LINE: 292 REASON: `any(Class<T> clazz)` incorrectly records the universal `Any.ANY` matcher, ignoring `clazz` instead of matching only instances of the supplied class."
 Jsoup,7,1,67,4,pattern_matched_clean,LINE: 67 REASON: `title()` only trims leading/trailing whitespace instead of normalizing internal whitespace in the document title.
 Jsoup,7,2,114,4,wrong,LINE: 114 REASON: `normalise()` returns before merging duplicate `<head>`/`<body>` elements and ensuring they are parented under `<html>`.
+Compress,39,1,288,30,pattern_matched_clean,"LINE: 288 REASON: The condition treats any non-null Unicode block other than SPECIALS as printable, allowing invalid surrogate/non-printable characters to pass through instead of being sanitized."
+Compress,39,2,271,30,wrong,"LINE: 271 REASON: `sanitize` uses the full input length instead of capping it, so it can return a string longer than the documented 255-character maximum."
