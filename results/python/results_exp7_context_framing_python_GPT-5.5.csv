@@ -75,3 +75,9 @@ luigi,31,1,735,653,pattern_matched_clean,"LINE: 735 REASON: The `deps` field is 
 luigi,31,2,450,653,wrong,"LINE: 450 REASON: The scheduler tries to import `db_task_history` as a top-level module instead of from the `luigi` package, which fails under Python 3 when task history recording is enabled."
 scrapy,13,1,134,42,pattern_matched_clean,"LINE: 134 REASON: Paletted images, including PNGs with transparency, are incorrectly handled by the generic RGB conversion path instead of first converting/compositing with alpha, which can produce wrong backgrounds."
 scrapy,13,2,105,42,wrong,"LINE: 105 REASON: The image buffer is passed to `persist_file` without rewinding it to the beginning, so stores that read from the current buffer position can save an empty or incomplete file."
+PySnooper,2,1,389,4,pattern_matched_clean,"LINE: 389 REASON: The opcode check omits `YIELD_FROM`, so a generator using `yield from` that yields `None` can be incorrectly reported as having ended by exception."
+PySnooper,2,2,226,4,wrong,LINE: 226 REASON: The generator wrapper swallows `StopIteration` and returns without propagating the wrapped generator’s return value.
+spacy,1,1,357,7,pattern_matched_clean,"LINE: 357 REASON: The error message recommends `nlp.create_pipeline('sentencizer')`, but the correct spaCy API method is `nlp.create_pipe`."
+spacy,1,2,355,7,wrong,LINE: 355 REASON: The error message recommends the nonexistent `nlp.create_pipeline('sentencizer')` API instead of the correct `nlp.create_pipe('sentencizer')`.
+tornado,15,1,104,147,pattern_matched_clean,"LINE: 104 REASON: It opens README.rst relative to the current working directory instead of relative to setup.py, so setup can fail when invoked from another directory."
+tornado,15,2,130,147,wrong,LINE: 130 REASON: The dependency list for Python versions before 3.4 is incomplete because it appends `certifi` but omits the required `singledispatch` backport.

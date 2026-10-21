@@ -92,3 +92,7 @@ pandas_49
 spacy_10
 luigi_31
 scrapy_13
+PySnooper_2
+pandas_31
+spacy_1
+tornado_15

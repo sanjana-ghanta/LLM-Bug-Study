@@ -75,3 +75,9 @@ luigi,31,1,739,653,pattern_matched_clean,"LINE: 739 REASON: `_serialize_task` al
 luigi,31,2,850,653,wrong,"LINE: 850 REASON: The root task in the inverse dependency graph is serialized with its normal dependencies and they are never cleared, so inverse dependencies are appended to an already-wrong `deps` list."
 scrapy,13,1,135,42,pattern_matched_clean,"LINE: 135 REASON: The code converts non-RGB images directly to RGB, which discards transparency for images with alpha/palette transparency instead of compositing them onto a background before saving as JPEG."
 scrapy,13,2,133,42,wrong,"LINE: 133 REASON: Palette PNG images with transparency fall into the generic non-RGB conversion path instead of being composited onto a background, causing transparency to be handled incorrectly."
+PySnooper,2,1,241,4,pattern_matched_clean,"LINE: 241 REASON: The generator wrapper returns `None` when the wrapped generator raises `StopIteration`, discarding the generator’s actual return value from `StopIteration.value`."
+PySnooper,2,2,87,4,wrong,"LINE: 87 REASON: The source decoder incorrectly defaults to ASCII, which corrupts valid UTF-8 Python source files without an explicit coding cookie."
+spacy,1,1,356,7,pattern_matched_clean,"LINE: 356 REASON: The error message incorrectly suggests `nlp.create_pipeline('sentencizer')`, but the spaCy API method is `nlp.create_pipe(...)`."
+spacy,1,2,352,7,wrong,LINE: 352 REASON: The error message incorrectly tells users to call the nonexistent `nlp.create_pipeline('sentencizer')` method instead of `nlp.create_pipe('sentencizer')`.
+tornado,15,1,124,147,pattern_matched_clean,"LINE: 124 REASON: The backports.ssl_match_hostname dependency is only added for Python < 3.2, but Tornado needs it on Python versions before 3.5."
+tornado,15,2,95,147,wrong,"LINE: 95 REASON: `README.rst` is opened relative to the current working directory instead of relative to `setup.py`, so running setup from another directory can fail."

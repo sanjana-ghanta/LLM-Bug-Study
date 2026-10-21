@@ -48,3 +48,4 @@ Collections_21
 Compress_9
 JacksonCore_21
 Cli_40
+Collections_25
