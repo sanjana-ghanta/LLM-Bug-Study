@@ -32,3 +32,10 @@ luigi_5
 pandas_55
 black_8
 pandas_93
+ansible_14
+luigi_32
+pandas_79
+pandas_99
+thefuck_26
+spacy_7
+tornado_3

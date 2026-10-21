@@ -24,3 +24,7 @@ Lang,23,1,482,72,pattern_matched_clean,"LINE: 482 REASON: The condition treats a
 Lang,23,2,257,72,wrong,"LINE: 257 REASON: The documented equals/hashCode implementations are missing here, so ExtendedMessageFormat falls back to MessageFormat equality and ignores its toPattern and registry fields."
 Math,9,1,193,87,pattern_matched_clean,"LINE: 193 REASON: The parallel-line check uses `Precision.EPSILON`, which is too large for `1 - cos * cos` and incorrectly treats nearly parallel but intersecting lines as parallel."
 Math,9,2,87,87,correct,"LINE: 87 REASON: `revert()` reconstructs the line from two points, which can recompute and shift the stored origin/zero point instead of preserving it and only negating the direction."
+JacksonDatabind,23,1,124,53,pattern_matched_clean,"LINE: 124 REASON: `ShortSerializer` uses the schema type `""number""` even though `Short` is an integer type and should be reported as `""integer""`."
+JacksonDatabind,23,2,122,53,wrong,"LINE: 122 REASON: The ShortSerializer incorrectly declares Short values with JSON schema type ""number"" instead of the integral type ""integer""."
+Jsoup,44,1,,60,reasoned_no_bug_or_malformed,LINE: NONE REASON: No specific faulty line is evident in this file; the token processing and guarded token reuse appear consistent.
+Jsoup,44,2,61,60,correct,"LINE: 61 REASON: The shared `start` token is reset and reused unconditionally, which can corrupt an in-use current start token during recursive parsing."

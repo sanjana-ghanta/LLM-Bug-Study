@@ -24,3 +24,7 @@ Lang,23,1,478,72,pattern_matched_clean,"LINE: 478 REASON: The code treats every 
 Lang,23,2,265,72,wrong,"LINE: 265 REASON: The equals() override that should follow this Javadoc is missing, so ExtendedMessageFormat incorrectly inherits MessageFormat.equals instead of comparing its custom pattern and registry."
 Math,9,1,156,87,pattern_matched_clean,"LINE: 156 REASON: The containment test uses a hard-coded absolute tolerance of `1.0e-10`, causing line intersection/similarity checks to incorrectly classify very close points instead of using the line's configured tolerance."
 Math,9,2,196,87,wrong,"LINE: 196 REASON: The parallelism test in closestPoint uses Precision.EPSILON, which is too large and incorrectly treats nearly parallel non-parallel lines as parallel."
+JacksonDatabind,23,1,124,53,pattern_matched_clean,"LINE: 124 REASON: ShortSerializer declares the JSON schema type for Short as ""number"" even though Short is an integral type and should be reported as ""integer""."
+JacksonDatabind,23,2,122,53,wrong,"LINE: 122 REASON: The Short serializer incorrectly declares its schema type as ""number"" even though Short is an integral type and should use ""integer""."
+Jsoup,44,1,51,60,pattern_matched_clean,"LINE: 51 REASON: The token is reset before checking whether it is EOF, which can clear the token state needed to terminate the parse loop correctly."
+Jsoup,44,2,61,60,correct,"LINE: 61 REASON: The cached `start` token is unconditionally reset and reused, which can corrupt the in-use current token during nested synthetic start-tag processing."

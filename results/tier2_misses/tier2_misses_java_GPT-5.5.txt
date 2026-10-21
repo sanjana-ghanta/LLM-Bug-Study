@@ -14,3 +14,5 @@ Csv_7
 JxPath_3
 Lang_23
 Math_9
+JacksonDatabind_23
+Jsoup_44
