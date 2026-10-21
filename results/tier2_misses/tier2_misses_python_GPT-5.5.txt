@@ -57,3 +57,5 @@ pandas_81
 pandas_159
 pandas_112
 pandas_131
+fastapi_3
+keras_25
