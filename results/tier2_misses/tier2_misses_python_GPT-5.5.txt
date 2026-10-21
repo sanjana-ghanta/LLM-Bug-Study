@@ -70,3 +70,5 @@ pandas_153
 fastapi_15
 pandas_108
 pandas_36
+black_18
+luigi_17

@@ -32,3 +32,9 @@ Jsoup_7
 Closure_14
 Compress_39
 Time_9
+Chart_13
+Cli_37
+JacksonDatabind_55
+JacksonDatabind_60
+Jsoup_58
+Jsoup_67
