@@ -74,3 +74,5 @@ Compress,9,1,277,107,pattern_matched_clean,"LINE: 277 REASON: The write-size che
 Compress,9,2,330,107,wrong,"LINE: 330 REASON: `numToWrite` has been mutated during the write loop, so calling `count(numToWrite)` undercounts the bytes actually written."
 JacksonCore,21,1,647,237,pattern_matched_clean,"LINE: 647 REASON: In `_nextTokenWithBuffering`, returning `t` directly for an included `START_OBJECT` skips the buffered path tokens; it should return `_nextBuffered(buffRoot)`."
 JacksonCore,21,2,822,237,wrong,"LINE: 822 REASON: `getText()` blindly delegates to the underlying parser, which can be positioned past buffered filtered tokens, so it returns incorrect text for exposed tokens such as buffered `FIELD_NAME`s."
+Cli,40,1,50,103,pattern_matched_clean,"LINE: 50 REASON: The method blindly casts an arbitrary `Object` to `Class<?>`, which can throw a `ClassCastException` instead of handling invalid option types through `ParseException`."
+Cli,40,2,150,103,wrong,"LINE: 150 REASON: The method incorrectly parses every numeric string without a decimal point as a Long, causing valid numbers such as scientific notation or large integers to fail."

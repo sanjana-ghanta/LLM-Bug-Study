@@ -90,3 +90,5 @@ luigi_6
 pandas_113
 pandas_49
 spacy_10
+luigi_31
+scrapy_13
