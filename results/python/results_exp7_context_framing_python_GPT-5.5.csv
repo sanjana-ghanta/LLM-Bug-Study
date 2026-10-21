@@ -67,3 +67,5 @@ pandas,138,1,339,11,pattern_matched_clean,"LINE: 339 REASON: The quantile breakp
 pandas,138,2,334,11,wrong,"LINE: 334 REASON: `np.linspace` can produce quantile breakpoints that are slightly below the exact fractional values, causing `qcut` to compute incorrect bin edges for some integer `q` values."
 pandas,51,1,471,29,pattern_matched_clean,"LINE: 471 REASON: The `len(self.codes)` guard incorrectly skips `self.take(indexer)` for an empty `CategoricalIndex`, leaving `new_target` as a plain `Index` and causing later categorical-code handling to fail."
 pandas,51,2,572,29,wrong,"LINE: 572 REASON: `categories.get_indexer(target)` maps labels absent from the categories to `-1`, which is also the missing-value code, so absent labels can incorrectly match NaN entries in the CategoricalIndex."
+pandas,113,1,425,654,pattern_matched_clean,LINE: 425 REASON: `np.float` is a deprecated/removed NumPy alias and should be replaced with a valid type such as `np.float64` or `float`.
+pandas,113,2,426,654,wrong,"LINE: 426 REASON: `np.float` is a deprecated/removed NumPy alias, so using `np.float(""NaN"")` can raise an `AttributeError` with newer NumPy versions."

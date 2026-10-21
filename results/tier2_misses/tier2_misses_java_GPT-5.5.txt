@@ -44,3 +44,4 @@ Jsoup_21
 Compress_22
 Mockito_35
 Closure_25
+Collections_21

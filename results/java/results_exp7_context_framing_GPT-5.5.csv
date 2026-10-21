@@ -68,3 +68,5 @@ Jsoup,21,1,83,63,pattern_matched_clean,LINE: 83 REASON: `Or.toString()` formats 
 Jsoup,21,2,47,63,wrong,"LINE: 47 REASON: `And.toString()` joins conjunctive evaluators with a space, which misrepresents a same-element AND as a descendant selector."
 Mockito,35,1,479,362,pattern_matched_clean,"LINE: 479 REASON: `eq(T value)` unconditionally calls `value.getClass()`, so `eq(null)` throws a `NullPointerException` instead of registering a null equality matcher."
 Mockito,35,2,237,362,wrong,"LINE: 237 REASON: `any(Class<T>)` incorrectly delegates to `anyObject()`, ignoring the supplied class and therefore matching arguments of any type instead of only instances of `clazz`."
+Collections,21,1,206,26,pattern_matched_clean,"LINE: 206 REASON: `set.add(e)` mutates the backing uniqueness set while merely filtering candidates, so if the subsequent list insertion fails the set and list become inconsistent."
+Collections,21,2,332,26,wrong,"LINE: 332 REASON: subList returns a modifiable SetUniqueList backed by the parent, allowing changes that can introduce duplicates into the parent list despite the method contract saying it should be unmodifiable."
