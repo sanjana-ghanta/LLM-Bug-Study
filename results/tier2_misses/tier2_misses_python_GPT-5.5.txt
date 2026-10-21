@@ -83,3 +83,6 @@ pandas_56
 matplotlib_1
 matplotlib_2
 tqdm_3
+matplotlib_29
+pandas_51
+tornado_6
