@@ -21,3 +21,5 @@ JacksonDatabind_62
 Jsoup_29
 Time_3
 JacksonDatabind_87
+Jsoup_66
+Lang_56
