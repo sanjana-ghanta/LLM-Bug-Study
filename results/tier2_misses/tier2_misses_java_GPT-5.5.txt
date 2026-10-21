@@ -45,3 +45,5 @@ Compress_22
 Mockito_35
 Closure_25
 Collections_21
+Compress_9
+JacksonCore_21

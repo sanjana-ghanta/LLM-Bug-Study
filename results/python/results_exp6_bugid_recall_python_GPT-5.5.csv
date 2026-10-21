@@ -69,3 +69,5 @@ pandas,51,1,424,29,pattern_matched_clean,"LINE: 424 REASON: `_maybe_cast_indexer
 pandas,51,2,551,29,wrong,"LINE: 551 REASON: Non-category target labels are encoded as `-1`, which is also the categorical missing-value code, so they can be incorrectly matched to `NaN` entries in the index."
 pandas,113,1,424,654,pattern_matched_clean,"LINE: 424 REASON: The nulls fixture uses `np.float(""NaN"")`, but `np.float` is a deprecated/removed NumPy alias and should be replaced with a concrete type like `np.float64`."
 pandas,113,2,425,654,wrong,"LINE: 425 REASON: The fixture uses `np.float(""NaN"")`, a deprecated/removed NumPy alias for Python `float`, instead of the intended NumPy scalar type such as `np.float64(""NaN"")`."
+spacy,10,1,570,476,pattern_matched_clean,"LINE: 570 REASON: The warning stack frame is selected with `inspect.stack()[-1]`, which points to the outermost entry point instead of the actual caller location."
+spacy,10,2,565,476,wrong,"LINE: 565 REASON: The code uses `inspect.stack()[-1]`, which selects the outermost stack frame instead of the caller frame, causing warnings to be reported with the wrong filename and line number."

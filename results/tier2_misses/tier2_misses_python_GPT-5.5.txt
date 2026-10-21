@@ -89,3 +89,4 @@ tornado_6
 luigi_6
 pandas_113
 pandas_49
+spacy_10
