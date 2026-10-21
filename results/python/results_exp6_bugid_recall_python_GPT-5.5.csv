@@ -81,3 +81,9 @@ spacy,1,1,356,7,pattern_matched_clean,"LINE: 356 REASON: The error message incor
 spacy,1,2,352,7,wrong,LINE: 352 REASON: The error message incorrectly tells users to call the nonexistent `nlp.create_pipeline('sentencizer')` method instead of `nlp.create_pipe('sentencizer')`.
 tornado,15,1,124,147,pattern_matched_clean,"LINE: 124 REASON: The backports.ssl_match_hostname dependency is only added for Python < 3.2, but Tornado needs it on Python versions before 3.5."
 tornado,15,2,95,147,wrong,"LINE: 95 REASON: `README.rst` is opened relative to the current working directory instead of relative to `setup.py`, so running setup from another directory can fail."
+keras,6,1,503,410,pattern_matched_clean,"LINE: 503 REASON: This accesses `y.shape[1]`, which crashes for 1-D sparse target arrays instead of treating them as class labels."
+keras,6,2,219,410,wrong,"LINE: 219 REASON: `set_of_lengths(None)` returns `{0}` instead of an empty set, causing missing weights to be treated as length 0 and triggering false sample-length mismatch errors."
+luigi,12,1,26,19,pattern_matched_clean,"LINE: 26 REASON: The optional snakebite HDFS client is imported eagerly even when it is not configured, causing failures in environments without the snakebite dependency."
+luigi,12,2,25,19,wrong,"LINE: 25 REASON: The optional snakebite HDFS client is imported unconditionally, so importing this module fails when snakebite is not installed even if a different HDFS client is configured."
+pandas,74,1,224,163,pattern_matched_clean,"LINE: 224 REASON: When casting a TimedeltaIndex with NaT values to a non-nanosecond timedelta dtype, this returns a timedelta-based Index instead of the expected numeric Index with NaN for missing values."
+pandas,74,2,167,163,correct,"LINE: 167 REASON: Constructing from a `TimedeltaArray` calls `_simple_new` directly with `freq`, bypassing frequency validation/inference and allowing an invalid or `""infer""` frequency to be attached incorrectly."

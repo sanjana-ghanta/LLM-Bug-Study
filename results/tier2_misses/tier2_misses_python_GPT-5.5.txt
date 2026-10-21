@@ -96,3 +96,7 @@ PySnooper_2
 pandas_31
 spacy_1
 tornado_15
+black_15
+keras_6
+luigi_12
+pandas_74
