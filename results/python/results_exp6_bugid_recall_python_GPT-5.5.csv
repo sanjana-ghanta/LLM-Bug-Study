@@ -53,3 +53,5 @@ keras,25,1,138,38,pattern_matched_clean,"LINE: 138 REASON: The cached global `_I
 keras,25,2,136,38,wrong,"LINE: 136 REASON: The symbolic preprocessing caches `_IMAGENET_MEAN` globally and only initializes it once, so calls with a different preprocessing mode can reuse the wrong mean values."
 pandas,80,1,238,50,pattern_matched_clean,"LINE: 238 REASON: The condition only checks `dropna`, so `value_counts(dropna=False)` always appends an NA bucket even when the array contains no missing values."
 pandas,80,2,161,50,wrong,"LINE: 161 REASON: `isna()` returns the internal mask array directly instead of a copy, allowing callers to mutate the array’s internal missing-value state."
+thefuck,19,1,9,12,pattern_matched_clean,LINE: 9 REASON: The match condition is too specific to one Git rejection message and fails to recognize other non-fast-forward push rejection messages that should trigger the force-push suggestion.
+thefuck,19,2,10,12,correct,"LINE: 10 REASON: The match condition is too specific to one Git rejection message, so it fails to detect other valid non-fast-forward push rejection errors that should trigger a force-push suggestion."

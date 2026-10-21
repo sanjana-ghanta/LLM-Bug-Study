@@ -64,3 +64,5 @@ pandas_80
 tqdm_6
 pandas_15
 pandas_41
+pandas_114
+thefuck_19
