@@ -45,3 +45,5 @@ pandas_67
 pandas_90
 pandas_136
 scrapy_33
+pandas_157
+pandas_71
