@@ -35,3 +35,5 @@ spacy,7,1,50,7,pattern_matched_clean,"LINE: 50 REASON: `seen_tokens` is updated 
 spacy,7,2,41,7,wrong,"LINE: 41 REASON: The sort key uses `span.start` with `reverse=True`, which incorrectly prefers later equal-length overlapping spans instead of the first/earliest span."
 tornado,3,1,296,233,pattern_matched_clean,"LINE: 296 REASON: It sets an exception on the returned Future without checking whether it has been cancelled, which can raise an invalid state error instead of ignoring cancelled futures."
 tornado,3,2,290,233,wrong,"LINE: 290 REASON: The code calls `future.set_exception(response.error)` directly, which can raise an invalid-state error if the returned Future was already cancelled instead of safely ignoring cancelled Futures."
+scrapy,5,1,110,120,pattern_matched_clean,"LINE: 110 REASON: The `Response.follow` signature omits the `flags` argument supported by `Request.__init__`, so callers cannot pass request flags through `response.follow()`."
+scrapy,5,2,123,120,correct,LINE: 123 REASON: Calling `self.urljoin(url)` without first rejecting `None` causes `Response.follow(None)` to resolve to the current response URL instead of raising an error.
