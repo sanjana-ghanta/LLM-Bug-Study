@@ -109,3 +109,4 @@ cookiecutter_1
 matplotlib_26
 pandas_45
 black_12
+black_14
