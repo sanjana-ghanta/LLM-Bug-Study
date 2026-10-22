@@ -59,3 +59,4 @@ Math_6
 JacksonDatabind_26
 JacksonDatabind_4
 JacksonCore_12
+Compress_34
