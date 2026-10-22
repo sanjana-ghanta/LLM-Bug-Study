@@ -100,3 +100,5 @@ JacksonDatabind,82,1,54,495,pattern_matched_clean,LINE: 54 REASON: The dangerous
 JacksonDatabind,82,2,62,495,wrong,"LINE: 62 REASON: The illegal-deserialization blacklist is finalized without adding `com.sun.rowset.JdbcRowSetImpl`, leaving that known dangerous JDK gadget type deserializable."
 Lang,46,1,123,86,pattern_matched_clean,"LINE: 123 REASON: `escapeJavaScript(String)` incorrectly passes `true` for `escapeForwardSlash`, causing forward slashes to be escaped even though JavaScript escaping here should only add single-quote escaping."
 Lang,46,2,244,86,wrong,"LINE: 244 REASON: The code unconditionally escapes forward slashes, causing `escapeJava` to incorrectly turn `/` into `\/` instead of only doing so for JavaScript."
+Mockito,18,1,57,86,pattern_matched_clean,"LINE: 57 REASON: The Serializable default answer stores a MockUtil instance, which is not serializable and can break serialization of mocks using this answer."
+Mockito,18,2,117,86,wrong,LINE: 117 REASON: The default answer falls through to returning null for `Iterable` return types instead of returning an empty iterable value.

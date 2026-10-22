@@ -100,3 +100,5 @@ JacksonDatabind,82,1,62,495,pattern_matched_clean,"LINE: 62 REASON: The illegal-
 JacksonDatabind,82,2,65,495,wrong,"LINE: 65 REASON: The hard-coded illegal deserialization class deny-list is incomplete, so additional known dangerous gadget classes can bypass the security check."
 Lang,46,1,321,86,pattern_matched_clean,"LINE: 321 REASON: It appends every character after `\u` as a hex digit, so valid Java Unicode escapes with repeated `u` markers such as `\uu0041` are parsed incorrectly."
 Lang,46,2,244,86,wrong,"LINE: 244 REASON: The forward slash is always escaped in Java-style strings, causing `escapeJava` to incorrectly output `\/` instead of `/` when only JavaScript escaping should do that."
+Mockito,18,1,,86,reasoned_no_bug_or_malformed,LINE: NONE REASON: No specific defective statement is identifiable in the provided file; it implements the documented Mockito default return behavior.
+Mockito,18,2,117,86,wrong,LINE: 117 REASON: Iterable-returning methods are not handled and incorrectly fall through to returning null instead of an empty iterable.

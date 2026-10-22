@@ -65,3 +65,4 @@ JacksonDatabind_82
 Jsoup_61
 Lang_46
 Collections_2
+Mockito_18
