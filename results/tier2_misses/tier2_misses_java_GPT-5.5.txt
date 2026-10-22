@@ -60,3 +60,7 @@ JacksonDatabind_26
 JacksonDatabind_4
 JacksonCore_12
 Compress_34
+JacksonDatabind_20
+JacksonDatabind_82
+Jsoup_61
+Lang_46
